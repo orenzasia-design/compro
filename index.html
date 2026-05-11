@@ -18,7 +18,7 @@
       --text: #E0E0E0;
       --text-dim: #999;
     }
-    * { 
+    *, *::before, *::after { 
       margin:0; padding:0; box-sizing:border-box;
       user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
       -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none;
@@ -36,9 +36,7 @@
       background-attachment: fixed;
       transition: background-image 0.5s ease;
     }
-    body.custom-bg {
-      background-blend-mode: overlay;
-    }
+    body.custom-bg { background-blend-mode: overlay; }
     ::-webkit-scrollbar { width:6px; }
     ::-webkit-scrollbar-track { background:#0d1117; }
     ::-webkit-scrollbar-thumb { background:var(--orange); border-radius:10px; }
@@ -130,6 +128,7 @@
       padding:0.2rem 1rem; border-radius:15px; letter-spacing:1px; margin-top:0.3rem;
     }
 
+    /* ======= MODAL ======= */
     .modal-overlay {
       position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(5px);
       z-index:2000; display:flex; align-items:center; justify-content:center;
@@ -197,10 +196,182 @@
       text-decoration:none; color:inherit; cursor:pointer;
     }
     .contact-card:hover { border-color:var(--orange); box-shadow:0 0 30px var(--orange-glow); }
-    .contact-icon {
-      width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem;
-    }
+    .contact-icon { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; }
     .contact-card h3 { font-family:monospace; margin-top:0.5rem; color:#fff; }
+
+    /* ======= KLIEN SECTION ======= */
+    #clients {
+      min-height: auto;
+      padding: 80px 5% 60px;
+      justify-content: flex-start;
+    }
+    .clients-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .clients-intro p {
+      color: #aaa;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .clients-stats {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .clients-stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,87,34,0.08);
+      border: 1px solid rgba(255,87,34,0.25);
+      border-radius: 99px;
+      padding: 7px 20px;
+    }
+    .clients-stat-pill .cs-num {
+      font-family: monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--orange);
+    }
+    .clients-stat-pill .cs-lbl {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .client-card {
+      background: rgba(16,20,34,0.85);
+      border: 1px solid rgba(255,87,34,0.15);
+      border-radius: 20px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      backdrop-filter: blur(10px);
+      transition: 0.35s;
+      position: relative;
+    }
+    .client-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,87,34,0.5);
+      box-shadow: 0 16px 40px rgba(255,87,34,0.18);
+    }
+    .client-card.featured-bumn {
+      border-color: rgba(255,87,34,0.45);
+      background: linear-gradient(135deg, rgba(16,20,34,0.9) 0%, rgba(20,30,55,0.9) 100%);
+    }
+    .bumn-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--orange);
+      background: rgba(255,87,34,0.12);
+      border: 1px solid rgba(255,87,34,0.35);
+      border-radius: 99px;
+      padding: 2px 9px;
+    }
+    .client-card-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+    .client-logo-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+      padding: 5px;
+    }
+    .client-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .client-logo-init {
+      width: 58px;
+      height: 58px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: -0.5px;
+    }
+    .client-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 3px;
+    }
+    .client-type {
+      font-size: 11px;
+      color: #777;
+    }
+    .client-divider {
+      height: 1px;
+      background: rgba(255,87,34,0.12);
+    }
+    .client-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 3px 11px;
+      border-radius: 99px;
+      width: fit-content;
+      letter-spacing: 0.03em;
+    }
+    .cb-amber  { background: rgba(186,117,23,0.18); color: #f5c842; border: 1px solid rgba(186,117,23,0.3); }
+    .cb-blue   { background: rgba(24,95,165,0.18); color: #5ca8f4; border: 1px solid rgba(24,95,165,0.3); }
+    .cb-green  { background: rgba(59,109,17,0.2); color: #7ecb3f; border: 1px solid rgba(59,109,17,0.3); }
+    .cb-purple { background: rgba(83,74,183,0.18); color: #a89ef5; border: 1px solid rgba(83,74,183,0.3); }
+    .cb-coral  { background: rgba(113,43,19,0.2); color: #f4845f; border: 1px solid rgba(113,43,19,0.3); }
+    .client-desc {
+      font-size: 12px;
+      color: #999;
+      line-height: 1.7;
+    }
+    .client-verified {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: auto;
+    }
+    .client-vdot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1D9E75;
+      flex-shrink: 0;
+    }
+    .client-vtxt {
+      font-size: 10.5px;
+      color: #1D9E75;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
 
     footer {
       text-align:center; padding:1.5rem 5%; border-top:1px solid rgba(255,87,34,0.2);
@@ -211,6 +382,11 @@
       0%,90%,100%{transform:translate(0);}
       92%{transform:translate(-2px,1px);} 94%{transform:translate(2px,-1px);}
       96%{transform:translate(-1px,-1px);} 98%{transform:translate(1px,2px);}
+    }
+
+    @media (max-width: 600px) {
+      .clients-grid { grid-template-columns: 1fr; }
+      .clients-stats { gap: 8px; }
     }
   </style>
 </head>
@@ -230,6 +406,7 @@
       <ul id="nav-menu">
         <li><a href="#home" data-lang="nav.home">Beranda</a></li>
         <li><a href="#products" data-lang="nav.products">Produk</a></li>
+        <li><a href="#clients" data-lang="nav.clients">Klien</a></li>
         <li><a href="#about" data-lang="nav.about">Keunggulan</a></li>
         <li><a href="#contact" data-lang="nav.contact">Kontak</a></li>
       </ul>
@@ -237,6 +414,7 @@
   </div>
 </header>
 
+<!-- HOME -->
 <section id="home">
   <div class="hero-content">
     <h1 data-lang="hero.title">PT. ORENZ<br><span class="highlight">SUKU CADANG ASIA RAYA</span></h1>
@@ -248,6 +426,7 @@
   </div>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products">
   <h2 class="section-title"><span data-lang="products.line">Lini</span> <span data-lang="products.title">Produk</span></h2>
   <div class="product-grid">
@@ -303,6 +482,161 @@
   </div>
 </section>
 
+<!-- ======= KLIEN / PORTOFOLIO ======= -->
+<section id="clients">
+  <h2 class="section-title"><span data-lang="clients.title1">Klien</span> <span data-lang="clients.title2">Kami</span></h2>
+  <div class="clients-intro">
+    <p data-lang="clients.desc">Dipercaya oleh perusahaan-perusahaan terkemuka di industri energi, pertambangan, perdagangan, dan konstruksi di seluruh Indonesia.</p>
+  </div>
+
+  <div class="clients-stats">
+    <div class="clients-stat-pill">
+      <span class="cs-num">5+</span>
+      <span class="cs-lbl" data-lang="clients.stat1">Klien Aktif</span>
+    </div>
+    <div class="clients-stat-pill">
+      <span class="cs-num">BUMN</span>
+      <span class="cs-lbl" data-lang="clients.stat2">Termasuk Klien</span>
+    </div>
+    <div class="clients-stat-pill">
+      <span class="cs-num">100%</span>
+      <span class="cs-lbl" data-lang="clients.stat3">Kepuasan Klien</span>
+    </div>
+  </div>
+
+  <div class="clients-grid">
+
+    <!-- ================================================== -->
+    <!-- LOGO KLIEN — GANTI NAMA FILE src="..." SESUAI FILE LOGO ANDA -->
+    <!-- Letakkan file logo di folder yang SAMA dengan file HTML ini  -->
+    <!-- Format yang didukung: .png / .jpg / .jpeg / .svg / .webp     -->
+    <!-- ================================================== -->
+
+    <!-- 1. PT Bukit Asam (BUMN - Featured) -->
+    <!-- GANTI src di bawah ini → contoh: src="logo-bukitasam.png" -->
+    <div class="client-card featured-bumn">
+      <div class="bumn-badge">BUMN</div>
+      <div class="client-card-top">
+        <div class="client-logo-wrap">
+          <img src="logo-bukitasam.png"
+               alt="Logo PT Bukit Asam"
+               draggable="false"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
+          <span style="display:none; font-weight:800; font-size:12px; color:#c0392b;
+                       justify-content:center; align-items:center; width:100%; height:100%;">PTBA</span>
+        </div>
+        <div>
+          <p class="client-name">PT. Bukit Asam Tbk</p>
+          <p class="client-type">BUMN · Energi & Pertambangan Batu Bara</p>
+        </div>
+      </div>
+      <div class="client-divider"></div>
+      <span class="client-badge cb-amber">⚡ Energi</span>
+      <p class="client-desc">Perusahaan tambang batu bara pelat merah terdaftar di BEI (IDX: PTBA). Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di Tanjung Enim, Sumatera Selatan.</p>
+      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
+    </div>
+
+    <!-- 2. PT Mayangkara Jaya Abadi -->
+    <!-- GANTI src di bawah ini → contoh: src="logo-mayangkara.png" -->
+    <div class="client-card">
+      <div class="client-card-top">
+        <div class="client-logo-wrap">
+          <img src="logo-mayangkara.png"
+               alt="Logo PT Mayangkara Jaya Abadi"
+               draggable="false"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
+          <span style="display:none; font-weight:800; font-size:13px; color:#5ca8f4;
+                       justify-content:center; align-items:center; width:100%; height:100%;">MJA</span>
+        </div>
+        <div>
+          <p class="client-name">PT. Mayangkara Jaya Abadi</p>
+          <p class="client-type">Swasta · Perdagangan & Jasa Umum</p>
+        </div>
+      </div>
+      <div class="client-divider"></div>
+      <span class="client-badge cb-blue">🏬 Perdagangan</span>
+      <p class="client-desc">Perusahaan swasta nasional yang bergerak di bidang perdagangan umum dan jasa. Berkomitmen pada pelayanan prima, kepercayaan mitra, dan kemitraan bisnis yang berkelanjutan.</p>
+      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
+    </div>
+
+    <!-- 3. CV GMR Niaga Putra -->
+    <!-- GANTI src di bawah ini → contoh: src="logo-gmrniaga.png" -->
+    <div class="client-card">
+      <div class="client-card-top">
+        <div class="client-logo-wrap">
+          <img src="logo-gmrniaga.png"
+               alt="Logo CV GMR Niaga Putra"
+               draggable="false"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
+          <span style="display:none; font-weight:800; font-size:13px; color:#7ecb3f;
+                       justify-content:center; align-items:center; width:100%; height:100%;">GMR</span>
+        </div>
+        <div>
+          <p class="client-name">CV. GMR Niaga Putra</p>
+          <p class="client-type">CV · Konstruksi & Pengadaan</p>
+        </div>
+      </div>
+      <div class="client-divider"></div>
+      <span class="client-badge cb-green">🔧 Konstruksi</span>
+      <p class="client-desc">Perusahaan konstruksi dan pengadaan material berpengalaman dalam proyek infrastruktur. Menangani kebutuhan suplai barang dan jasa teknis untuk berbagai skala proyek.</p>
+      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
+    </div>
+
+    <!-- 4. Global Makara Teknik -->
+    <!-- GANTI src di bawah ini → contoh: src="logo-globalmakara.png" -->
+    <div class="client-card">
+      <div class="client-card-top">
+        <div class="client-logo-wrap">
+          <img src="logo-globalmakara.png"
+               alt="Logo Global Makara Teknik"
+               draggable="false"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
+          <span style="display:none; font-weight:800; font-size:13px; color:#a89ef5;
+                       justify-content:center; align-items:center; width:100%; height:100%;">GMT</span>
+        </div>
+        <div>
+          <p class="client-name">Global Makara Teknik</p>
+          <p class="client-type">Swasta · Jasa Pertambangan & Mining</p>
+        </div>
+      </div>
+      <div class="client-divider"></div>
+      <span class="client-badge cb-purple">⛏️ Pertambangan</span>
+      <p class="client-desc">Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. Beroperasi di Sumatera Selatan dan Kalimantan Selatan.</p>
+      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
+    </div>
+
+    <!-- 5. PT Pawon Servis Tama -->
+    <!-- GANTI src di bawah ini → contoh: src="logo-pawonservis.png" -->
+    <div class="client-card">
+      <div class="client-card-top">
+        <div class="client-logo-wrap">
+          <img src="logo-pawonservis.png"
+               alt="Logo PT Pawon Servis Tama"
+               draggable="false"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
+          <span style="display:none; font-weight:800; font-size:13px; color:#f4845f;
+                       justify-content:center; align-items:center; width:100%; height:100%;">PST</span>
+        </div>
+        <div>
+          <p class="client-name">PT. Pawon Servis Tama</p>
+          <p class="client-type">Swasta · Retail & Sparepart Alat Berat</p>
+        </div>
+      </div>
+      <div class="client-divider"></div>
+      <span class="client-badge cb-coral">⚙️ Sparepart & Servis</span>
+      <p class="client-desc">Perusahaan retail dan penjualan sparepart kendaraan alat berat berbasis di Jakarta Timur. Melayani kebutuhan suku cadang dan servis untuk armada alat berat industri.</p>
+      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT / KEUNGGULAN -->
 <section id="about">
   <h2 class="section-title"><span data-lang="about.why">Mengapa</span> <span data-lang="about.us">Kami?</span></h2>
   <div class="feature-grid">
@@ -321,6 +655,7 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title"><span data-lang="contact.us">Hubungi</span> <span data-lang="contact.them">Kami</span></h2>
   <div class="contact-wrapper">
@@ -340,6 +675,8 @@
 <footer>
   <p data-lang="footer">&copy; 2022 PT. ORENZ SUKU CADANG ASIA RAYA. All rights reserved. | Sparepart Truck & Heavy Equipment</p>
 </footer>
+
+<!-- ====== MODALS ====== -->
 
 <!-- Modal Sparepart -->
 <div class="modal-overlay" id="modalSparepart">
@@ -452,12 +789,9 @@
     <button class="modal-close" onclick="closeModal('modalAlsintan')">&times;</button>
     <h2><span data-lang="alsintan.title">Alsintan</span></h2>
     <p style="color:#aaa; margin-bottom:1.5rem;" data-lang="alsintan.katalog">Katalog resmi alat mesin pertanian, distribusi PT. ORENZ.</p>
-
     <div class="alsintan-grid" id="alsintanProductGrid"></div>
-    
     <h4 style="color:#fff; margin-top:2rem;" data-lang="implement.title">⚙️ Implement Pertanian</h4>
     <div class="alsintan-grid" style="margin-top:0.5rem;" id="implementGrid"></div>
-    
     <div style="margin-top:2rem; text-align:center;">
       <a href="https://wa.me/6288802032033?text=Halo%2C%20saya%20tertarik%20dengan%20Alsintan." class="btn btn-primary btn-sm" target="_blank" data-lang="alsintan.chat">💬 Chat WhatsApp Tim Sales</a>
     </div>
@@ -472,7 +806,7 @@
   </div>
 </div>
 
-<!-- Modal TCO dengan perbandingan -->
+<!-- Modal TCO -->
 <div class="modal-overlay" id="modalTCO">
   <div class="modal" style="max-width:950px;">
     <button class="modal-close" onclick="closeModal('modalTCO')">&times;</button>
@@ -498,10 +832,9 @@
     <button class="modal-close" onclick="closeModal('modalVideo')">&times;</button>
     <h2><span>Video Demo</span> Rice Harvester 4LZ-7</h2>
     <p style="color:#aaa; margin-bottom:1.5rem;">Pilih video uji coba di Sumatera:</p>
-    
     <div style="display:grid; gap:1rem;">
       <div style="background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-        <h4 style="color:#fff; margin-bottom:0.5rem;">🎬 Demo 1: Proses Panen Padi Di Lahan</h4>
+        <h4 style="color:#fff; margin-bottom:0.5rem;">🎬 Demo 1: Panen Padi di Lahan Basah</h4>
         <video controls width="100%" style="border-radius:8px; max-height:400px;">
           <source src="rh4lz-7-1.mp4" type="video/mp4">
           Browser Anda tidak mendukung pemutaran video. <a href="rh4lz-7-1.mp4" download>Unduh video</a>.
@@ -522,7 +855,6 @@
         </video>
       </div>
     </div>
-    
     <p style="color:#888; font-size:0.8rem; margin-top:1rem;">*Pastikan folder berisi file video: <strong>rh4lz-7-1.mp4</strong>, <strong>rh4lz-7-2.mp4</strong>, <strong>rh4lz-7-3.mp4</strong>.</p>
   </div>
 </div>
@@ -532,7 +864,7 @@
   const translations = {
     id: {
       langIcon: '🇮🇩', langText: 'ID',
-      nav: { home: 'Beranda', products: 'Produk', about: 'Keunggulan', contact: 'Kontak' },
+      nav: { home: 'Beranda', products: 'Produk', clients: 'Klien', about: 'Keunggulan', contact: 'Kontak' },
       hero: { title: 'PT. ORENZ<br><span class="highlight">SUKU CADANG ASIA RAYA</span>', desc: 'Sparepart Truck, Heavy Equipment, Ban, CaO Limestone & Alsintan – Multi Brands, Harga Kompetitif, Tanpa Perantara.', contact: '📞 Hubungi Kami', explore: '🔍 Jelajahi Produk' },
       products: { line: 'Lini', title: 'Produk' },
       sparepart: { title: 'Spareparts', desc: 'Truck & Heavy Equipment Multi Brands. Order cepat dengan form interaktif.' },
@@ -540,6 +872,7 @@
       cao: { title: 'CaO Limestone', desc: 'Highgrade High Purity (97.6% CaO). Sertifikat lab resmi & kapasitas besar.', full: 'Limestone Highgrade', weight: 'NET WEIGHT: 1,000 KG / Jumbo Bag', lab: '🧪 Hasil Uji Laboratorium', sample: 'SAMPLE: Kapur Powder | DATE: 12/02/2024 - 26/02/2024', roa: '🔬 Lihat Dokumen Lengkap (ROA)', supply: '📦 Ketentuan Supply', cap: '✅ Kapasitas Produksi: 100 ton/hari (±3,000 ton/bulan)', moq: '✅ Minimum Order: 25 ton', fob: '✅ FOB Port: Marunda, Jakarta', pack: '✅ Packaging: Jumbo Bag 1 Ton, double inner', app: '✅ Aplikasi: Steel, Water Treatment, Sugar, Chemical, Glass, Construction', order: '📦 Pesan CaO Sekarang' },
       alsintan: { title: 'Alsintan', desc: 'Alat Mesin Pertanian lengkap. Katalog spesifikasi teknis & estimasi biaya operasional tersedia.', katalog: 'Katalog resmi alat mesin pertanian, distribusi PT. ORENZ.', chat: '💬 Chat WhatsApp Tim Sales', detail: 'Detail & Spesifikasi', price: 'Tanya Harga' },
       implement: { title: '⚙️ Implement Pertanian', rotary: 'Rotary Tiller', rotaryDesc: 'Pengolah tanah primer', disc: 'Disc Plough', discDesc: 'Bajak piringan', trailer: 'Trailer', trailerDesc: 'Angkut hasil panen', priceBtn: 'Tanya Harga' },
+      clients: { title1: 'Klien', title2: 'Kami', desc: 'Dipercaya oleh perusahaan-perusahaan terkemuka di industri energi, pertambangan, perdagangan, dan konstruksi di seluruh Indonesia.', stat1: 'Klien Aktif', stat2: 'Termasuk Klien', stat3: 'Kepuasan Klien' },
       feature: { fast: 'Respons Cepat', price: 'Harga Kompetitif', direct: 'Tanpa Perantara' },
       about: { why: 'Mengapa', us: 'Kami?' },
       contact: { us: 'Hubungi', them: 'Kami' },
@@ -554,24 +887,11 @@
       th: { brand: 'Brand', pn: 'Part Number', item: 'Item Name', qty: 'Qty', action: 'Aksi' },
       others: 'OTHERS BRAND',
       roa: { error: 'Dokumen ROA tidak dapat dimuat.' },
-      tco: { 
-        title: 'Estimasi Biaya Operasional & Kepemilikan',
-        definisi: 'Estimasi Biaya Operasional & Kepemilikan (Operational Cost & Ownership Estimate) adalah ringkasan proyeksi biaya yang akan dikeluarkan pembeli <strong>setelah pembelian unit</strong>, mencakup konsumsi bahan bakar, perawatan rutin, overhaul besar, serta nilai jual kembali di akhir periode.',
-        asumsi: '*Asumsi: solar Rp14.000/L, 1.000 jam operasi/tahun, 0.08 L/HP/jam.',
-        fuel: 'Biaya BBM/tahun',
-        maint: 'Biaya Maintenance/tahun',
-        overhaul: 'Overhaul (tahun ke-5)',
-        resale: 'Nilai Jual Kembali',
-        total5: 'Total Biaya 5 Tahun',
-        totalYear: 'Rata‑rata per Tahun',
-        ask: '📞 Tanya Lebih Lanjut',
-        comparison: 'Perbandingan Biaya Operasional dengan Kompetitor (estimasi)',
-        disclaimer: '*Data kompetitor merupakan perkiraan berdasarkan spesifikasi umum dan informasi pasar. Biaya aktual dapat bervariasi.'
-      }
+      tco: { title: 'Estimasi Biaya Operasional & Kepemilikan', definisi: 'Estimasi Biaya Operasional & Kepemilikan (Operational Cost & Ownership Estimate) adalah ringkasan proyeksi biaya yang akan dikeluarkan pembeli <strong>setelah pembelian unit</strong>, mencakup konsumsi bahan bakar, perawatan rutin, overhaul besar, serta nilai jual kembali di akhir periode.', asumsi: '*Asumsi: solar Rp14.000/L, 1.000 jam operasi/tahun, 0.08 L/HP/jam.', fuel: 'Biaya BBM/tahun', maint: 'Biaya Maintenance/tahun', overhaul: 'Overhaul (tahun ke-5)', resale: 'Nilai Jual Kembali', total5: 'Total Biaya 5 Tahun', totalYear: 'Rata‑rata per Tahun', ask: '📞 Tanya Lebih Lanjut', comparison: 'Perbandingan Biaya Operasional dengan Kompetitor (estimasi)', disclaimer: '*Data kompetitor merupakan perkiraan berdasarkan spesifikasi umum dan informasi pasar. Biaya aktual dapat bervariasi.' }
     },
     en: {
       langIcon: '🇬🇧', langText: 'EN',
-      nav: { home: 'Home', products: 'Products', about: 'Why Us', contact: 'Contact' },
+      nav: { home: 'Home', products: 'Products', clients: 'Clients', about: 'Why Us', contact: 'Contact' },
       hero: { title: 'PT. ORENZ<br><span class="highlight">ASIA RAYA SPARE PARTS</span>', desc: 'Multi Brand Truck & Heavy Equipment Spare Parts, Tires, CaO Limestone & Agricultural Machinery – Competitive Price, Direct Contact.', contact: '📞 Contact Us', explore: '🔍 Explore Products' },
       products: { line: 'Product', title: 'Lines' },
       sparepart: { title: 'Spare Parts', desc: 'Multi Brand Truck & Heavy Equipment. Quick order with interactive form.' },
@@ -579,6 +899,7 @@
       cao: { title: 'CaO Limestone', desc: 'Highgrade High Purity (97.6% CaO). Certified lab report & large capacity.', full: 'Limestone Highgrade', weight: 'NET WEIGHT: 1,000 KG / Jumbo Bag', lab: '🧪 Laboratory Test Results', sample: 'SAMPLE: Limestone Powder | DATE: 12/02/2024 - 26/02/2024', roa: '🔬 View Full Report (ROA)', supply: '📦 Supply Terms', cap: '✅ Production Capacity: 100 tons/day (±3,000 tons/month)', moq: '✅ Minimum Order: 25 tons', fob: '✅ FOB Port: Marunda, Jakarta', pack: '✅ Packaging: 1 Ton Jumbo Bag, double inner', app: '✅ Applications: Steel, Water Treatment, Sugar, Chemical, Glass, Construction', order: '📦 Order CaO Now' },
       alsintan: { title: 'Agricultural Machinery', desc: 'Complete agricultural machinery. Technical specs & operational cost estimate available.', katalog: 'Official agricultural machinery catalog, distributed by PT. ORENZ.', chat: '💬 Chat Sales on WhatsApp', detail: 'Details & Specs', price: 'Ask Price' },
       implement: { title: '⚙️ Agricultural Implements', rotary: 'Rotary Tiller', rotaryDesc: 'Primary soil cultivator', disc: 'Disc Plough', discDesc: 'Disc plow', trailer: 'Trailer', trailerDesc: 'Harvest transport', priceBtn: 'Ask Price' },
+      clients: { title1: 'Our', title2: 'Clients', desc: 'Trusted by leading companies in the energy, mining, trading, and construction industries across Indonesia.', stat1: 'Active Clients', stat2: 'Including BUMN', stat3: 'Client Satisfaction' },
       feature: { fast: 'Fast Response', price: 'Competitive Price', direct: 'Direct Contact' },
       about: { why: 'Why', us: 'Us?' },
       contact: { us: 'Contact', them: 'Us' },
@@ -593,20 +914,7 @@
       th: { brand: 'Brand', pn: 'Part Number', item: 'Item Name', qty: 'Qty', action: 'Action' },
       others: 'OTHERS BRAND',
       roa: { error: 'ROA document cannot be loaded.' },
-      tco: { 
-        title: 'Operational Cost & Ownership Estimate',
-        definisi: 'The Operational Cost & Ownership Estimate summarizes projected costs after purchasing the unit: fuel, routine maintenance, major overhaul, and resale value.',
-        asumsi: '*Assumption: diesel IDR 14,000/L, 1,000 operating hours/year, 0.08 L/HP/hour.',
-        fuel: 'Fuel Cost/year',
-        maint: 'Maintenance Cost/year',
-        overhaul: 'Overhaul (year 5)',
-        resale: 'Resale Value',
-        total5: 'Total 5-Year Cost',
-        totalYear: 'Average per Year',
-        ask: '📞 Ask More',
-        comparison: 'Operational Cost Comparison with Competitors (estimated)',
-        disclaimer: '*Competitor data is estimated based on typical specifications and market information. Actual costs may vary.'
-      }
+      tco: { title: 'Operational Cost & Ownership Estimate', definisi: 'The Operational Cost & Ownership Estimate summarizes projected costs after purchasing the unit: fuel, routine maintenance, major overhaul, and resale value.', asumsi: '*Assumption: diesel IDR 14,000/L, 1,000 operating hours/year, 0.08 L/HP/hour.', fuel: 'Fuel Cost/year', maint: 'Maintenance Cost/year', overhaul: 'Overhaul (year 5)', resale: 'Resale Value', total5: 'Total 5-Year Cost', totalYear: 'Average per Year', ask: '📞 Ask More', comparison: 'Operational Cost Comparison with Competitors (estimated)', disclaimer: '*Competitor data is estimated based on typical specifications and market information. Actual costs may vary.' }
     }
   };
 
@@ -640,19 +948,15 @@
     document.getElementById('langIcon').textContent = translations[lang].langIcon;
     document.getElementById('langText').textContent = translations[lang].langText;
     document.getElementById('sparepartGuide').innerHTML = t('modal.sparepartGuide');
-    if (document.getElementById('modalAlsintan').classList.contains('active')) {
-      buildAlsintanCatalog();
-    }
-    if (document.getElementById('modalTyre').classList.contains('active')) {
-      buildTyreCatalog();
-    }
+    if (document.getElementById('modalAlsintan').classList.contains('active')) buildAlsintanCatalog();
+    if (document.getElementById('modalTyre').classList.contains('active')) buildTyreCatalog();
   }
 
   function toggleLanguage() {
     applyLanguage(currentLang === 'id' ? 'en' : 'id');
   }
 
-  // ============ BACKGROUND & PROTEKSI ============
+  // ============ BACKGROUND ============
   let originalBackground = getComputedStyle(document.body).backgroundImage;
   function setBodyBackground(imageFile) {
     document.body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${imageFile}')`;
@@ -706,17 +1010,13 @@
   function openModal(id) { document.getElementById(id).classList.add('active'); }
   function closeModal(id) {
     document.getElementById(id).classList.remove('active');
-    if (!document.querySelector('.modal-overlay.active')) {
-      resetBodyBackground();
-    }
+    if (!document.querySelector('.modal-overlay.active')) resetBodyBackground();
   }
   document.querySelectorAll('.modal-overlay').forEach(ov => {
     ov.addEventListener('click', function(e) { if (e.target === this) closeModal(this.id); });
   });
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(ov => closeModal(ov.id));
-    }
+    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.active').forEach(ov => closeModal(ov.id));
   });
 
   // ============ SPAREPART ============
@@ -802,32 +1102,27 @@
     reader.readAsArrayBuffer(file);
   }
 
-  // ============ TYRE (gambar disesuaikan dengan daftar file) ============
+  // ============ TYRE ============
   const tyreData = [
-    { name:'CB793', type:'Widebody Dump Truck', img:'tyrecb793.jpg', sizes:['13.00R25 ★★★ 163/182A','14.00R24 ★★★ 169/188A','14.00R25 ★★★ 169/188A'], tread:'29-31 mm', desc: currentLang==='id'?'Pola khusus truk widebody.':'Special widebody truck pattern.' },
-    { name:'CM770PRO', type:'Crane Tire', img:'tyrecm770pro.jpg', sizes:['385/95R25 170F'], tread:'Variatif', desc: 'Stabilitas tinggi, longitudinal groove anti selip.' },
-    { name:'CB386', type:'Loader Tire', img:'tyrecb386.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Dalam', desc: 'Block besar, traksi sangat baik.' },
-    { name:'E4 Underground', type:'Underground Mine', img:'tyree4.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Ekstra dalam', desc: 'Desain block besar untuk bawah tanah.' },
-    { name:'Smooth Mine', type:'Underground Smooth', img:'tyresmooth.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Low Section', desc: 'Permukaan halus, masa pakai panjang.' },
-    { name:'Dump Truck', type:'Off-Highway Dump', img:'tyredump.jpg', sizes:['16.00R25','23.5R25','26.5R25'], tread:'Ultra deep', desc: 'Heat dissipation, kompon TKPH tinggi.' },
-    { name:'Loader Bias', type:'Bias Loader', img:'tyreloaderbias.jpg', sizes:['Multi size'], tread:'Standar', desc: 'Ekonomis dan andal.' },
-    { name:'Motor Grader', type:'Grader', img:'tyregrader.jpg', sizes:['Tersedia'], tread:'Variatif', desc: 'Traksi baik dan tahan aus.' }
+    { name:'CB793', type:'Widebody Dump Truck', img:'tyrecb793.jpg', sizes:['13.00R25 ★★★ 163/182A','14.00R24 ★★★ 169/188A','14.00R25 ★★★ 169/188A'], tread:'29-31 mm', desc:'Pola khusus truk widebody.' },
+    { name:'CM770PRO', type:'Crane Tire', img:'tyrecm770pro.jpg', sizes:['385/95R25 170F'], tread:'Variatif', desc:'Stabilitas tinggi, longitudinal groove anti selip.' },
+    { name:'CB386', type:'Loader Tire', img:'tyrecb386.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Dalam', desc:'Block besar, traksi sangat baik.' },
+    { name:'E4 Underground', type:'Underground Mine', img:'tyree4.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Ekstra dalam', desc:'Desain block besar untuk bawah tanah.' },
+    { name:'Smooth Mine', type:'Underground Smooth', img:'tyresmooth.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Low Section', desc:'Permukaan halus, masa pakai panjang.' },
+    { name:'Dump Truck', type:'Off-Highway Dump', img:'tyredump.jpg', sizes:['16.00R25','23.5R25','26.5R25'], tread:'Ultra deep', desc:'Heat dissipation, kompon TKPH tinggi.' },
+    { name:'Loader Bias', type:'Bias Loader', img:'tyreloaderbias.jpg', sizes:['Multi size'], tread:'Standar', desc:'Ekonomis dan andal.' },
+    { name:'Motor Grader', type:'Grader', img:'tyregrader.jpg', sizes:['Tersedia'], tread:'Variatif', desc:'Traksi baik dan tahan aus.' }
   ];
 
   function buildTyreCatalog() {
     const grid = document.getElementById('tyreCatalogGrid');
     grid.innerHTML = '';
     tyreData.forEach((tyre, i) => {
-      const hasImg = tyre.img && tyre.img.trim() !== '';
-      const imgHTML = hasImg 
-        ? `<img src="${tyre.img}" alt="${tyre.name}" draggable="false" style="width:100%; height:90px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem; background:#0d1222;"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-           <div style="display:none; font-size:2.5rem; color:var(--orange);">⭕</div>`
-        : `<div style="font-size:2.5rem; color:var(--orange); margin-bottom:0.5rem;">⭕</div>`;
-      
       grid.innerHTML += `
         <div class="alsintan-card" onclick="showTyreDetail(${i})" style="text-align:center; padding:1rem;">
-          ${imgHTML}
+          <img src="${tyre.img}" alt="${tyre.name}" draggable="false" style="width:100%; height:90px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem; background:#0d1222;"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div style="display:none; font-size:2.5rem; color:var(--orange);">⭕</div>
           <span style="display:block; color:#fff; font-weight:600;">${tyre.name}</span>
           <small style="color:#888;">${tyre.type}</small>
           <small style="display:block; color:#aaa;">${tyre.sizes[0]}</small>
@@ -850,13 +1145,13 @@
 
   function openROA() { openModal('modalROA'); }
 
-  // ============ ALSINTAN & TCO ============
+  // ============ ALSINTAN ============
   const alsintanProducts = {
-    DF504: { name: 'Traktor DF504 (50 HP)', img: 'df504.jpg', specs: { id: ['Engine: 4 silinder, 50 HP','Transmisi: 8F+4R','4WD','PTO: 540/720 rpm','3-point lift: 800 kg','Berat: 2,100 kg'], en: ['Engine: 4-cyl, 50 HP','Transmission: 8F+4R','4WD','PTO: 540/720 rpm','Lift: 800 kg','Weight: 2,100 kg'] }, desc: { id:'Serbaguna, irit BBM.', en:'Versatile, fuel efficient.' }, tco: { fob: 5324, hp: 50 } },
-    DF704: { name: 'Traktor DF704 (70 HP)', img: 'df704.jpg', specs: { id: ['Engine: 4 silinder, 70 HP','Transmisi: 8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Berat: 2,650 kg'], en: ['Engine: 4-cyl, 70 HP','8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Weight: 2,650 kg'] }, desc: { id:'Bertenga untuk lahan berat.', en:'Powerful for heavy soil.' }, tco: { fob: 6676, hp: 70 } },
-    DF904: { name: 'Traktor DF904 (90 HP)', img: 'df904.jpg', specs: { id: ['Engine: 4 silinder, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Berat: 3,100 kg'], en: ['Engine: 4-cyl, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Weight: 3,100 kg'] }, desc: { id:'Heavy-duty, kabin AC.', en:'Heavy-duty with AC cab.' }, tco: { fob: 10310, hp: 90 } },
-    DF1004: { name: 'Traktor DF1004 (100 HP)', img: 'df1004.jpg', specs: { id: ['Engine: 4 silinder, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Berat: 3,450 kg'], en: ['Engine: 4-cyl, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Weight: 3,450 kg'] }, desc: { id:'Flagship, kenyamanan tinggi.', en:'Flagship, high comfort.' }, tco: { fob: 10408, hp: 100 } },
-    '4LZ7': { name: 'Rice Harvester 4LZ-7 (120 HP)', img: '4lz7.jpg', specs: { id: ['Engine: 120 HP','Kapasitas: 5-7 ton/jam','Grain tank: 1,500 L','Lebar potong: 2.2 m','Berat: 4,800 kg'], en: ['Engine: 120 HP','Capacity: 5-7 t/h','Grain tank: 1,500 L','Cutting width: 2.2 m','Weight: 4,800 kg'] }, desc: { id:'Combine harvester modern.', en:'Modern combine harvester.' }, tco: { fob: 18900, hp: 120 } }
+    DF504: { name:'Traktor DF504 (50 HP)', img:'df504.jpg', specs:{ id:['Engine: 4 silinder, 50 HP','Transmisi: 8F+4R','4WD','PTO: 540/720 rpm','3-point lift: 800 kg','Berat: 2,100 kg'], en:['Engine: 4-cyl, 50 HP','Transmission: 8F+4R','4WD','PTO: 540/720 rpm','Lift: 800 kg','Weight: 2,100 kg'] }, desc:{ id:'Serbaguna, irit BBM.', en:'Versatile, fuel efficient.' }, tco:{ fob:5324, hp:50 } },
+    DF704: { name:'Traktor DF704 (70 HP)', img:'df704.jpg', specs:{ id:['Engine: 4 silinder, 70 HP','Transmisi: 8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Berat: 2,650 kg'], en:['Engine: 4-cyl, 70 HP','8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Weight: 2,650 kg'] }, desc:{ id:'Bertenaga untuk lahan berat.', en:'Powerful for heavy soil.' }, tco:{ fob:6676, hp:70 } },
+    DF904: { name:'Traktor DF904 (90 HP)', img:'df904.jpg', specs:{ id:['Engine: 4 silinder, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Berat: 3,100 kg'], en:['Engine: 4-cyl, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Weight: 3,100 kg'] }, desc:{ id:'Heavy-duty, kabin AC.', en:'Heavy-duty with AC cab.' }, tco:{ fob:10310, hp:90 } },
+    DF1004: { name:'Traktor DF1004 (100 HP)', img:'df1004.jpg', specs:{ id:['Engine: 4 silinder, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Berat: 3,450 kg'], en:['Engine: 4-cyl, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Weight: 3,450 kg'] }, desc:{ id:'Flagship, kenyamanan tinggi.', en:'Flagship, high comfort.' }, tco:{ fob:10408, hp:100 } },
+    '4LZ7': { name:'Rice Harvester 4LZ-7 (120 HP)', img:'4lz7.jpg', specs:{ id:['Engine: 120 HP','Kapasitas: 5-7 ton/jam','Grain tank: 1,500 L','Lebar potong: 2.2 m','Berat: 4,800 kg'], en:['Engine: 120 HP','Capacity: 5-7 t/h','Grain tank: 1,500 L','Cutting width: 2.2 m','Weight: 4,800 kg'] }, desc:{ id:'Combine harvester modern.', en:'Modern combine harvester.' }, tco:{ fob:18900, hp:120 } }
   };
 
   function buildAlsintanCatalog() {
@@ -924,18 +1219,16 @@
             <button class="btn btn-outline btn-sm" onclick="showOperationalCost('${model}')">📊 ${currentLang==='id'?'Estimasi Biaya Operasional':'Operational Cost Estimate'}</button>
           </div>
         </div>
-      </div>
-    `;
+      </div>`;
     openModal('modalAlsintanDetail');
   }
 
-  // Basis perbandingan (inisial): K, JD, MF, Y
   const baseComparison = {
-    Dafeng:            { fuel:56000000, maint:4100000, overhaul:27600000, resale:48300000, total5:280000000, perYear:56000000 },
-    K:                 { fuel:56000000, maint:8500000, overhaul:57000000, resale:42500000, total5:356000000, perYear:71200000 },
-    JD:                { fuel:56000000, maint:12500000, overhaul:85000000, resale:72000000, total5:354000000, perYear:70800000 },
-    MF:                { fuel:56000000, maint:9800000, overhaul:66000000, resale:38000000, total5:372000000, perYear:74400000 },
-    Y:                 { fuel:56000000, maint:10200000, overhaul:68000000, resale:40000000, total5:370000000, perYear:74000000 }
+    Dafeng: { fuel:56000000, maint:4100000, overhaul:27600000, resale:48300000, total5:280000000, perYear:56000000 },
+    K:      { fuel:56000000, maint:8500000, overhaul:57000000, resale:42500000, total5:356000000, perYear:71200000 },
+    JD:     { fuel:56000000, maint:12500000, overhaul:85000000, resale:72000000, total5:354000000, perYear:70800000 },
+    MF:     { fuel:56000000, maint:9800000, overhaul:66000000, resale:38000000, total5:372000000, perYear:74400000 },
+    Y:      { fuel:56000000, maint:10200000, overhaul:68000000, resale:40000000, total5:370000000, perYear:74000000 }
   };
 
   function getCompetitorData(hp) {
@@ -977,8 +1270,7 @@
         </table>
       </div>
       <p style="color:#888; font-size:0.8rem; margin:0.5rem 0;">${tc.disclaimer}</p>
-      <button class="btn btn-primary btn-sm" onclick="openWhatsApp('${prod.name}')">${tc.ask}</button>
-    `;
+      <button class="btn btn-primary btn-sm" onclick="openWhatsApp('${prod.name}')">${tc.ask}</button>`;
     openModal('modalTCO');
   }
 
@@ -986,7 +1278,6 @@
     window.open(`https://wa.me/6288802032033?text=${currentLang==='id'?'Halo':'Hello'}%20PT.%20ORENZ%2C%20${currentLang==='id'?'saya tertarik dengan':'I am interested in'}%20${encodeURIComponent(product)}.`, '_blank');
   }
 
-  // Inisialisasi
   window.addEventListener('load', () => {
     applyLanguage(currentLang);
     buildAlsintanCatalog();
