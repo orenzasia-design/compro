@@ -1,1265 +1,666 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>PT. ORENZ | Sparepart Truck & Heavy Equipment</title>
-  <meta name="description" content="PT. ORENZ SUKU CADANG ASIA RAYA - Sparepart Multi Brands, Tyre, CaO Limestone, Alsintan.">
-  
-  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js" defer></script>
-  
-  <style>
-    :root {
-      --orange: #FF5722;
-      --orange-glow: rgba(255,87,34,0.5);
-      --dark-bg: #060910;
-      --card-bg: rgba(16,20,34,0.8);
-      --border: rgba(255,87,34,0.2);
-      --text: #E0E0E0;
-      --text-dim: #999;
-    }
-    *, *::before, *::after { 
-      margin:0; padding:0; box-sizing:border-box;
-      user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;
-      -webkit-user-drag: none; -khtml-user-drag: none; -moz-user-drag: none; -o-user-drag: none;
-    }
-    input, textarea { user-select: auto; -webkit-user-select: auto; }
-    body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background: var(--dark-bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.5;
-      background-image: radial-gradient(circle at 30% 40%, #0f172a, #020617);
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      transition: background-image 0.5s ease;
-    }
-    body.custom-bg { background-blend-mode: overlay; }
-    ::-webkit-scrollbar { width:6px; }
-    ::-webkit-scrollbar-track { background:#0d1117; }
-    ::-webkit-scrollbar-thumb { background:var(--orange); border-radius:10px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT. ORENZ SUKU CADANG ASIA RAYA — Company Profile 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --coal:#0D0D0F;--pit:#141418;--steel:#1C1C24;--iron:#252530;
+  --amber:#F5A623;--amber-dark:#C4810E;--amber-glow:rgba(245,166,35,0.12);
+  --white:#FFFFFF;--offwhite:#F0EDE8;--muted:#8A8A98;
+  --border:rgba(255,255,255,0.07);--border-amber:rgba(245,166,35,0.25);
+  --danger:#E8340A;--success:#2ECC71;--radius:6px;--radius-lg:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;background:var(--coal);color:var(--white);line-height:1.6;font-size:15px;overflow-x:hidden}
 
-    header {
-      position:fixed; top:0; left:0; width:100%; padding:0.8rem 5%;
-      display:flex; justify-content:space-between; align-items:center; z-index:1000; transition:0.3s;
-    }
-    header.scrolled {
-      background:rgba(6,9,16,0.9); backdrop-filter:blur(15px); border-bottom:1px solid var(--border);
-    }
-    .logo {
-      display:flex; align-items:center; gap:0.6rem;
-      font-size:1.8rem; font-weight:800; letter-spacing:3px;
-      color:#fff; text-shadow:0 0 15px var(--orange-glow); font-family: monospace;
-    }
-    .logo-img { width:36px; height:36px; object-fit:contain; border-radius:6px; background:rgba(255,87,34,0.2); }
-    .logo span { color:var(--orange); }
-    .lang-toggle {
-      background: transparent; border: 1px solid var(--orange); color: var(--orange);
-      padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer; font-weight: 600;
-      transition: 0.3s; margin-left: 1rem; font-size: 0.8rem;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .lang-toggle:hover { background: var(--orange); color: #fff; }
-    nav ul { display:flex; list-style:none; gap:1.5rem; }
-    nav a {
-      color:#bbb; text-decoration:none; font-weight:500; font-size:0.9rem;
-      letter-spacing:1px; transition:0.3s; padding:0.4rem 0;
-    }
-    nav a::after {
-      content:''; display:block; width:0; height:2px; background:var(--orange);
-      box-shadow:0 0 10px var(--orange); transition:0.3s;
-    }
-    nav a:hover { color:#fff; }
-    nav a:hover::after { width:100%; }
-    .menu-toggle { display:none; font-size:1.8rem; color:#fff; cursor:pointer; background:none; border:none; }
-    @media (max-width:768px) {
-      .menu-toggle { display:block; }
-      nav ul {
-        position:fixed; top:0; right:-100%; width:70%; height:100vh;
-        background:#060910; flex-direction:column; justify-content:center;
-        align-items:center; gap:2rem; transition:0.5s; border-left:1px solid var(--orange);
-        backdrop-filter:blur(20px); z-index:999;
-      }
-      nav ul.active { right:0; }
-    }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,15,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:70px}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;letter-spacing:.02em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:12px}
+.nav-logo img{height:40px;width:40px;object-fit:contain;border-radius:50%;background:transparent;padding:0;border:none}
+.nav-logo span.company-name{font-size:14px;font-weight:600;letter-spacing:0.5px;white-space:nowrap}
+.nav-logo span.amber{color:var(--amber)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+.nav-cta{background:var(--amber);color:var(--coal);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 20px;border-radius:var(--radius);text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--amber-dark)}
 
-    section { padding:90px 5% 60px; min-height:100vh; display:flex; flex-direction:column; justify-content:center; }
-    .section-title {
-      font-size:2.2rem; font-weight:700; text-align:center; color:#fff;
-      text-transform:uppercase; letter-spacing:5px; margin-bottom:2.5rem; font-family:monospace;
-    }
-    .section-title span { color:var(--orange); }
+/* HERO */
+#hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 80px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.45) saturate(0.8);transition:filter 0.3s}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,15,0.2) 0%,rgba(13,13,15,0.55) 40%,rgba(13,13,15,0.95) 80%,var(--coal) 100%)}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--amber-glow);border:1px solid var(--border-amber);border-radius:40px;padding:6px 16px;margin-bottom:28px;font-size:12px;font-weight:500;color:var(--amber);letter-spacing:.06em}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber);display:block;box-shadow:0 0 8px var(--amber);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:900;line-height:1.05;letter-spacing:-.01em;text-shadow:0 2px 10px rgba(0,0,0,0.3)}
+h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(36px,5vw,58px);font-weight:800;line-height:1.05;letter-spacing:-.01em}
+h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700}
+.hero-title{margin-bottom:12px}
+.hero-subtitle{font-size:18px;font-weight:300;color:var(--offwhite);max-width:600px;margin-bottom:40px;line-height:1.7;text-shadow:0 1px 5px rgba(0,0,0,0.5)}
+.hero-stats{display:flex;gap:48px;margin-bottom:48px;padding-top:32px;border-top:1px solid var(--border)}
+.hero-stat-num{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:800;color:var(--amber);line-height:1;display:block}
+.hero-stat-label{font-size:12px;color:var(--muted);margin-top:4px;display:block;letter-spacing:.04em}
+.hero-cta-group{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--amber);color:var(--coal);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 32px;border-radius:var(--radius);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px)}
+.btn-secondary{border:1px solid var(--border-amber);color:var(--amber);font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 32px;border-radius:var(--radius);text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:var(--amber-glow)}
+.text-amber{color:var(--amber)}
+.text-muted{color:var(--muted)}
 
-    #home { text-align:center; padding-top:150px; }
-    .hero-content h1 {
-      font-size:3.5rem; font-weight:900; line-height:1.2; font-family:monospace; margin-bottom:1rem;
-      animation: glitch 3s infinite;
-    }
-    .hero-content h1 .highlight { color:var(--orange); display:block; font-size:2.5rem; }
-    .hero-content p { font-size:1.1rem; color:#aaa; max-width:600px; margin:0 auto 2rem; }
-    .btn-group { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-    .btn {
-      padding:0.8rem 2rem; border-radius:30px; font-weight:700; letter-spacing:1px;
-      text-decoration:none; transition:0.3s; text-transform:uppercase; font-size:0.8rem;
-      border:1px solid transparent; cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem;
-      background:transparent; color:var(--orange);
-    }
-    .btn-primary { background:var(--orange); color:#fff; box-shadow:0 0 20px var(--orange-glow); }
-    .btn-primary:hover { background:#ff3d00; transform:translateY(-2px); }
-    .btn-outline { border:1px solid var(--orange); }
-    .btn-outline:hover { background:var(--orange); color:#fff; }
-    .btn-sm { padding:0.5rem 1.2rem; font-size:0.75rem; }
+/* TICKER */
+.ticker-wrap{background:var(--amber);overflow:hidden;padding:12px 0;white-space:nowrap}
+.ticker{display:inline-block;animation:ticker 35s linear infinite}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coal);display:inline;padding:0 48px}
+.ticker-item::before{content:'●';margin-right:24px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    .product-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem; max-width:1200px; margin:0 auto; }
-    .product-card {
-      background:var(--card-bg); border:1px solid var(--border); border-radius:24px; overflow:hidden;
-      transition:0.4s; cursor:pointer; backdrop-filter:blur(10px);
-    }
-    .product-card:hover { transform:translateY(-10px); border-color:var(--orange); box-shadow:0 20px 40px rgba(255,87,34,0.3); }
-    .product-img { width:100%; height:180px; object-fit:cover; background:#111827; filter:brightness(0.9); }
-    .product-body { padding:1.5rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:0.8rem; }
-    .product-body .icon { font-size:2.5rem; color:var(--orange); }
-    .product-body h3 { font-family:monospace; letter-spacing:1px; color:#fff; }
-    .product-body p { color:#bbb; font-size:0.85rem; }
-    .brands-tag {
-      font-size:0.7rem; color:var(--orange); background:rgba(255,87,34,0.15);
-      padding:0.2rem 1rem; border-radius:15px; letter-spacing:1px; margin-top:0.3rem;
-    }
+/* SECTION BASE */
+section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.full-bleed{max-width:none;padding-left:40px;padding-right:40px}
+.eyebrow{font-family:'Roboto Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:16px}
+.section-header{margin-bottom:56px}
+.section-header h2{margin-bottom:16px}
+.section-header p{color:var(--muted);max-width:560px;font-size:16px;line-height:1.7}
+.divider{height:1px;background:var(--border);max-width:1200px;margin:0 auto}
 
-    /* ======= MODAL ======= */
-    .modal-overlay {
-      position:fixed; inset:0; background:rgba(0,0,0,0.85); backdrop-filter:blur(5px);
-      z-index:2000; display:flex; align-items:center; justify-content:center;
-      opacity:0; visibility:hidden; transition:0.3s;
-    }
-    .modal-overlay.active { opacity:1; visibility:visible; }
-    .modal {
-      background:#0f1525; border:1px solid var(--border); border-radius:20px; padding:1.5rem;
-      width:92%; max-width:850px; max-height:85vh; overflow-y:auto; position:relative;
-      box-shadow:0 0 40px rgba(255,87,34,0.3);
-    }
-    .modal-close {
-      position:absolute; top:0.8rem; right:1rem; background:none; border:none;
-      font-size:1.8rem; color:#fff; cursor:pointer;
-    }
-    .modal-close:hover { color:var(--orange); }
-    .modal h2 { font-family:monospace; font-size:1.8rem; margin-bottom:1.5rem; color:#fff; }
-    .modal h2 span { color:var(--orange); }
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-statement{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:600;line-height:1.35;color:var(--offwhite)}
+.about-statement strong{color:var(--amber);font-weight:700}
+.about-right{display:flex;flex-direction:column;gap:20px}
+.about-p{color:var(--muted);line-height:1.8;font-size:15px}
+.founded-badge{display:inline-flex;align-items:center;gap:12px;padding:12px 20px;border:1px solid var(--border);border-radius:var(--radius);background:var(--pit);font-size:13px;color:var(--muted)}
+.founded-badge strong{color:var(--white);font-size:15px}
 
-    .brand-grid { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0; }
-    .brand-chip {
-      padding:0.4rem 1rem; border-radius:20px; border:1px solid #2a3142;
-      background:transparent; color:#ccc; cursor:pointer; font-size:0.8rem; transition:0.3s;
-    }
-    .brand-chip.selected, .brand-chip:hover { border-color:var(--orange); background:rgba(255,87,34,0.2); color:var(--orange); }
-    .form-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px,1fr)); gap:0.8rem; margin:1rem 0; }
-    .form-group { display:flex; flex-direction:column; gap:0.3rem; }
-    .form-group label { font-size:0.75rem; font-weight:600; color:#aaa; text-transform:uppercase; }
-    .form-group input, .form-group select {
-      padding:0.6rem; border-radius:8px; border:1px solid #2a3142;
-      background:#0d1222; color:#fff; font-size:0.85rem;
-    }
-    .form-group input:focus { border-color:var(--orange); outline:none; box-shadow:0 0 8px var(--orange-glow); }
-    .table-wrapper { overflow-x:auto; margin:1rem 0; border:1px solid #2a3142; border-radius:12px; }
-    table { width:100%; border-collapse:collapse; font-size:0.8rem; }
-    th { background:var(--orange); color:#000; padding:0.6rem; text-align:left; }
-    td { padding:0.5rem; border-bottom:1px solid #1f2937; color:#ddd; }
-    .btn-icon { background:none; border:none; color:var(--orange); cursor:pointer; font-size:1rem; }
-    .btn-icon:hover { color:#fff; }
+/* STATS BAR */
+.stats-bar{background:var(--pit);border:1px solid var(--border);border-radius:var(--radius-lg);display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px}
+.stat-item{padding:32px 28px;text-align:center;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:900;color:var(--amber);line-height:1;display:block}
+.stat-label{font-size:12px;color:var(--muted);margin-top:8px;display:block;letter-spacing:.04em;text-transform:uppercase}
 
-    .alsintan-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; margin:1.5rem 0; }
-    .alsintan-card {
-      background:#0d1222; border:1px solid #2a3142; border-radius:16px; padding:1rem;
-      text-align:center; transition:0.3s; cursor:pointer;
-    }
-    .alsintan-card:hover { border-color:var(--orange); box-shadow:0 0 20px rgba(255,87,34,0.3); }
-    .alsintan-card img { width:100%; height:120px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem; background:#0d1222; }
-    .alsintan-card .icon { font-size:3rem; color:var(--orange); margin-bottom:0.5rem; }
-    .alsintan-card h4 { color:#fff; font-family:monospace; margin-bottom:0.3rem; }
-    .alsintan-card p { color:#aaa; font-size:0.8rem; }
+/* FLEET UNITS WITH BACKGROUND IMAGES */
+.units-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.unit-card{background:var(--pit);padding:24px;transition:background .2s;position:relative;overflow:hidden;min-height:280px}
+.unit-card:hover{background:var(--iron)}
+.unit-img-bg{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.2;z-index:0;transition:opacity 0.3s;filter:brightness(0.6) contrast(1.1)}
+.unit-card:hover .unit-img-bg{opacity:0.35}
+.unit-card > *{position:relative;z-index:1}
+.unit-brand{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;display:block}
+.unit-name{font-family:'Barlow Condensed',sans-serif;font-size:21px;font-weight:700;color:var(--white);margin-bottom:10px}
+.unit-type{font-size:12px;color:var(--muted);margin-bottom:14px;display:block}
+.unit-parts{display:flex;flex-wrap:wrap;gap:5px}
+.part-pill{font-size:10px;font-weight:500;letter-spacing:.03em;padding:3px 9px;border-radius:20px;background:rgba(245,166,35,.1);color:var(--amber);border:1px solid rgba(245,166,35,.2)}
+.part-pill.critical{background:rgba(232,52,10,.1);color:#FF6B47;border-color:rgba(232,52,10,.2)}
 
-    .feature-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.5rem; max-width:1000px; margin:0 auto; text-align:center; }
-    .feature-item {
-      padding:2rem 1.5rem; background:rgba(16,20,34,0.5); border-left:2px solid var(--orange); border-radius:0 20px 20px 0;
-    }
-    .feature-item:hover { background:rgba(255,87,34,0.1); transform:translateY(-5px); }
-    .feature-item .icon { font-size:2.5rem; color:var(--orange); margin-bottom:1rem; }
-    .feature-item h4 { font-family:monospace; letter-spacing:1px; color:#fff; margin-bottom:0.5rem; }
+/* PRODUCTS VISUAL CARDS */
+.prod-visual-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px}
+.prod-visual-card{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);background:var(--pit);transition:border-color .2s;position:relative}
+.prod-visual-card:hover{border-color:var(--border-amber)}
+.prod-img-wrap{height:180px;overflow:hidden;position:relative}
+.prod-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
+.prod-visual-card:hover .prod-img-wrap img{transform:scale(1.04)}
+.prod-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(13,13,15,0.9) 100%)}
+.prod-img-label{position:absolute;bottom:14px;left:16px;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--white);text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+.prod-img-sub{position:absolute;bottom:14px;right:16px;font-size:10px;font-family:'Roboto Mono',monospace;color:var(--amber);letter-spacing:.1em}
+.prod-body{padding:20px 24px}
+.parts-table{width:100%;border-collapse:collapse}
+.parts-table th{font-family:'Roboto Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:0 0 10px;text-align:left;font-weight:500}
+.parts-table tr{border-bottom:1px solid var(--border)}
+.parts-table tr:last-child{border-bottom:none}
+.parts-table td{padding:9px 0;font-size:13px;vertical-align:middle}
+.parts-table td:first-child{color:var(--offwhite);font-weight:500}
+.parts-table td:nth-child(2){font-family:'Roboto Mono',monospace;font-size:10px;color:var(--muted);padding:9px 12px}
+.stock-dot{width:8px;height:8px;border-radius:50%;display:block;margin:0 auto}
+.stock-dot.ready{background:var(--success);box-shadow:0 0 6px rgba(46,204,113,.4)}
+.stock-dot.order{background:var(--amber)}
 
-    .contact-wrapper { display:flex; flex-wrap:wrap; gap:2rem; justify-content:center; max-width:700px; margin:0 auto; }
-    .contact-card {
-      background:var(--card-bg); border:1px solid var(--border); border-radius:20px; padding:2rem;
-      flex:1 1 200px; text-align:center; backdrop-filter:blur(10px); transition:0.3s;
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      text-decoration:none; color:inherit; cursor:pointer;
-    }
-    .contact-card:hover { border-color:var(--orange); box-shadow:0 0 30px var(--orange-glow); }
-    .contact-icon { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; }
-    .contact-card h3 { font-family:monospace; margin-top:0.5rem; color:#fff; }
+/* TYRE SECTION */
+.tyre-section{background:var(--pit)}
+.tyre-feature{border-radius:var(--radius-lg);overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;border:1px solid var(--border);margin-top:56px}
+.tyre-img-col{position:relative;min-height:320px}
+.tyre-img-col img{width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(.9);transition:transform 0.3s}
+.tyre-img-col:hover img{transform:scale(1.02)}
+.tyre-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,13,15,0) 0%,rgba(13,13,15,0.95) 100%)}
+.tyre-data-col{padding:40px 36px;display:flex;flex-direction:column;gap:16px}
+.tyre-size-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.tyre-size-chip{font-family:'Roboto Mono',monospace;font-size:12px;font-weight:500;padding:6px 12px;border-radius:4px;background:var(--amber-glow);border:1px solid var(--border-amber);color:var(--amber)}
+.tyre-app-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)}
+.tyre-app-row:last-of-type{border-bottom:none}
+.tyre-app-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:var(--white)}
+.tyre-app-desc{font-size:11px;color:var(--muted);margin-top:2px}
+.tyre-spec{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--amber);text-align:right;flex-shrink:0;margin-left:12px}
 
-    /* ======= KLIEN SECTION ======= */
-    #clients {
-      min-height: auto;
-      padding: 80px 5% 60px;
-      justify-content: flex-start;
-    }
-    .clients-intro {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-    }
-    .clients-intro p {
-      color: #aaa;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    .clients-stats {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-    .clients-stat-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,87,34,0.08);
-      border: 1px solid rgba(255,87,34,0.25);
-      border-radius: 99px;
-      padding: 7px 20px;
-    }
-    .clients-stat-pill .cs-num {
-      font-family: monospace;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--orange);
-    }
-    .clients-stat-pill .cs-lbl {
-      font-size: 0.8rem;
-      color: #aaa;
-    }
-    .clients-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .client-card {
-      background: rgba(16,20,34,0.85);
-      border: 1px solid rgba(255,87,34,0.15);
-      border-radius: 20px;
-      padding: 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      backdrop-filter: blur(10px);
-      transition: 0.35s;
-      position: relative;
-    }
-    .client-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255,87,34,0.5);
-      box-shadow: 0 16px 40px rgba(255,87,34,0.18);
-    }
-    .client-card.featured-bumn {
-      border-color: rgba(255,87,34,0.45);
-      background: linear-gradient(135deg, rgba(16,20,34,0.9) 0%, rgba(20,30,55,0.9) 100%);
-    }
-    .bumn-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--orange);
-      background: rgba(255,87,34,0.12);
-      border: 1px solid rgba(255,87,34,0.35);
-      border-radius: 99px;
-      padding: 2px 9px;
-    }
-    .client-card-top {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-    }
-    .client-logo-wrap {
-      width: 58px;
-      height: 58px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
-      padding: 5px;
-    }
-    .client-logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .client-logo-init {
-      width: 58px;
-      height: 58px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-weight: 800;
-      font-size: 14px;
-      letter-spacing: -0.5px;
-    }
-    .client-name {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.35;
-      margin-bottom: 3px;
-    }
-    .client-type {
-      font-size: 11px;
-      color: #777;
-    }
-    .client-divider {
-      height: 1px;
-      background: rgba(255,87,34,0.12);
-    }
-    .client-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 10.5px;
-      font-weight: 600;
-      padding: 3px 11px;
-      border-radius: 99px;
-      width: fit-content;
-      letter-spacing: 0.03em;
-    }
-    .cb-amber  { background: rgba(186,117,23,0.18); color: #f5c842; border: 1px solid rgba(186,117,23,0.3); }
-    .cb-blue   { background: rgba(24,95,165,0.18); color: #5ca8f4; border: 1px solid rgba(24,95,165,0.3); }
-    .cb-green  { background: rgba(59,109,17,0.2); color: #7ecb3f; border: 1px solid rgba(59,109,17,0.3); }
-    .cb-purple { background: rgba(83,74,183,0.18); color: #a89ef5; border: 1px solid rgba(83,74,183,0.3); }
-    .cb-coral  { background: rgba(113,43,19,0.2); color: #f4845f; border: 1px solid rgba(113,43,19,0.3); }
-    .client-desc {
-      font-size: 12px;
-      color: #999;
-      line-height: 1.7;
-    }
-    .client-verified {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: auto;
-    }
-    .client-vdot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #1D9E75;
-      flex-shrink: 0;
-    }
-    .client-vtxt {
-      font-size: 10.5px;
-      color: #1D9E75;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
+/* BRANDS */
+.brands-section{background:var(--steel)}
+.brands-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:48px}
+.brand-chip{padding:10px 20px;border:1px solid var(--border);border-radius:40px;background:var(--iron);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--white);transition:all .2s;cursor:default}
+.brand-chip.primary{border-color:var(--border-amber);background:var(--amber-glow);color:var(--amber)}
+.brand-chip:hover{border-color:var(--border-amber);color:var(--amber)}
 
-    footer {
-      text-align:center; padding:1.5rem 5%; border-top:1px solid rgba(255,87,34,0.2);
-      color:#555; font-size:0.8rem;
-    }
+/* WAREHOUSE */
+.warehouse-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:56px}
+.stock-statement{font-family:'Barlow Condensed',sans-serif;font-size:clamp(20px,2.5vw,28px);font-weight:600;line-height:1.35;color:var(--offwhite);margin-bottom:32px}
+.stock-statement strong{color:var(--amber)}
+.avail-row{display:flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid var(--border);border-radius:var(--radius);background:var(--pit);margin-bottom:12px}
+.avail-indicator{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.avail-indicator.green{background:var(--success);box-shadow:0 0 8px rgba(46,204,113,.5)}
+.avail-indicator.yellow{background:var(--amber)}
+.avail-indicator.red{background:var(--danger)}
+.avail-title{font-size:14px;font-weight:600;color:var(--white)}
+.avail-desc{font-size:12px;color:var(--muted);margin-top:2px}
+.warehouse-visual{background:var(--pit);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.warehouse-header{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;font-family:'Roboto Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.warehouse-header::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--success);display:block;box-shadow:0 0 6px rgba(46,204,113,.4)}
+.warehouse-row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid var(--border);transition:background .15s}
+.warehouse-row:hover{background:var(--iron)}
+.warehouse-row:last-child{border-bottom:none}
+.wr-part{font-size:13px;color:var(--offwhite);font-weight:500}
+.wr-unit{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px}
+.wr-qty{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--amber);background:var(--amber-glow);border:1px solid var(--border-amber);padding:2px 8px;border-radius:4px}
+.wr-qty.ready{color:var(--success);background:rgba(46,204,113,.1);border-color:rgba(46,204,113,.2)}
 
-    @keyframes glitch {
-      0%,90%,100%{transform:translate(0);}
-      92%{transform:translate(-2px,1px);} 94%{transform:translate(2px,-1px);}
-      96%{transform:translate(-1px,-1px);} 98%{transform:translate(1px,2px);}
-    }
+/* EMERGENCY */
+.emergency-section{background:var(--pit)}
+.emergency-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start;margin-top:56px}
+.emergency-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,52,10,.1);border:1px solid rgba(232,52,10,.25);border-radius:40px;padding:8px 18px;font-size:12px;font-weight:600;color:#FF6B47;letter-spacing:.06em}
+.emergency-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--danger);display:block;animation:pulse 1.5s ease-in-out infinite}
+.emerg-header-row{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;flex-wrap:wrap;gap:16px}
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--danger),var(--amber),var(--success))}
+.timeline-item{position:relative;margin-bottom:28px}
+.timeline-dot{position:absolute;left:-27px;top:4px;width:16px;height:16px;border-radius:50%;border:2px solid var(--coal);background:var(--amber)}
+.timeline-dot.start{background:var(--danger);box-shadow:0 0 10px rgba(232,52,10,.5)}
+.timeline-dot.end{background:var(--success);box-shadow:0 0 10px rgba(46,204,113,.5)}
+.timeline-time{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.1em;margin-bottom:4px;display:block}
+.timeline-title{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:4px}
+.timeline-desc{font-size:13px;color:var(--muted)}
+.emerg-right{display:flex;flex-direction:column;gap:16px}
+.emerg-card{background:var(--steel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px}
+.emerg-quote{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:800;color:var(--amber);line-height:1.15;margin-bottom:16px}
+.emerg-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.code-block{background:var(--iron);border-radius:var(--radius);padding:16px;font-family:'Roboto Mono',monospace;font-size:12px;line-height:1.8;color:var(--muted);margin:16px 0}
 
-    @media (max-width: 600px) {
-      .clients-grid { grid-template-columns: 1fr; }
-      .clients-stats { gap: 8px; }
-    }
-  </style>
+/* CLIENTS */
+.clients-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:56px}
+.client-card{background:var(--pit);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;transition:border-color .2s;position:relative;overflow:hidden}
+.client-card.featured{border-color:var(--border-amber)}
+.client-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber),transparent)}
+.client-logo-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.client-logo{height:48px;width:auto;max-width:140px;object-fit:contain;background:#fff;padding:8px 12px;border-radius:12px;filter:brightness(1);transition:transform 0.2s}
+.client-card:hover .client-logo{transform:scale(1.02)}
+.client-label{font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:8px}
+.client-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:800;color:var(--white);margin-bottom:4px}
+.client-industry{font-size:12px;color:var(--muted);margin-bottom:16px}
+.client-scope{font-size:14px;color:var(--offwhite);line-height:1.7}
+.client-scope strong{color:var(--amber);font-weight:600}
+.bumn-badge{position:absolute;top:20px;right:20px;background:rgba(245,166,35,.15);border:1px solid var(--border-amber);border-radius:4px;padding:3px 8px;font-size:10px;font-weight:700;color:var(--amber);letter-spacing:.08em}
+.project-ref{background:var(--pit);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;margin-top:16px;border-left:3px solid var(--amber)}
+.project-ref-title{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.1em;margin-bottom:8px}
+.project-ref-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* WHY */
+.why-section{background:var(--steel)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:56px}
+.why-card{background:var(--iron);padding:36px 28px;display:flex;flex-direction:column;gap:12px}
+.why-num{font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:900;color:rgba(245,166,35,.15);line-height:1;display:block}
+.why-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:var(--white)}
+.why-text{font-size:14px;color:var(--muted);line-height:1.75}
+.why-tag{font-size:12px;color:var(--amber);font-family:'Roboto Mono',monospace;letter-spacing:.06em;margin-top:8px}
+
+/* CONTACT */
+.contact-section{padding:120px 40px;background:var(--coal);text-align:center}
+.contact-inner{max-width:800px;margin:0 auto}
+.contact-sub{font-size:17px;color:var(--muted);margin:16px auto 56px;max-width:520px;line-height:1.7}
+.contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:40px}
+.contact-card{background:var(--pit);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:left;text-decoration:none;color:inherit;transition:all .2s;display:flex;flex-direction:column;gap:10px}
+.contact-card:hover{border-color:var(--border-amber);transform:translateY(-2px)}
+.contact-card-icon{font-size:28px;width:52px;height:52px;background:var(--amber-glow);border:1px solid var(--border-amber);border-radius:var(--radius);display:flex;align-items:center;justify-content:center}
+.contact-card-label{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--amber);letter-spacing:.14em;text-transform:uppercase}
+.contact-card-value{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--white)}
+.contact-card-sub{font-size:12px;color:var(--muted)}
+.contact-tagline{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:600;color:var(--muted);line-height:1.6;margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.contact-tagline strong{color:var(--white)}
+
+/* FOOTER */
+footer{background:var(--coal);border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:10px}
+.footer-logo img{height:32px;width:32px;object-fit:contain;border-radius:50%;background:transparent;padding:0}
+.footer-logo span.company-name{font-size:13px;white-space:nowrap}
+.footer-logo span.amber{color:var(--amber)}
+.footer-copy{font-size:11px;color:var(--muted)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:11px;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--amber)}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+
+/* CAPS GRID */
+.caps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.cap-card{background:var(--steel);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 26px;transition:border-color .2s}
+.cap-card:hover{border-color:var(--border-amber)}
+.cap-icon{width:46px;height:46px;border-radius:var(--radius);background:var(--amber-glow);border:1px solid var(--border-amber);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:20px}
+.cap-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;margin-bottom:10px}
+.cap-desc{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px}
+.cap-list{list-style:none}
+.cap-list li{font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.cap-list li::before{content:'›';color:var(--amber);font-weight:700;font-size:16px}
+.cap-list li:last-child{border-bottom:none}
+
+/* ===================== PRINT / PDF ===================== */
+@media print {
+  *,*::before,*::after{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#0D0D0F!important;color:#fff!important;font-size:13px;overflow:visible!important;width:100%}
+
+  /* Sembunyikan elemen interaktif */
+  nav,.ticker-wrap,.hero-cta-group,.btn-primary,.btn-secondary,.nav-cta,.nav-links,.hero-badge{display:none!important}
+
+  /* Paksa semua reveal element tampil */
+  .reveal{opacity:1!important;transform:none!important;transition:none!important}
+
+  /* Hilangkan animasi & efek */
+  *{box-shadow:none!important;backdrop-filter:none!important;animation:none!important;transition:none!important}
+  .divider{display:none!important}
+
+  /* ── PAGE 1: HERO ── */
+  #hero{min-height:0!important;height:auto!important;page-break-after:always;break-after:page;padding:80px 40px 60px!important;display:flex!important;flex-direction:column!important;justify-content:center!important}
+  .hero-bg{filter:brightness(0.3) saturate(0.7)!important}
+  h1{font-size:64px!important}
+  .hero-subtitle{font-size:15px!important}
+  .hero-stats{margin-bottom:0!important}
+
+  /* ── PAGE 2: ABOUT ── */
+  #about{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important;max-width:none!important}
+  .about-grid{grid-template-columns:1fr 1fr!important;gap:40px!important}
+
+  /* ── PAGE 3: FLEET ── */
+  #fleet{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important;max-width:none!important}
+  .units-grid{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+  .unit-card{min-height:0!important;padding:20px 16px!important}
+  .unit-img-bg{opacity:0.15!important}
+
+  /* ── PAGE 4: CAPABILITIES ── */
+  #capabilities{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important}
+  .caps-grid{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+  .cap-card{padding:20px 16px!important}
+
+  /* ── PAGE 5: PRODUCTS ── */
+  #products{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important;max-width:none!important}
+  .prod-visual-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}
+  .prod-img-wrap{height:120px!important}
+  .prod-img-wrap img{height:120px!important}
+
+  /* ── PAGE 6: OTR TYRE ── */
+  #tyre{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important;max-width:none!important}
+  .tyre-feature{grid-template-columns:1fr 1fr!important}
+  .tyre-img-col img{filter:brightness(0.4) saturate(0.8)!important}
+
+  /* ── PAGE 7: EMERGENCY ── */
+  #emergency{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important}
+  .emergency-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}
+  .code-block{background:#252530!important;font-size:11px!important}
+
+  /* ── PAGE 8: CLIENTS ── */
+  #clients{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important;max-width:none!important}
+  .clients-grid{grid-template-columns:repeat(2,1fr)!important;gap:16px!important}
+  .client-card{padding:20px!important}
+  .client-logo{height:36px!important}
+
+  /* ── PAGE 9: WHY ORENZ ── */
+  #why{page-break-before:always;break-before:page;page-break-after:always;break-after:page;padding:50px 40px!important}
+  .why-grid{grid-template-columns:repeat(3,1fr)!important;gap:16px!important}
+  .why-card{padding:20px 16px!important}
+
+  /* ── PAGE 10: CONTACT + FOOTER ── */
+  #contact{page-break-before:always;break-before:page;padding:50px 40px!important}
+  .contact-cards{grid-template-columns:1fr 1fr!important;gap:16px!important}
+  .contact-card{padding:24px!important}
+  footer{page-break-before:avoid;break-before:avoid;padding:20px 40px!important;border-top:1px solid rgba(255,255,255,0.1)!important}
+
+  /* Jangan potong elemen di tengah halaman */
+  .unit-card,.cap-card,.prod-visual-card,.client-card,.why-card,.timeline-item,.emerg-card,.contact-card,.stat-item,.about-grid,.stats-bar{page-break-inside:avoid;break-inside:avoid}
+}
+
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links,.nav-cta{display:none}
+  .nav-logo span.company-name{font-size:11px;white-space:normal;max-width:180px}
+  section{padding:60px 20px}
+  #hero{padding:0 20px 60px}
+  h1{font-size:44px}h2{font-size:32px}
+  .about-grid,.warehouse-grid,.emergency-grid,.tyre-feature{grid-template-columns:1fr}
+  .tyre-feature{grid-template-columns:1fr}
+  .tyre-img-col{min-height:200px}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .units-grid,.caps-grid,.why-grid{grid-template-columns:1fr}
+  .prod-visual-grid,.clients-grid,.contact-cards{grid-template-columns:1fr}
+  .hero-stats{gap:20px;flex-wrap:wrap}
+  footer{flex-direction:column;align-items:center;text-align:center}
+  .emerg-header-row{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-<body oncontextmenu="return false;">
+<body>
 
-<header id="header">
-  <div class="logo">
-    <img src="logoorenz.jpg" class="logo-img" alt="Logo ORENZ" draggable="false">
-    <span>ORENZ<span>.</span></span>
-  </div>
-  <div style="display:flex; align-items:center;">
-    <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
-      <span id="langIcon">🌐</span> <span id="langText">EN</span>
-    </button>
-    <nav>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <ul id="nav-menu">
-        <li><a href="#home" data-lang="nav.home">Beranda</a></li>
-        <li><a href="#products" data-lang="nav.products">Produk</a></li>
-        <li><a href="#clients" data-lang="nav.clients">Klien</a></li>
-        <li><a href="#about" data-lang="nav.about">Keunggulan</a></li>
-        <li><a href="#contact" data-lang="nav.contact">Kontak</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img id="navLogoImg" alt="ORENZ Logo">
+    <span class="company-name">PT. ORENZ SUKU CADANG <span class="amber">ASIA RAYA</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#fleet">Units</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#tyre">OTR Tyre</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/6288802032033?text=Halo%20ORENZ%2C%20saya%20ingin%20inquiry%20spareparts." class="nav-cta" target="_blank">Inquiry Parts ›</a>
+</nav>
 
-<!-- HOME -->
-<section id="home">
-  <div class="hero-content">
-    <h1 data-lang="hero.title">PT. ORENZ<br><span class="highlight">SUKU CADANG ASIA RAYA</span></h1>
-    <p data-lang="hero.desc">Sparepart Truck, Heavy Equipment, Ban, CaO Limestone & Alsintan – Multi Brands, Harga Kompetitif, Tanpa Perantara.</p>
-    <div class="btn-group">
-      <a href="#contact" class="btn btn-primary" data-lang="hero.contact">📞 Hubungi Kami</a>
-      <a href="#products" class="btn btn-outline" data-lang="hero.explore">🔍 Jelajahi Produk</a>
+<!-- HERO -->
+<section id="hero" style="padding:0;max-width:none">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Operational Since 2022 · Jakarta, Indonesia</div>
+    <h1 class="hero-title">
+      <span style="display:block">YOUR FLEET</span>
+      <span style="display:block;color:var(--amber)">NEVER STOPS.</span>
+    </h1>
+    <p class="hero-subtitle">Heavy Equipment Parts & OTR Tyre Solutions untuk operasional mining Indonesia. Spesialis SANY, BELAZ, KAMAZ, HOWO, UD Truck dan seluruh armada Anda.</p>
+    <div class="hero-stats">
+      <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Fast-Moving Parts Ready</span></div>
+      <div><span class="hero-stat-num">10+</span><span class="hero-stat-label">Unit Models Supported</span></div>
+      <div><span class="hero-stat-num">8+</span><span class="hero-stat-label">Brands Covered</span></div>
+      <div><span class="hero-stat-num">24/7</span><span class="hero-stat-label">Emergency Response</span></div>
+    </div>
+    <div class="hero-cta-group">
+      <a href="https://wa.me/6288802032033?text=Halo%20ORENZ%2C%20saya%20ingin%20inquiry%20parts." class="btn-primary" target="_blank">Hubungi Kami — WhatsApp ›</a>
+      <a href="#products" class="btn-secondary">Lihat Produk ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">SANY Heavy Equipment</span><span class="ticker-item">BELAZ Rigid Dump Truck</span><span class="ticker-item">KAMAZ Mining Truck</span><span class="ticker-item">HOWO Haul Truck</span><span class="ticker-item">UD Truck & HINO</span><span class="ticker-item">OTR Tyre Solutions</span><span class="ticker-item">200+ Parts Ready Stock Jakarta</span><span class="ticker-item">Emergency Supply 24/7</span><span class="ticker-item">Delivery ke Seluruh Site Mining</span>
+    <span class="ticker-item">SANY Heavy Equipment</span><span class="ticker-item">BELAZ Rigid Dump Truck</span><span class="ticker-item">KAMAZ Mining Truck</span><span class="ticker-item">HOWO Haul Truck</span><span class="ticker-item">UD Truck & HINO</span><span class="ticker-item">OTR Tyre Solutions</span><span class="ticker-item">200+ Parts Ready Stock Jakarta</span><span class="ticker-item">Emergency Supply 24/7</span><span class="ticker-item">Delivery ke Seluruh Site Mining</span>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <span class="eyebrow">Who We Are</span>
+      <p class="about-statement">Kami tidak sekadar menjual parts.<br>Kami <strong>menjaga availability unit Anda</strong> agar operasional tambang tidak pernah terhenti.</p>
+    </div>
+    <div class="about-right reveal reveal-d2">
+      <p class="about-p"><strong style="color:var(--white)">PT. Orenz Suku Cadang Asia Raya</strong> adalah perusahaan supply chain spareparts dan OTR tyre untuk industri pertambangan dan alat berat Indonesia. Kami berbasis di Jakarta dengan jaringan pengiriman ke seluruh site mining di Kalimantan, Sumatera, dan Papua.</p>
+      <p class="about-p">Kami memahami bahwa satu unit yang down bukan hanya masalah teknis — ini masalah <em>production loss</em> yang berdampak langsung ke bisnis Anda. Itulah mengapa kami maintain buffer stock untuk fast-moving parts dan menyediakan response 24/7 untuk kebutuhan emergency.</p>
+      <div class="founded-badge">
+        <span>Established</span><strong>2022</strong>
+        <span style="color:var(--border)">|</span>
+        <span>Jakarta, Indonesia 🇮🇩</span>
+      </div>
+    </div>
+  </div>
+  <div class="stats-bar reveal">
+    <div class="stat-item"><span class="stat-num">200+</span><span class="stat-label">Part Numbers Ready</span></div>
+    <div class="stat-item"><span class="stat-num">8+</span><span class="stat-label">Brands Covered</span></div>
+    <div class="stat-item"><span class="stat-num">4+</span><span class="stat-label">Active Mining Clients</span></div>
+    <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">Emergency Response</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FLEET - dengan background gambar setiap unit -->
+<section id="fleet">
+  <div class="section-header reveal">
+    <span class="eyebrow">Fleet Coverage</span>
+    <h2>Units We <span class="text-amber">Support</span></h2>
+    <p>Kami familiar dengan unit-unit yang beroperasi di pit tambang Indonesia — dari spek teknis hingga part number kritis yang paling sering diganti.</p>
+  </div>
+  <div class="units-grid reveal">
+    <!-- SANY SRT95C -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgSanySrt" alt="SANY SRT95C">
+      <span class="unit-brand">SANY</span>
+      <div class="unit-name">SRT95C</div>
+      <span class="unit-type">Rigid Dump Truck — 95T Class</span>
+      <div class="unit-parts"><span class="part-pill critical">Suspension Seal Kit</span><span class="part-pill">Brake Disc Set</span><span class="part-pill">Filter Set</span><span class="part-pill">Final Drive Seal</span></div>
+    </div>
+    <!-- BELAZ 75131/75135 -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgBelaz" alt="BELAZ 75131">
+      <span class="unit-brand">BELAZ</span>
+      <div class="unit-name">75131 / 75135</div>
+      <span class="unit-type">Rigid Dump Truck — 130T Class</span>
+      <div class="unit-parts"><span class="part-pill critical">Suspension Cylinder Kit</span><span class="part-pill">Steering Seal Kit</span><span class="part-pill">Hydraulic Filter</span><span class="part-pill">Brake Caliper</span></div>
+    </div>
+    <!-- KAMAZ 6520/65201 -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgKamaz" alt="KAMAZ 6520">
+      <span class="unit-brand">KAMAZ</span>
+      <div class="unit-name">6520 / 65201</div>
+      <span class="unit-type">Mining Dump Truck — 20T Class</span>
+      <div class="unit-parts"><span class="part-pill">Engine Filter Set</span><span class="part-pill">Brake Drum</span><span class="part-pill">Clutch Disc</span><span class="part-pill">Steering Kit</span></div>
+    </div>
+    <!-- HOWO / SHACMAN -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgHowo" alt="HOWO SHACMAN">
+      <span class="unit-brand">HOWO / SHACMAN</span>
+      <div class="unit-name">N7 / H3000</div>
+      <span class="unit-type">Heavy Haul Truck — Mining</span>
+      <div class="unit-parts"><span class="part-pill">Drive Shaft</span><span class="part-pill">Diff Seal Kit</span><span class="part-pill critical">Leaf Spring Set</span><span class="part-pill">Filter Package</span></div>
+    </div>
+    <!-- UD TRUCK / HINO -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgUdtHino" alt="UD Truck HINO">
+      <span class="unit-brand">UD TRUCK / HINO</span>
+      <div class="unit-name">Quon / 500 Series</div>
+      <span class="unit-type">Support Truck — Mining Operations</span>
+      <div class="unit-parts"><span class="part-pill">Brake Pad Set</span><span class="part-pill">Air Filter</span><span class="part-pill">Clutch Kit</span><span class="part-pill">Fuel Filter</span></div>
+    </div>
+    <!-- SANY / XCMG Excavator -->
+    <div class="unit-card">
+      <img class="unit-img-bg" id="imgExca" alt="Excavator Mining">
+      <span class="unit-brand">SANY / XCMG</span>
+      <div class="unit-name">SY700 / XE900D</div>
+      <span class="unit-type">Excavator — Mining Class</span>
+      <div class="unit-parts"><span class="part-pill critical">Bucket Tooth + Adapter</span><span class="part-pill">Hydraulic Seal Kit</span><span class="part-pill">Track Pad</span><span class="part-pill">Swing Motor Kit</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CAPABILITIES -->
+<section id="capabilities" style="background:var(--pit);max-width:none;padding:100px 40px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Capability</span>
+      <h2>Lebih dari Sekadar <span class="text-amber">Supplier</span></h2>
+      <p>Kami adalah technical partner Anda — mulai dari identifikasi part, sourcing, hingga pengiriman ke site.</p>
+    </div>
+    <div class="caps-grid">
+      <div class="cap-card reveal reveal-d1"><div class="cap-icon">🔍</div><div class="cap-title">Parts Sourcing & Identification</div><p class="cap-desc">Kirim foto atau part number — kami identifikasi dan verifikasi dalam 2 jam kerja.</p><ul class="cap-list"><li>OEM & OEM-compatible parts</li><li>Cross-reference service</li><li>Fit & function verification</li><li>Direct manufacturer network</li></ul></div>
+      <div class="cap-card reveal reveal-d2"><div class="cap-icon">📦</div><div class="cap-title">Stock & Logistics Management</div><p class="cap-desc">Buffer stock untuk fast-moving parts dengan pengiriman ke seluruh site mining Indonesia.</p><ul class="cap-list"><li>Jakarta central warehouse</li><li>Same-day dispatch (ready stock)</li><li>Air freight emergency capability</li><li>Custom industrial packaging</li></ul></div>
+      <div class="cap-card reveal reveal-d3"><div class="cap-icon">🔧</div><div class="cap-title">Technical Support & Consultation</div><p class="cap-desc">Kami bukan order taker. Kami adalah technical partner di balik setiap PO Anda.</p><ul class="cap-list"><li>Application-specific recommendation</li><li>TKPH tyre calculation (free)</li><li>Vendor registration documentation</li><li>After-supply follow-up support</li></ul></div>
     </div>
   </div>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products">
-  <h2 class="section-title"><span data-lang="products.line">Lini</span> <span data-lang="products.title">Produk</span></h2>
-  <div class="product-grid">
-    
-    <div class="product-card" onclick="setBodyBackground('backgroundspareparts.jpg'); openModal('modalSparepart');">
-      <img src="sparepartkolase.jpg" alt="Kolase Unit" class="product-img" draggable="false"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div style="display:none; height:180px; align-items:center; justify-content:center; font-size:3rem; color:var(--orange); background:#111827;">⚙️</div>
-      <div class="product-body">
-        <div class="icon">⚙️</div>
-        <h3 data-lang="sparepart.title">Spareparts</h3>
-        <p data-lang="sparepart.desc">Truck & Heavy Equipment Multi Brands. Order cepat dengan form interaktif.</p>
-        <span class="brands-tag">SANY · HINO · KAMAZ · BELAZ · UD TRUCK · KOMATSU · CAT</span>
-      </div>
-    </div>
-
-    <div class="product-card" onclick="setBodyBackground('backgroundspareparts.jpg'); openModal('modalTyre');buildTyreCatalog();">
-      <img src="tyrecover.jpg" alt="Ban" class="product-img" draggable="false"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div style="display:none; height:180px; align-items:center; justify-content:center; font-size:3rem; color:var(--orange); background:#111827;">⭕</div>
-      <div class="product-body">
-        <div class="icon">⭕</div>
-        <h3 data-lang="tyre.title">Tyre / Ban</h3>
-        <p data-lang="tyre.desc">Ban alat berat, truck tambang & logistik. Katalog lengkap dengan spesifikasi.</p>
-        <span class="brands-tag">OFF ROAD · MINING · HIGHWAY</span>
-      </div>
-    </div>
-
-    <div class="product-card" onclick="openModal('modalCaO')">
-      <img src="caocover.jpg" alt="CaO" class="product-img" draggable="false"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div style="display:none; height:180px; align-items:center; justify-content:center; font-size:3rem; color:var(--orange); background:#111827;">⛰️</div>
-      <div class="product-body">
-        <div class="icon">⛰️</div>
-        <h3 data-lang="cao.title">CaO Limestone</h3>
-        <p data-lang="cao.desc">Highgrade High Purity (97.6% CaO). Sertifikat lab resmi & kapasitas besar.</p>
-        <span class="brands-tag">HIGH PURITY · INDUSTRIAL</span>
-      </div>
-    </div>
-
-    <div class="product-card" onclick="setBodyBackground('backgroundsniptan.jpg'); openModal('modalAlsintan');">
-      <img src="alsintancover.jpg" alt="Alsintan" class="product-img" draggable="false"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div style="display:none; height:180px; align-items:center; justify-content:center; font-size:3rem; color:var(--orange); background:#111827;">🚜</div>
-      <div class="product-body">
-        <div class="icon">🚜</div>
-        <h3 data-lang="alsintan.title">Alsintan</h3>
-        <p data-lang="alsintan.desc">Alat Mesin Pertanian lengkap. Katalog spesifikasi teknis & estimasi biaya operasional tersedia.</p>
-        <span class="brands-tag">DAFENG · AGRICULTURE</span>
-      </div>
-    </div>
-
+  <div class="section-header reveal">
+    <span class="eyebrow">Product Lines</span>
+    <h2>Fast Moving Parts — <span class="text-amber">Ready Stock</span></h2>
+    <p>Parts yang paling sering dibutuhkan operasional mining. Kami maintain stok agar tidak ada downtime akibat tunggu parts.</p>
+  </div>
+  <div class="prod-visual-grid">
+    <div class="prod-visual-card reveal reveal-d1"><div class="prod-img-wrap"><img id="imgHdTruck" alt="HD Dump Truck Parts"><div class="prod-img-overlay"></div><div class="prod-img-label">HD Dump Truck Parts</div><div class="prod-img-sub">READY STOCK ●</div></div><div class="prod-body"><div style="font-size:12px;color:var(--muted);margin-bottom:14px">SANY · BELAZ · KAMAZ · HOWO · SHACMAN</div><table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th style="text-align:center">Stock</th></tr></thead><tbody><tr><tr>Suspension Cylinder Seal Kit</td><td>SRT95C / 75131</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Brake Disc / Rotor Set</td><td>SANY / BELAZ Series</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Fuel Filter Set (Primary+Secondary)</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Air Filter Element Set</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Steering Cylinder Seal Kit</td><td>BELAZ / SANY</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Transmission Oil Filter</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Drive Belt Set</td><td>KAMAZ / HOWO</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Hydraulic Return Filter</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot order"></span></td></tr>
+      </tbody></table></div></div>
+    <div class="prod-visual-card reveal reveal-d2"><div class="prod-img-wrap"><img id="imgExcaParts" alt="Excavator Parts"><div class="prod-img-overlay"></div><div class="prod-img-label">Excavator Parts</div><div class="prod-img-sub">READY STOCK ●</div></div><div class="prod-body"><div style="font-size:12px;color:var(--muted);margin-bottom:14px">SANY SY Series · XCMG XE Series</div><table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th style="text-align:center">Stock</th></tr></thead><tbody><tr><td>Bucket Tooth Standard + HD</td><td>SY700 / SY870 / XE900D</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Bucket Tooth Adapter</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Hydraulic Cylinder Seal Kit</td><td>Boom / Arm / Bucket</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Cutting Edge + End Bit Set</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Swing Motor Seal Kit</td><td>SANY / XCMG</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Track Pad / Shoe</td><td>SY700 / XE900D</td><td style="text-align:center"><span class="stock-dot order"></span></td></tr>
+        <tr><td>Boom Pin & Bushing Set</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot order"></span></td></tr>
+        <tr><td>Hydraulic Oil Filter</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+      </tbody></table></div></div>
+    <div class="prod-visual-card reveal"><div class="prod-img-wrap"><img id="imgSupportTruck" alt="Support Truck Parts"><div class="prod-img-overlay"></div><div class="prod-img-label">Support Truck Parts</div><div class="prod-img-sub">READY STOCK ●</div></div><div class="prod-body"><div style="font-size:12px;color:var(--muted);margin-bottom:14px">UD Truck · HINO · FAW · ISUZU</div><table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th style="text-align:center">Stock</th></tr></thead><tbody><tr><td>Brake Pad Set (Front + Rear)</td><td>UD Quon / HINO 500</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Clutch Disc + Pressure Plate</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Air Filter Element</td><td>Multi-brand</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Fuel Filter Kit</td><td>Multi-brand</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Leaf Spring Set</td><td>HOWO / SHACMAN</td><td style="text-align:center"><span class="stock-dot order"></span></td></tr>
+        <tr><td>Diff Seal Kit</td><td>FAW / HOWO</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+      </tbody></table></div></div>
+    <div class="prod-visual-card reveal reveal-d1"><div class="prod-img-wrap"><img id="imgEngineFilter" alt="Engine Filter Package"><div class="prod-img-overlay"></div><div class="prod-img-label">Engine & Filter Package</div><div class="prod-img-sub">READY STOCK ●</div></div><div class="prod-body"><div style="font-size:12px;color:var(--muted);margin-bottom:14px">Scheduled Maintenance — Multi Brand</div><table class="parts-table"><thead><tr><th>Package</th><th>Coverage</th><th style="text-align:center">Stock</th></tr></thead><tbody><tr><td>Complete Filter Kit (250H service)</td><td>SANY / BELAZ</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Complete Filter Kit (500H service)</td><td>KAMAZ / HOWO</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Cooling System Hose Set</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>V-Belt & Drive Belt Package</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+        <tr><td>Water Pump Seal Kit</td><td>Multi-unit</td><td style="text-align:center"><span class="stock-dot order"></span></td></tr>
+        <tr><td>Thermostat Set</td><td>Multi-brand</td><td style="text-align:center"><span class="stock-dot ready"></span></td></tr>
+      </tbody></table><div style="display:flex;gap:16px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border)"><div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span class="stock-dot ready" style="width:8px;height:8px;display:inline-block"></span>Ready (H+1 dispatch)</div><div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)"><span class="stock-dot order" style="width:8px;height:8px;display:inline-block"></span>Order Basis (7-14 hari)</div></div></div></div>
   </div>
 </section>
 
-<!-- ======= KLIEN / PORTOFOLIO ======= -->
-<section id="clients">
-  <h2 class="section-title"><span data-lang="clients.title1">Klien</span> <span data-lang="clients.title2">Kami</span></h2>
-  <div class="clients-intro">
-    <p data-lang="clients.desc">Dipercaya oleh perusahaan-perusahaan terkemuka di industri energi, pertambangan, perdagangan, dan konstruksi di seluruh Indonesia.</p>
-  </div>
-
-  <div class="clients-stats">
-    <div class="clients-stat-pill">
-      <span class="cs-num">4+</span>
-      <span class="cs-lbl" data-lang="clients.stat1">Klien Aktif</span>
-    </div>
-    <div class="clients-stat-pill">
-      <span class="cs-num">BUMN</span>
-      <span class="cs-lbl" data-lang="clients.stat2">Termasuk Klien</span>
-    </div>
-    <div class="clients-stat-pill">
-      <span class="cs-num">100%</span>
-      <span class="cs-lbl" data-lang="clients.stat3">Kepuasan Klien</span>
-    </div>
-  </div>
-
-  <div class="clients-grid">
-
-    <!-- ================================================== -->
-    <!-- LOGO KLIEN — GANTI NAMA FILE src="..." SESUAI FILE LOGO ANDA -->
-    <!-- Letakkan file logo di folder yang SAMA dengan file HTML ini  -->
-    <!-- Format yang didukung: .png / .jpg / .jpeg / .svg / .webp     -->
-    <!-- ================================================== -->
-
-    <!-- 1. PT Bukit Asam (BUMN - Featured) -->
-    <!-- GANTI src di bawah ini → contoh: src="logo-bukitasam.png" -->
-    <div class="client-card featured-bumn">
-      <div class="bumn-badge">BUMN</div>
-      <div class="client-card-top">
-        <div class="client-logo-wrap">
-          <img src="logo-bukitasam.png"
-               alt="Logo PT Bukit Asam"
-               draggable="false"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
-          <span style="display:none; font-weight:800; font-size:12px; color:#c0392b;
-                       justify-content:center; align-items:center; width:100%; height:100%;">PTBA</span>
-        </div>
-        <div>
-          <p class="client-name">PT. Bukit Asam Tbk</p>
-          <p class="client-type">BUMN · Energi & Pertambangan Batu Bara</p>
-        </div>
-      </div>
-      <div class="client-divider"></div>
-      <span class="client-badge cb-amber">⚡ Energi</span>
-      <p class="client-desc">Perusahaan tambang batu bara pelat merah terdaftar di BEI (IDX: PTBA). Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di Tanjung Enim, Sumatera Selatan.</p>
-      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
-    </div>
-
-    <!-- 2. PT Mayangkara Jaya Abadi -->
-    <!-- GANTI src di bawah ini → contoh: src="logo-mayangkara.png" -->
-    <div class="client-card">
-      <div class="client-card-top">
-        <div class="client-logo-wrap">
-          <img src="logo-mayangkara.png"
-               alt="Logo PT Mayangkara Jaya Abadi"
-               draggable="false"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
-          <span style="display:none; font-weight:800; font-size:13px; color:#5ca8f4;
-                       justify-content:center; align-items:center; width:100%; height:100%;">MJA</span>
-        </div>
-        <div>
-          <p class="client-name">PT. Mayangkara Jaya Abadi</p>
-          <p class="client-type">Swasta · Perdagangan & Jasa Umum</p>
-        </div>
-      </div>
-      <div class="client-divider"></div>
-      <span class="client-badge cb-blue">🏬 Perdagangan</span>
-      <p class="client-desc">Perusahaan swasta nasional yang bergerak di bidang perdagangan umum dan jasa. Berkomitmen pada pelayanan prima, kepercayaan mitra, dan kemitraan bisnis yang berkelanjutan.</p>
-      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
-    </div>
-
-    
-    <!-- 3. Global Makara Teknik -->
-    <!-- GANTI src di bawah ini → contoh: src="logo-globalmakara.png" -->
-    <div class="client-card">
-      <div class="client-card-top">
-        <div class="client-logo-wrap">
-          <img src="logo-globalmakara.png"
-               alt="Logo Global Makara Teknik"
-               draggable="false"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
-          <span style="display:none; font-weight:800; font-size:13px; color:#a89ef5;
-                       justify-content:center; align-items:center; width:100%; height:100%;">GMT</span>
-        </div>
-        <div>
-          <p class="client-name">Global Makara Teknik</p>
-          <p class="client-type">Swasta · Jasa Pertambangan & Mining</p>
-        </div>
-      </div>
-      <div class="client-divider"></div>
-      <span class="client-badge cb-purple">⛏️ Pertambangan</span>
-      <p class="client-desc">Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. Beroperasi di Sumatera Selatan dan Kalimantan Selatan.</p>
-      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
-    </div>
-
-    <!-- 4. PT Pawon Servis Tama -->
-    <!-- GANTI src di bawah ini → contoh: src="logo-pawonservis.png" -->
-    <div class="client-card">
-      <div class="client-card-top">
-        <div class="client-logo-wrap">
-          <img src="logo-pawonservis.png"
-               alt="Logo PT Pawon Servis Tama"
-               draggable="false"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <!-- Teks cadangan jika logo belum diisi / file tidak ditemukan -->
-          <span style="display:none; font-weight:800; font-size:13px; color:#f4845f;
-                       justify-content:center; align-items:center; width:100%; height:100%;">PST</span>
-        </div>
-        <div>
-          <p class="client-name">PT. Pawon Servis Tama</p>
-          <p class="client-type">Swasta · Retail & Sparepart Alat Berat</p>
-        </div>
-      </div>
-      <div class="client-divider"></div>
-      <span class="client-badge cb-coral">⚙️ Sparepart & Servis</span>
-      <p class="client-desc">Perusahaan retail dan penjualan sparepart kendaraan alat berat berbasis di Jakarta Timur. Melayani kebutuhan suku cadang dan servis untuk armada alat berat industri.</p>
-      <div class="client-verified"><div class="client-vdot"></div><span class="client-vtxt">Klien Terverifikasi</span></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT / KEUNGGULAN -->
-<section id="about">
-  <h2 class="section-title"><span data-lang="about.why">Mengapa</span> <span data-lang="about.us">Kami?</span></h2>
-  <div class="feature-grid">
-    <div class="feature-item">
-      <div class="icon">⚡</div>
-      <h4 data-lang="feature.fast">Respons Cepat</h4>
-    </div>
-    <div class="feature-item">
-      <div class="icon">🏷️</div>
-      <h4 data-lang="feature.price">Harga Kompetitif</h4>
-    </div>
-    <div class="feature-item">
-      <div class="icon">🤝</div>
-      <h4 data-lang="feature.direct">Tanpa Perantara</h4>
+<!-- OTR TYRE -->
+<section id="tyre" style="background:var(--pit);max-width:none;padding:100px 40px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header reveal"><span class="eyebrow">OTR Tyre Solutions</span><h2>Ban Tambang untuk <span class="text-amber">Setiap Aplikasi</span></h2><p>Kami tidak sekadar jual ban. Kami konsultasikan tyre selection yang tepat untuk kondisi haul road, payload class, dan TKPH operasional Anda.</p></div>
+    <div class="tyre-feature reveal">
+      <div class="tyre-img-col"><img id="tyreBgImg" alt="OTR Mining Tyre"><div class="tyre-img-overlay"></div></div>
+      <div class="tyre-data-col"><span class="eyebrow" style="margin-bottom:8px">Size Coverage</span><div class="tyre-size-chips"><span class="tyre-size-chip">33.00-51</span><span class="tyre-size-chip">27.00-49</span><span class="tyre-size-chip">24.00-35</span><span class="tyre-size-chip">21.00-35</span><span class="tyre-size-chip">18.00-33</span><span class="tyre-size-chip">26.5-25</span><span class="tyre-size-chip">29.5-25</span><span class="tyre-size-chip">17.5-25</span></div><span class="eyebrow" style="margin-top:12px;margin-bottom:8px">Application Matrix</span><div class="tyre-app-row"><div><div class="tyre-app-name">Open Pit Haul Road</div><div class="tyre-app-desc">High-impact, hard rock — pattern E-4, high TKPH</div></div><div class="tyre-spec">E-4 / TK6<br>High TKPH</div></div><div class="tyre-app-row"><div><div class="tyre-app-name">Underground Haulage</div><div class="tyre-app-desc">Cut & chip resistant compound — pattern E-3</div></div><div class="tyre-spec">E-3 / TK5<br>Cut Resistant</div></div><div class="tyre-app-row"><div><div class="tyre-app-name">Wheel Loader Application</div><div class="tyre-app-desc">Rock duty, side-wall protection — pattern L-5</div></div><div class="tyre-spec">L-5<br>Rock Duty</div></div><div class="tyre-app-row"><div><div class="tyre-app-name">Support & Grader</div><div class="tyre-app-desc">All-surface capability untuk unit support tambang</div></div><div class="tyre-spec">G-2/G-4<br>All Surface</div></div><div style="background:var(--amber-glow);border:1px solid var(--border-amber);border-radius:var(--radius);padding:18px;display:flex;align-items:center;gap:14px;margin-top:4px"><div style="font-size:28px;flex-shrink:0">📐</div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:700;color:var(--amber);margin-bottom:4px">TKPH Consultation — Free</div><div style="font-size:12px;color:var(--muted);line-height:1.6">Kami hitung TKPH requirement fleet Anda dan rekomendasikan tyre paling cost-efficient. Gratis, tanpa obligation PO.</div></div></div></div>
     </div>
   </div>
 </section>
+
+<!-- BRANDS -->
+<section id="brands" style="background:var(--steel);max-width:none;padding:80px 40px"><div style="max-width:1200px;margin:0 auto"><div class="section-header reveal"><span class="eyebrow">Brand Coverage</span><h2>Kami Cover <span class="text-amber">Fleet Anda</span></h2><p>Tidak terikat satu brand. Kami terikat pada kebutuhan operasional Anda.</p></div><div class="brands-grid reveal"><div class="brand-chip primary">SANY — Priority</div><div class="brand-chip">BELAZ</div><div class="brand-chip">KAMAZ</div><div class="brand-chip">HOWO</div><div class="brand-chip">SHACMAN</div><div class="brand-chip">FAW</div><div class="brand-chip">XCMG</div><div class="brand-chip">UD TRUCK</div><div class="brand-chip">HINO</div><div class="brand-chip">ISUZU</div><div class="brand-chip">SINOTRUK</div><div class="brand-chip">FOTON</div><div class="brand-chip">+ OEM Compatible</div></div></div></section>
+
+<!-- STOCK READINESS -->
+<section id="stock"><div class="section-header reveal"><span class="eyebrow">Stock & Warehouse</span><h2>Parts Ada. <span class="text-amber">Tidak Perlu Tunggu Indent.</span></h2></div><div class="warehouse-grid"><div class="reveal"><p class="stock-statement">Kami maintain <strong>buffer stock 200+ fast-moving part numbers</strong> agar unit Anda tidak harus menunggu parts dari luar negeri.</p><div class="avail-row"><div class="avail-indicator green"></div><div><div class="avail-title">Ready Stock</div><div class="avail-desc">Tersedia di warehouse Jakarta — dispatch H+1 kerja</div></div></div><div class="avail-row"><div class="avail-indicator yellow"></div><div><div class="avail-title">Order Basis</div><div class="avail-desc">Procurement dari principal — estimasi 7–14 hari kerja</div></div></div><div class="avail-row"><div class="avail-indicator red"></div><div><div class="avail-title">Emergency Procurement</div><div class="avail-desc">Eskalasi khusus dengan air freight — timeline by case</div></div></div></div><div class="reveal reveal-d2"><div class="warehouse-visual"><div class="warehouse-header">JAKARTA WAREHOUSE — STOCK INDICATOR</div><div class="warehouse-row"><div><div class="wr-part">Suspension Cylinder Seal Kit</div><div class="wr-unit">SANY SRT95C / BELAZ 75131</div></div><span class="wr-qty ready">● READY</span></div><div class="warehouse-row"><div><div class="wr-part">Bucket Tooth Set (Standard + HD)</div><div class="wr-unit">SANY SY Series / XCMG XE</div></div><span class="wr-qty ready">● READY</span></div><div class="warehouse-row"><div><div class="wr-part">Fuel Filter Set (250H Kit)</div><div class="wr-unit">Multi-brand</div></div><span class="wr-qty ready">● READY</span></div><div class="warehouse-row"><div><div class="wr-part">Brake Disc Set</div><div class="wr-unit">BELAZ 75131 / SANY SRT</div></div><span class="wr-qty ready">● READY</span></div><div class="warehouse-row"><div><div class="wr-part">OTR Tyre 27.00-49 E-4</div><div class="wr-unit">HD Dump Truck Class</div></div><span class="wr-qty ready">● READY</span></div><div class="warehouse-row"><div><div class="wr-part">Steering Cylinder Seal Kit</div><div class="wr-unit">BELAZ / KAMAZ</div></div><span class="wr-qty">ORDER</span></div><div class="warehouse-row"><div><div class="wr-part">Hydraulic Return Filter</div><div class="wr-unit">Multi-unit</div></div><span class="wr-qty ready">● READY</span></div></div></div></div></section>
+
+<!-- EMERGENCY -->
+<section id="emergency" style="background:var(--pit);max-width:none;padding:100px 40px"><div style="max-width:1200px;margin:0 auto"><div class="emerg-header-row reveal"><div><span class="eyebrow">Emergency Support Protocol</span><h2>Unit Down Jam 2 Pagi?<br><span class="text-amber">Kami Masih Bisa Response.</span></h2></div><div class="emergency-badge">24/7 EMERGENCY SUPPORT ACTIVE</div></div><div class="emergency-grid"><div class="reveal"><div class="timeline"><div class="timeline-item"><div class="timeline-dot start"></div><span class="timeline-time">T+0 — Jam Berapa Pun</span><div class="timeline-title">Unit Down Alert Diterima</div><div class="timeline-desc">Inquiry masuk via WhatsApp — tidak ada batas jam kerja untuk emergency.</div></div><div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-time">T+2 Jam</span><div class="timeline-title">Part Identification & Availability Check</div><div class="timeline-desc">Identifikasi part number, cek stok warehouse, konfirmasi ketersediaan.</div></div><div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-time">T+4 Jam</span><div class="timeline-title">Quotation Issued</div><div class="timeline-desc">Penawaran resmi dengan harga, quantity, dan estimasi delivery dikirim.</div></div><div class="timeline-item"><div class="timeline-dot"></div><span class="timeline-time">Setelah PO Confirmed</span><div class="timeline-title">Same-Day / Next-Day Dispatch</div><div class="timeline-desc">Packing dan pengiriman prioritas — tracking real-time diberikan.</div></div><div class="timeline-item"><div class="timeline-dot end"></div><span class="timeline-time">Delivery to Site</span><div class="timeline-title">Unit Kembali Beroperasi</div><div class="timeline-desc">Produksi berlanjut. Downtime diminimalisir. Mission accomplished.</div></div></div></div><div class="emerg-right reveal reveal-d2"><div class="emerg-card"><div class="emerg-quote">"Kami tidak mengenal jam kerja ketika unit Anda down."</div><p>Production loss dari satu HD dump truck bisa mencapai Rp 80–150 juta per hari. Response cepat bukan sekadar service — ini adalah kewajiban kami sebagai operational partner Anda.</p></div><div class="emerg-card" style="border-color:var(--border-amber)"><div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;color:var(--amber);margin-bottom:10px">Cara Inquiry Emergency — Paling Mudah</div><p style="margin-bottom:14px">Kirim via WhatsApp, format bebas:</p><div class="code-block">Unit: SANY SRT95C<br>Problem: Suspension turun<br>Part: Suspension seal kit<br>Qty: 2 set<br>Site: [lokasi Anda]</div><a href="https://wa.me/6288802032033?text=EMERGENCY%20PARTS%20REQUEST%0AUnit%3A%20%0AProblem%3A%20%0APart%3A%20%0AQty%3A%20%0ASite%3A%20" class="btn-primary" target="_blank" style="width:100%;justify-content:center;display:flex;margin-top:4px">Hubungi Kami — Emergency ›</a></div></div></div></div></section>
+
+<!-- CLIENTS -->
+<section id="clients"><div class="section-header reveal"><span class="eyebrow">Track Record</span><h2>Dipercaya Oleh <span class="text-amber">Industri Pertambangan</span></h2><p>Dari BUMN tambang hingga kontraktor swasta nasional — kami telah membuktikan capability kami di lapangan.</p></div><div class="clients-grid"><div class="client-card featured reveal"><span class="bumn-badge">BUMN</span><div class="client-logo-row"><img id="logoBukitAsam" class="client-logo" alt="PT Bukit Asam"></div><span class="client-label">Verified Client — Coal Mining</span><div class="client-name">PT. Bukit Asam Tbk</div><div class="client-industry">BUMN · Energi & Pertambangan Batu Bara · IDX: PTBA</div><p class="client-scope">Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di <strong>Tanjung Enim, Sumatera Selatan</strong>. ORENZ terpercaya untuk pengadaan spareparts dan komponen alat berat operasional tambang.</p><div class="project-ref"><div class="project-ref-title">PROJECT REFERENCE</div><div class="project-ref-text">Pengadaan spareparts unit <strong>BELAZ Rigid Dump Truck</strong> — operasional pit tambang batu bara, Tanjung Enim, Sumatera Selatan. Supply terverifikasi, delivery on-time.</div></div></div><div class="client-card reveal reveal-d1"><div class="client-logo-row"><img id="logoGlobalMakara" class="client-logo" alt="Global Makara Teknik"></div><span class="client-label">Verified Client — Mining Services</span><div class="client-name">Global Makara Teknik</div><div class="client-industry">Swasta · Jasa Pertambangan — Sumatera Selatan & Kalimantan Selatan</div><p class="client-scope">Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. ORENZ mendukung kebutuhan parts untuk fleet operasional di lapangan.</p></div><div class="client-card reveal reveal-d2"><div class="client-logo-row"><img id="logoPawonServis" class="client-logo" alt="PT Pawon Servis Tama"></div><span class="client-label">Verified Client — Heavy Equipment</span><div class="client-name">PT. Pawon Servis Tama</div><div class="client-industry">Swasta · Retail & Sparepart Alat Berat — Jakarta Timur</div><p class="client-scope">Perusahaan retail dan penjualan sparepart alat berat berbasis Jakarta Timur. Menjadi mitra distribusi ORENZ untuk kebutuhan parts multi-brand armada alat berat industri.</p></div><div class="client-card reveal reveal-d3"><div class="client-logo-row"><img id="logoMayangkara" class="client-logo" alt="PT Mayangkara Jaya Abadi"></div><span class="client-label">Verified Client — General Trade</span><div class="client-name">PT. Mayangkara Jaya Abadi</div><div class="client-industry">Swasta · Perdagangan & Jasa Umum</div><p class="client-scope">Perusahaan swasta nasional di bidang perdagangan umum dan jasa. ORENZ dipercaya sebagai supplier parts dan komponen untuk kebutuhan procurement teknis mereka.</p></div></div></section>
+
+<!-- WHY ORENZ -->
+<section id="why" style="background:var(--steel);max-width:none;padding:100px 40px"><div style="max-width:1200px;margin:0 auto"><div class="section-header reveal"><span class="eyebrow">Why ORENZ</span><h2>Bukan Supplier Biasa. <span class="text-amber">Operational Partner.</span></h2></div><div class="why-grid"><div class="why-card reveal"><span class="why-num">01</span><div class="why-title">Kami Kenal Unit Anda</div><p class="why-text">Kami tidak perlu Anda jelaskan SANY SRT95C itu apa. Kami familiar dengan seluruh line-up unit mining yang beroperasi di pit Indonesia — dari spek teknis hingga part number kritis.</p><div class="why-tag">// Fleet Familiarity</div></div><div class="why-card reveal reveal-d1"><span class="why-num">02</span><div class="why-title">Stock Ada, Bukan Klaim</div><p class="why-text">Kami maintain buffer stock nyata di warehouse Jakarta — bukan sekadar klaim di brosur. 200+ part number ready untuk dispatch H+1. Tidak perlu tunggu 3 minggu untuk parts urgent.</p><div class="why-tag">// Stock Readiness</div></div><div class="why-card reveal reveal-d2"><span class="why-num">03</span><div class="why-title">Response, Bukan Janji</div><p class="why-text">Identifikasi part dalam 2 jam. Quotation dalam 4 jam. Dispatch same-day untuk ready stock. Kami tahu berapa besar cost downtime unit Anda — dan kami tidak punya excuses untuk keterlambatan.</p><div class="why-tag">// Emergency Response</div></div><div class="why-card reveal reveal-d1"><span class="why-num">04</span><div class="why-title">Dokumentasi Procurement Lengkap</div><p class="why-text">NPWP, SIUP, PKP — semua siap. Kami memahami proses vendor registration di perusahaan mining dan siap masuk ke sistem procurement Anda tanpa menyulitkan tim purchasing.</p><div class="why-tag">// Procurement Ready</div></div><div class="why-card reveal reveal-d2"><span class="why-num">05</span><div class="why-title">Technical Support Included</div><p class="why-text">Tidak yakin part number? Kirim foto — kami identifikasi. Butuh cross-reference? Kami carikan. TKPH calculation? Kami hitung. Support teknis adalah bagian dari service kami, bukan extra charge.</p><div class="why-tag">// Technical Expertise</div></div><div class="why-card reveal reveal-d3"><span class="why-num">06</span><div class="why-title">Tidak Terikat Satu Brand</div><p class="why-text">Fleet tambang Anda punya berbagai unit dari berbagai brand. Kami cover SANY, BELAZ, KAMAZ, HOWO, UD Truck, HINO, dan banyak lagi. Satu supplier untuk seluruh fleet — lebih efisien, lebih simple.</p><div class="why-tag">// Multi-Brand Coverage</div></div></div></div></section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <h2 class="section-title"><span data-lang="contact.us">Hubungi</span> <span data-lang="contact.them">Kami</span></h2>
-  <div class="contact-wrapper">
-    <a href="https://wa.me/6288802032033" target="_blank" class="contact-card">
-      <img src="logowa.jpg" alt="WhatsApp" class="contact-icon"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <div style="display:none; font-size:4rem; color:var(--orange); margin-bottom:1rem;">💬</div>
-      <h3>WhatsApp</h3>
-    </a>
-    <a href="mailto:orenzasia@gmail.com" class="contact-card">
-      <div style="font-size:4rem; color:var(--orange); margin-bottom:1rem;">✉️</div>
-      <h3>Email</h3>
-    </a>
-  </div>
-</section>
+<section id="contact" class="contact-section" style="max-width:none"><div class="contact-inner"><span class="eyebrow">Start Your Inquiry</span><h2>Mulai dengan Satu <span class="text-amber">Inquiry.</span></h2><p class="contact-sub">Kami tidak minta Anda percaya dulu. Kami minta satu kesempatan untuk buktikan response time dan kualitas kami. Tidak ada obligation untuk PO.</p><div class="contact-cards"><a href="https://wa.me/6288802032033?text=Halo%20ORENZ%2C%20saya%20ingin%20inquiry%20spareparts%20untuk%20unit%20%5Bsebutkan%20unit%5D." class="contact-card" target="_blank"><div class="contact-card-icon">💬</div><div class="contact-card-label">WhatsApp — Respon Tercepat</div><div class="contact-card-value">Hubungi Kami via WA</div><div class="contact-card-sub">Kirim foto part / part number — kami identifikasi dalam 2 jam. Tidak ada obligation untuk PO.</div></a><a href="mailto:orenzasia@gmail.com?subject=Inquiry%20Parts%20-%20%5BNama%20Perusahaan%5D&body=Halo%20Tim%20ORENZ%2C%0A%0ASaya%20dari%20%5Bnama%20perusahaan%5D%20ingin%20inquiry%20untuk%3A%0A%0AUnit%3A%20%0APart%20yang%20dibutuhkan%3A%20%0AQuantity%3A%20%0ASite%20lokasi%3A%20" class="contact-card"><div class="contact-card-icon">📧</div><div class="contact-card-label">Email — Dokumentasi Formal</div><div class="contact-card-value">Kirim Email Inquiry</div><div class="contact-card-sub">Untuk PO formal, vendor registration, dan kebutuhan dokumentasi procurement resmi perusahaan Anda.</div></a></div><div style="margin-bottom:40px"><a href="https://wa.me/6288802032033?text=Halo%20ORENZ%2C%20saya%20ingin%20request%20vendor%20registration%20package." class="btn-secondary" target="_blank">Request Vendor Registration Package ›</a></div><div class="contact-tagline"><strong>PT. Orenz Suku Cadang Asia Raya</strong><br>Jakarta, Indonesia · Est. 2022<br><span style="color:var(--amber)">Supporting Your Fleet. Protecting Your Production.</span></div></div></section>
 
 <footer>
-  <p data-lang="footer">&copy; 2022 PT. ORENZ SUKU CADANG ASIA RAYA. All rights reserved. | Sparepart Truck & Heavy Equipment</p>
+  <a href="#" class="footer-logo"><img id="footerLogoImg" alt="ORENZ"><span class="company-name">PT. ORENZ SUKU CADANG <span class="amber">ASIA RAYA</span></span></a>
+  <span class="footer-copy">© 2026 PT. Orenz Suku Cadang Asia Raya. All rights reserved.</span>
+  <div class="footer-links"><a href="#about">About</a><a href="#fleet">Units</a><a href="#products">Products</a><a href="#tyre">OTR Tyre</a><a href="#clients">Clients</a><a href="#contact">Contact</a></div>
 </footer>
 
-<!-- ====== MODALS ====== -->
+<script>
+// ========================================
+// GLOBAL IMAGE SOURCE CONFIG - EDIT URLS HERE
+// ========================================
+const IMAGE_SRC = {
+  hero_bg: "https://placehold.co/1920x1080/0D0D0F/0D0D0F", // solid dark background
+  // Unit background images
+  sany_srt95c_img: "sanysrt95c.png",
+  belaz_75131_img: "belaz75131.png",
+  kamaz_6520_img: "kamaz6520.png",
+  howo_shacman_img: "howoshacman.png",
+  udt_hino_img: "udthino.png",
+  excavator_mining_img: "excasanyxcmg.png",
+  // Product images
+  hd_truck_parts: "hdtruck.png",
+  excavator_mining: "Excawidesanyxcmg.png",
+  support_truck_parts: "unitlighttruck.png",
+  engine_filter: "enginekitfilter.png",
+  tyre_bg: "tyre.png",
+  // Client logos
+  bukit_asam_logo: "logobukitasam.png",
+  global_makara_logo: "logoglobalmakara.png",
+  pawon_servis_logo: "logopawonservis.png",
+  mayangkara_logo: "logomayangkara.png",
+  orenz_logo: "logoorenz.png"
+};
 
-<!-- Modal Sparepart -->
-<div class="modal-overlay" id="modalSparepart">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modalSparepart')">&times;</button>
-    <h2><span data-lang="modal.sparepart">Order</span> <span data-lang="modal.sparepart2">Sparepart</span></h2>
-    <p style="color:#aaa;margin-bottom:0.5rem;" data-lang="modal.sparepart.inst">Pilih brand, isi detail part, lalu submit atau upload Excel.</p>
-    <div style="background:#1a2332; padding:0.8rem; border-radius:8px; margin-bottom:1rem; font-size:0.8rem; color:#ccc;" id="sparepartGuide"></div>
-    
-    <div class="brand-grid" id="brandChips">
-      <span class="brand-chip selected" data-brand="SANY">SANY</span>
-      <span class="brand-chip" data-brand="HINO">HINO</span>
-      <span class="brand-chip" data-brand="KAMAZ">KAMAZ</span>
-      <span class="brand-chip" data-brand="BELAZ">BELAZ</span>
-      <span class="brand-chip" data-brand="UD TRUCK">UD TRUCK</span>
-      <span class="brand-chip" data-brand="KOMATSU">KOMATSU</span>
-      <span class="brand-chip" data-brand="CATERPILLAR">CATERPILLAR</span>
-      <span class="brand-chip" data-brand="OTHERS" data-lang="others">OTHERS BRAND</span>
-    </div>
-
-    <div class="form-grid">
-      <div class="form-group"><label data-lang="form.brand">Brand / Unit Type</label><input type="text" id="partBrand" placeholder="Auto terisi"></div>
-      <div class="form-group"><label data-lang="form.pn">Part Number</label><input type="text" id="partNumber" placeholder="Masukkan part number"></div>
-      <div class="form-group"><label data-lang="form.item">Item Name</label><input type="text" id="partName" placeholder="Nama item / deskripsi"></div>
-      <div class="form-group"><label data-lang="form.qty">Qty</label><input type="number" id="partQty" placeholder="Jumlah" min="1" value="1"></div>
-    </div>
-
-    <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin:1rem 0;">
-      <button class="btn btn-outline btn-sm" onclick="addPartToList()" data-lang="btn.add">+ Tambah ke List</button>
-      <button class="btn btn-outline btn-sm" onclick="downloadExcelTemplate()" data-lang="btn.template">📥 Template Excel</button>
-      <label class="btn btn-outline btn-sm" style="cursor:pointer;" data-lang="btn.upload">📤 Upload Excel 
-        <input type="file" id="uploadExcel" accept=".xlsx,.xls" style="display:none;" onchange="handleExcelUpload(event)">
-      </label>
-    </div>
-
-    <div class="table-wrapper">
-      <table id="partsTable">
-        <thead><tr><th data-lang="th.brand">Brand</th><th data-lang="th.pn">Part Number</th><th data-lang="th.item">Item Name</th><th data-lang="th.qty">Qty</th><th data-lang="th.action">Aksi</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
-    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
-      <button class="btn btn-primary btn-sm" onclick="submitPartsToWA()" data-lang="btn.sendwa">📤 Kirim via WhatsApp</button>
-      <button class="btn btn-outline btn-sm" onclick="exportPartsToExcel()" data-lang="btn.export">📄 Export ke Excel</button>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Tyre -->
-<div class="modal-overlay" id="modalTyre">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modalTyre')">&times;</button>
-    <h2><span data-lang="modal.tyre">Katalog</span> <span data-lang="modal.tyre2">Tyre</span></h2>
-    <p style="color:#aaa;margin-bottom:1rem;" data-lang="modal.tyre.click">Klik tipe ban untuk melihat spesifikasi lengkap.</p>
-    <div id="tyreCatalogGrid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:1rem;"></div>
-    <div id="tyreDetail" style="margin-top:1.5rem; background:#0d1222; padding:1rem; border-radius:12px; display:none;"></div>
-    <div style="margin-top:1.5rem;">
-      <a href="https://wa.me/6288802032033?text=Halo%2C%20saya%20tertarik%20dengan%20ban%20..." class="btn btn-primary btn-sm" target="_blank" data-lang="btn.asktyre">📞 Tanya Harga Ban</a>
-    </div>
-  </div>
-</div>
-
-<!-- Modal CaO -->
-<div class="modal-overlay" id="modalCaO">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modalCaO')">&times;</button>
-    <h2><span>CaO</span> <span data-lang="cao.full">Limestone Highgrade</span></h2>
-    <div style="display:flex; flex-wrap:wrap; gap:2rem; align-items:center;">
-      <div style="flex:1; min-width:200px; text-align:center;">
-        <img src="caojumbo.jpg" alt="CaO Jumbo Bag" style="width:100%; max-width:250px; border-radius:16px;" draggable="false"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div style="display:none; font-size:3rem; color:var(--orange);">⛰️</div>
-        <p style="color:#fff; font-weight:700; margin-top:0.5rem;">CALCIUM OXIDE (CaO)</p>
-        <p style="color:#aaa;" data-lang="cao.weight">NET WEIGHT: 1,000 KG / Jumbo Bag</p>
-      </div>
-      <div style="flex:2; min-width:280px;">
-        <div style="background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-          <h4 style="color:#fff; margin-bottom:0.8rem;" data-lang="cao.lab">🧪 Hasil Uji Laboratorium</h4>
-          <p style="font-size:0.8rem; color:#888;" data-lang="cao.sample">SAMPLE: Kapur Powder | DATE: 12/02/2024 - 26/02/2024</p>
-          <table style="margin:0.8rem 0;">
-            <tr><th>Parameter</th><th>Unit</th><th>Results</th><th>Method</th></tr>
-            <tr><td>CaO</td><td>%</td><td style="color:#4caf50; font-weight:700;">97.60</td><td>ASTM C 25 - 19</td></tr>
-            <tr><td>MgO</td><td>%</td><td>0.70</td><td>POMIN-BT/01 (XRF)</td></tr>
-            <tr><td>SiO₂</td><td>%</td><td>0.84</td><td>POMIN-BT/01 (XRF)</td></tr>
-          </table>
-          <button class="btn btn-outline btn-sm" onclick="openROA()" data-lang="cao.roa">🔬 Lihat Dokumen Lengkap (ROA)</button>
-        </div>
-        <div style="margin-top:1rem; background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-          <h4 style="color:#fff;" data-lang="cao.supply">📦 Ketentuan Supply</h4>
-          <ul style="color:#ccc; font-size:0.85rem; list-style:none; padding-left:0;">
-            <li data-lang="cao.cap">✅ Kapasitas Produksi: 100 ton/hari (±3,000 ton/bulan)</li>
-            <li data-lang="cao.moq">✅ Minimum Order: 25 ton</li>
-            <li data-lang="cao.fob">✅ FOB Port: Marunda, Jakarta</li>
-            <li data-lang="cao.pack">✅ Packaging: Jumbo Bag 1 Ton, double inner</li>
-            <li data-lang="cao.app">✅ Aplikasi: Steel, Water Treatment, Sugar, Chemical, Glass, Construction</li>
-          </ul>
-        </div>
-        <div style="margin-top:1rem; text-align:center;">
-          <a href="https://wa.me/6288802032033?text=Halo%2C%20saya%20tertarik%20dengan%20CaO%20Limestone%20Highgrade." class="btn btn-primary btn-sm" target="_blank" data-lang="cao.order">📦 Pesan CaO Sekarang</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Alsintan -->
-<div class="modal-overlay" id="modalAlsintan">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modalAlsintan')">&times;</button>
-    <h2><span data-lang="alsintan.title">Alsintan</span></h2>
-    <p style="color:#aaa; margin-bottom:1.5rem;" data-lang="alsintan.katalog">Katalog resmi alat mesin pertanian, distribusi PT. ORENZ.</p>
-    <div class="alsintan-grid" id="alsintanProductGrid"></div>
-    <h4 style="color:#fff; margin-top:2rem;" data-lang="implement.title">⚙️ Implement Pertanian</h4>
-    <div class="alsintan-grid" style="margin-top:0.5rem;" id="implementGrid"></div>
-    <div style="margin-top:2rem; text-align:center;">
-      <a href="https://wa.me/6288802032033?text=Halo%2C%20saya%20tertarik%20dengan%20Alsintan." class="btn btn-primary btn-sm" target="_blank" data-lang="alsintan.chat">💬 Chat WhatsApp Tim Sales</a>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Detail Alsintan -->
-<div class="modal-overlay" id="modalAlsintanDetail">
-  <div class="modal" style="max-width:900px;">
-    <button class="modal-close" onclick="closeModal('modalAlsintanDetail')">&times;</button>
-    <div id="alsintanDetailContent"></div>
-  </div>
-</div>
-
-<!-- Modal TCO -->
-<div class="modal-overlay" id="modalTCO">
-  <div class="modal" style="max-width:950px;">
-    <button class="modal-close" onclick="closeModal('modalTCO')">&times;</button>
-    <div id="tcoContent"></div>
-  </div>
-</div>
-
-<!-- Modal ROA -->
-<div class="modal-overlay" id="modalROA">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('modalROA')">&times;</button>
-    <h2><span>Report of Analysis</span> (ROA)</h2>
-    <img src="roa.jpg" alt="ROA Document" style="width:100%; max-width:600px; margin:0 auto; display:block; border-radius:12px;" draggable="false"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <p style="display:none; text-align:center; color:var(--orange);" data-lang="roa.error">Dokumen ROA tidak dapat dimuat.</p>
-    <p style="text-align:center; margin-top:0.5rem;"><small style="color:#888;">Sertifikat No. 11060124000283 – SUCOFINDO</small></p>
-  </div>
-</div>
-
-<!-- Modal Video Demo Harvester -->
-<div class="modal-overlay" id="modalVideo">
-  <div class="modal" style="max-width:800px;">
-    <button class="modal-close" onclick="closeModal('modalVideo')">&times;</button>
-    <h2><span>Video Demo</span> Rice Harvester 4LZ-7</h2>
-    <p style="color:#aaa; margin-bottom:1.5rem;">Pilih video uji coba di Sumatera:</p>
-    <div style="display:grid; gap:1rem;">
-      <div style="background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-        <h4 style="color:#fff; margin-bottom:0.5rem;">🎬 Demo 1: Panen Padi di Lahan Basah</h4>
-        <video controls width="100%" style="border-radius:8px; max-height:400px;">
-          <source src="rh4lz-7-1.mp4" type="video/mp4">
-          Browser Anda tidak mendukung pemutaran video. <a href="rh4lz-7-1.mp4" download>Unduh video</a>.
-        </video>
-      </div>
-      <div style="background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-        <h4 style="color:#fff; margin-bottom:0.5rem;">🎬 Demo 2: Pengoperasian di Sawah Terbuka</h4>
-        <video controls width="100%" style="border-radius:8px; max-height:400px;">
-          <source src="rh4lz-7-2.mp4" type="video/mp4">
-          Browser Anda tidak mendukung pemutaran video. <a href="rh4lz-7-2.mp4" download>Unduh video</a>.
-        </video>
-      </div>
-      <div style="background:#0d1222; border:1px solid #2a3142; border-radius:12px; padding:1rem;">
-        <h4 style="color:#fff; margin-bottom:0.5rem;">🎬 Demo 3: Hasil Panen & Kinerja Mesin</h4>
-        <video controls width="100%" style="border-radius:8px; max-height:400px;">
-          <source src="rh4lz-7-3.mp4" type="video/mp4">
-          Browser Anda tidak mendukung pemutaran video. <a href="rh4lz-7-3.mp4" download>Unduh video</a>.
-        </video>
-      </div>
-    </div>
-    <p style="color:#888; font-size:0.8rem; margin-top:1rem;">*Pastikan folder berisi file video: <strong>rh4lz-7-1.mp4</strong>, <strong>rh4lz-7-2.mp4</strong>, <strong>rh4lz-7-3.mp4</strong>.</p>
-  </div>
-</div>
+// Apply all images after DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+  const heroBg = document.querySelector('.hero-bg');
+  if(heroBg) heroBg.style.backgroundImage = `url(${IMAGE_SRC.hero_bg})`;
+  
+  const imgSany = document.getElementById('imgSanySrt');
+  if(imgSany) imgSany.src = IMAGE_SRC.sany_srt95c_img;
+  const imgBelaz = document.getElementById('imgBelaz');
+  if(imgBelaz) imgBelaz.src = IMAGE_SRC.belaz_75131_img;
+  const imgKamaz = document.getElementById('imgKamaz');
+  if(imgKamaz) imgKamaz.src = IMAGE_SRC.kamaz_6520_img;
+  const imgHowo = document.getElementById('imgHowo');
+  if(imgHowo) imgHowo.src = IMAGE_SRC.howo_shacman_img;
+  const imgUdt = document.getElementById('imgUdtHino');
+  if(imgUdt) imgUdt.src = IMAGE_SRC.udt_hino_img;
+  const imgExcaBg = document.getElementById('imgExca');
+  if(imgExcaBg) imgExcaBg.src = IMAGE_SRC.excavator_mining_img;
+  
+  const imgHd = document.getElementById('imgHdTruck');
+  if(imgHd) imgHd.src = IMAGE_SRC.hd_truck_parts;
+  const imgExcaParts = document.getElementById('imgExcaParts');
+  if(imgExcaParts) imgExcaParts.src = IMAGE_SRC.excavator_mining;
+  const imgSupport = document.getElementById('imgSupportTruck');
+  if(imgSupport) imgSupport.src = IMAGE_SRC.support_truck_parts;
+  const imgEngine = document.getElementById('imgEngineFilter');
+  if(imgEngine) imgEngine.src = IMAGE_SRC.engine_filter;
+  
+  const tyreImg = document.getElementById('tyreBgImg');
+  if(tyreImg) tyreImg.src = IMAGE_SRC.tyre_bg;
+  
+  const logoBukit = document.getElementById('logoBukitAsam');
+  if(logoBukit) logoBukit.src = IMAGE_SRC.bukit_asam_logo;
+  const logoGlobal = document.getElementById('logoGlobalMakara');
+  if(logoGlobal) logoGlobal.src = IMAGE_SRC.global_makara_logo;
+  const logoPawon = document.getElementById('logoPawonServis');
+  if(logoPawon) logoPawon.src = IMAGE_SRC.pawon_servis_logo;
+  const logoMayang = document.getElementById('logoMayangkara');
+  if(logoMayang) logoMayang.src = IMAGE_SRC.mayangkara_logo;
+  
+  const navLogo = document.querySelector('#navLogoImg');
+  const footerLogo = document.querySelector('#footerLogoImg');
+  if(navLogo) navLogo.src = IMAGE_SRC.orenz_logo;
+  if(footerLogo) footerLogo.src = IMAGE_SRC.orenz_logo;
+});
+</script>
 
 <script>
-  // ============ MULTI LANGUAGE ============
-  const translations = {
-    id: {
-      langIcon: '🇮🇩', langText: 'ID',
-      nav: { home: 'Beranda', products: 'Produk', clients: 'Klien', about: 'Keunggulan', contact: 'Kontak' },
-      hero: { title: 'PT. ORENZ<br><span class="highlight">SUKU CADANG ASIA RAYA</span>', desc: 'Sparepart Truck, Heavy Equipment, Ban, CaO Limestone & Alsintan – Multi Brands, Harga Kompetitif, Tanpa Perantara.', contact: '📞 Hubungi Kami', explore: '🔍 Jelajahi Produk' },
-      products: { line: 'Lini', title: 'Produk' },
-      sparepart: { title: 'Spareparts', desc: 'Truck & Heavy Equipment Multi Brands. Order cepat dengan form interaktif.' },
-      tyre: { title: 'Tyre / Ban', desc: 'Ban alat berat, truck tambang & logistik. Katalog lengkap dengan spesifikasi.' },
-      cao: { title: 'CaO Limestone', desc: 'Highgrade High Purity (97.6% CaO). Sertifikat lab resmi & kapasitas besar.', full: 'Limestone Highgrade', weight: 'NET WEIGHT: 1,000 KG / Jumbo Bag', lab: '🧪 Hasil Uji Laboratorium', sample: 'SAMPLE: Kapur Powder | DATE: 12/02/2024 - 26/02/2024', roa: '🔬 Lihat Dokumen Lengkap (ROA)', supply: '📦 Ketentuan Supply', cap: '✅ Kapasitas Produksi: 100 ton/hari (±3,000 ton/bulan)', moq: '✅ Minimum Order: 25 ton', fob: '✅ FOB Port: Marunda, Jakarta', pack: '✅ Packaging: Jumbo Bag 1 Ton, double inner', app: '✅ Aplikasi: Steel, Water Treatment, Sugar, Chemical, Glass, Construction', order: '📦 Pesan CaO Sekarang' },
-      alsintan: { title: 'Alsintan', desc: 'Alat Mesin Pertanian lengkap. Katalog spesifikasi teknis & estimasi biaya operasional tersedia.', katalog: 'Katalog resmi alat mesin pertanian, distribusi PT. ORENZ.', chat: '💬 Chat WhatsApp Tim Sales', detail: 'Detail & Spesifikasi', price: 'Tanya Harga' },
-      implement: { title: '⚙️ Implement Pertanian', rotary: 'Rotary Tiller', rotaryDesc: 'Pengolah tanah primer', disc: 'Disc Plough', discDesc: 'Bajak piringan', trailer: 'Trailer', trailerDesc: 'Angkut hasil panen', priceBtn: 'Tanya Harga' },
-      clients: { title1: 'Klien', title2: 'Kami', desc: 'Dipercaya oleh perusahaan-perusahaan terkemuka di industri energi, pertambangan, perdagangan, dan konstruksi di seluruh Indonesia.', stat1: 'Klien Aktif', stat2: 'Termasuk Klien', stat3: 'Kepuasan Klien' },
-      feature: { fast: 'Respons Cepat', price: 'Harga Kompetitif', direct: 'Tanpa Perantara' },
-      about: { why: 'Mengapa', us: 'Kami?' },
-      contact: { us: 'Hubungi', them: 'Kami' },
-      footer: '© 2022 PT. ORENZ SUKU CADANG ASIA RAYA. All rights reserved. | Sparepart Truck & Heavy Equipment',
-      modal: {
-        sparepart: 'Order', sparepart2: 'Sparepart', sparepartInst: 'Pilih brand, isi detail part, lalu submit atau upload Excel.',
-        sparepartGuide: '<strong>📋 Petunjuk penggunaan Template Excel:</strong><br>1. Klik <strong>"📥 Template Excel"</strong> untuk mengunduh format standar.<br>2. Isi data part yang dibutuhkan (Brand, Part Number, Item Name, Qty).<br>3. Klik <strong>"📤 Upload Excel"</strong> untuk mengimpor data ke form di bawah.<br>4. Atau isi manual langsung pada form.',
-        tyre: 'Katalog', tyre2: 'Tyre', tyreClick: 'Klik tipe ban untuk melihat spesifikasi lengkap.'
-      },
-      form: { brand: 'Brand / Unit Type', pn: 'Part Number', item: 'Item Name', qty: 'Qty' },
-      btn: { add: '+ Tambah ke List', template: '📥 Template Excel', upload: '📤 Upload Excel', sendwa: '📤 Kirim via WhatsApp', export: '📄 Export ke Excel', asktyre: '📞 Tanya Harga Ban' },
-      th: { brand: 'Brand', pn: 'Part Number', item: 'Item Name', qty: 'Qty', action: 'Aksi' },
-      others: 'OTHERS BRAND',
-      roa: { error: 'Dokumen ROA tidak dapat dimuat.' },
-      tco: { title: 'Estimasi Biaya Operasional & Kepemilikan', definisi: 'Estimasi Biaya Operasional & Kepemilikan (Operational Cost & Ownership Estimate) adalah ringkasan proyeksi biaya yang akan dikeluarkan pembeli <strong>setelah pembelian unit</strong>, mencakup konsumsi bahan bakar, perawatan rutin, overhaul besar, serta nilai jual kembali di akhir periode.', asumsi: '*Asumsi: solar Rp14.000/L, 1.000 jam operasi/tahun, 0.08 L/HP/jam.', fuel: 'Biaya BBM/tahun', maint: 'Biaya Maintenance/tahun', overhaul: 'Overhaul (tahun ke-5)', resale: 'Nilai Jual Kembali', total5: 'Total Biaya 5 Tahun', totalYear: 'Rata‑rata per Tahun', ask: '📞 Tanya Lebih Lanjut', comparison: 'Perbandingan Biaya Operasional dengan Kompetitor (estimasi)', disclaimer: '*Data kompetitor merupakan perkiraan berdasarkan spesifikasi umum dan informasi pasar. Biaya aktual dapat bervariasi.' }
-    },
-    en: {
-      langIcon: '🇬🇧', langText: 'EN',
-      nav: { home: 'Home', products: 'Products', clients: 'Clients', about: 'Why Us', contact: 'Contact' },
-      hero: { title: 'PT. ORENZ<br><span class="highlight">ASIA RAYA SPARE PARTS</span>', desc: 'Multi Brand Truck & Heavy Equipment Spare Parts, Tires, CaO Limestone & Agricultural Machinery – Competitive Price, Direct Contact.', contact: '📞 Contact Us', explore: '🔍 Explore Products' },
-      products: { line: 'Product', title: 'Lines' },
-      sparepart: { title: 'Spare Parts', desc: 'Multi Brand Truck & Heavy Equipment. Quick order with interactive form.' },
-      tyre: { title: 'Tire', desc: 'Heavy equipment, mining & logistics tires. Complete catalog with specifications.' },
-      cao: { title: 'CaO Limestone', desc: 'Highgrade High Purity (97.6% CaO). Certified lab report & large capacity.', full: 'Limestone Highgrade', weight: 'NET WEIGHT: 1,000 KG / Jumbo Bag', lab: '🧪 Laboratory Test Results', sample: 'SAMPLE: Limestone Powder | DATE: 12/02/2024 - 26/02/2024', roa: '🔬 View Full Report (ROA)', supply: '📦 Supply Terms', cap: '✅ Production Capacity: 100 tons/day (±3,000 tons/month)', moq: '✅ Minimum Order: 25 tons', fob: '✅ FOB Port: Marunda, Jakarta', pack: '✅ Packaging: 1 Ton Jumbo Bag, double inner', app: '✅ Applications: Steel, Water Treatment, Sugar, Chemical, Glass, Construction', order: '📦 Order CaO Now' },
-      alsintan: { title: 'Agricultural Machinery', desc: 'Complete agricultural machinery. Technical specs & operational cost estimate available.', katalog: 'Official agricultural machinery catalog, distributed by PT. ORENZ.', chat: '💬 Chat Sales on WhatsApp', detail: 'Details & Specs', price: 'Ask Price' },
-      implement: { title: '⚙️ Agricultural Implements', rotary: 'Rotary Tiller', rotaryDesc: 'Primary soil cultivator', disc: 'Disc Plough', discDesc: 'Disc plow', trailer: 'Trailer', trailerDesc: 'Harvest transport', priceBtn: 'Ask Price' },
-      clients: { title1: 'Our', title2: 'Clients', desc: 'Trusted by leading companies in the energy, mining, trading, and construction industries across Indonesia.', stat1: 'Active Clients', stat2: 'Including BUMN', stat3: 'Client Satisfaction' },
-      feature: { fast: 'Fast Response', price: 'Competitive Price', direct: 'Direct Contact' },
-      about: { why: 'Why', us: 'Us?' },
-      contact: { us: 'Contact', them: 'Us' },
-      footer: '© 2022 PT. ORENZ SUKU CADANG ASIA RAYA. All rights reserved. | Sparepart Truck & Heavy Equipment',
-      modal: {
-        sparepart: 'Order', sparepart2: 'Spare Parts', sparepartInst: 'Select brand, fill in part details, then submit or upload Excel.',
-        sparepartGuide: '<strong>📋 Excel Template Instructions:</strong><br>1. Click <strong>"📥 Template Excel"</strong> to download the standard format.<br>2. Fill in the required part data (Brand, Part Number, Item Name, Qty).<br>3. Click <strong>"📤 Upload Excel"</strong> to import data into the form below.<br>4. Or fill manually directly on the form.',
-        tyre: 'Tire', tyre2: 'Catalog', tyreClick: 'Click on a tire type to see full specifications.'
-      },
-      form: { brand: 'Brand / Unit Type', pn: 'Part Number', item: 'Item Name', qty: 'Quantity' },
-      btn: { add: '+ Add to List', template: '📥 Excel Template', upload: '📤 Upload Excel', sendwa: '📤 Send via WhatsApp', export: '📄 Export to Excel', asktyre: '📞 Ask Tire Price' },
-      th: { brand: 'Brand', pn: 'Part Number', item: 'Item Name', qty: 'Qty', action: 'Action' },
-      others: 'OTHERS BRAND',
-      roa: { error: 'ROA document cannot be loaded.' },
-      tco: { title: 'Operational Cost & Ownership Estimate', definisi: 'The Operational Cost & Ownership Estimate summarizes projected costs after purchasing the unit: fuel, routine maintenance, major overhaul, and resale value.', asumsi: '*Assumption: diesel IDR 14,000/L, 1,000 operating hours/year, 0.08 L/HP/hour.', fuel: 'Fuel Cost/year', maint: 'Maintenance Cost/year', overhaul: 'Overhaul (year 5)', resale: 'Resale Value', total5: 'Total 5-Year Cost', totalYear: 'Average per Year', ask: '📞 Ask More', comparison: 'Operational Cost Comparison with Competitors (estimated)', disclaimer: '*Competitor data is estimated based on typical specifications and market information. Actual costs may vary.' }
-    }
-  };
-
-  let currentLang = localStorage.getItem('orenzLang') || 'id';
-  function t(key) {
-    const keys = key.split('.');
-    let val = translations[currentLang];
-    for (const k of keys) {
-      if (val && val[k] !== undefined) val = val[k];
-      else return key;
-    }
-    return val;
-  }
-
-  function applyLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('orenzLang', lang);
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      const key = el.getAttribute('data-lang');
-      const translated = t(key);
-      if (translated && key !== 'langIcon' && key !== 'langText') {
-        if (typeof translated === 'string' && translated.includes('<')) {
-          el.innerHTML = translated;
-        } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-          el.placeholder = translated;
-        } else {
-          el.textContent = translated;
-        }
-      }
-    });
-    document.getElementById('langIcon').textContent = translations[lang].langIcon;
-    document.getElementById('langText').textContent = translations[lang].langText;
-    document.getElementById('sparepartGuide').innerHTML = t('modal.sparepartGuide');
-    if (document.getElementById('modalAlsintan').classList.contains('active')) buildAlsintanCatalog();
-    if (document.getElementById('modalTyre').classList.contains('active')) buildTyreCatalog();
-  }
-
-  function toggleLanguage() {
-    applyLanguage(currentLang === 'id' ? 'en' : 'id');
-  }
-
-  // ============ BACKGROUND ============
-  let originalBackground = getComputedStyle(document.body).backgroundImage;
-  function setBodyBackground(imageFile) {
-    document.body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${imageFile}')`;
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.classList.add('custom-bg');
-  }
-  function resetBodyBackground() {
-    document.body.style.backgroundImage = originalBackground || "radial-gradient(circle at 30% 40%, #0f172a, #020617)";
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.classList.remove('custom-bg');
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    applyLanguage(currentLang);
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'F12' || e.keyCode === 123 || 
-         (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-         (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'U' || e.key === 'S' || e.key === 'P'))) {
-        e.preventDefault();
-        return false;
-      }
-    });
-    document.querySelectorAll('img').forEach(img => img.addEventListener('dragstart', e => e.preventDefault()));
-    document.body.addEventListener('contextmenu', e => { e.preventDefault(); return false; });
-  });
-
-  // ============ HEADER SCROLL ============
-  window.addEventListener('scroll', () => {
-    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  // ============ MOBILE MENU ============
-  document.getElementById('menu-toggle').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('active');
-  });
-  document.querySelectorAll('#nav-menu a').forEach(link => {
-    link.addEventListener('click', () => document.getElementById('nav-menu').classList.remove('active'));
-  });
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // ============ MODAL ============
-  function openModal(id) { document.getElementById(id).classList.add('active'); }
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('active');
-    if (!document.querySelector('.modal-overlay.active')) resetBodyBackground();
-  }
-  document.querySelectorAll('.modal-overlay').forEach(ov => {
-    ov.addEventListener('click', function(e) { if (e.target === this) closeModal(this.id); });
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.active').forEach(ov => closeModal(ov.id));
-  });
-
-  // ============ SPAREPART ============
-  let selectedBrand = 'SANY';
-  document.getElementById('partBrand').value = selectedBrand;
-  document.querySelectorAll('#brandChips .brand-chip').forEach(chip => {
-    chip.addEventListener('click', function() {
-      document.querySelectorAll('#brandChips .brand-chip').forEach(c => c.classList.remove('selected'));
-      this.classList.add('selected');
-      selectedBrand = this.dataset.brand;
-      document.getElementById('partBrand').value = selectedBrand;
-    });
-  });
-
-  let partsList = [];
-  function addPartToList() {
-    const brand = document.getElementById('partBrand').value || selectedBrand;
-    const partNumber = document.getElementById('partNumber').value.trim();
-    const partName = document.getElementById('partName').value.trim();
-    const qty = parseInt(document.getElementById('partQty').value) || 1;
-    if (!partNumber && !partName) { alert(currentLang==='id'?'Minimal isi Part Number atau Item Name.':'Please fill Part Number or Item Name.'); return; }
-    partsList.push({ brand, partNumber, partName, qty });
-    renderPartsTable();
-    document.getElementById('partNumber').value = '';
-    document.getElementById('partName').value = '';
-    document.getElementById('partQty').value = 1;
-  }
-  function renderPartsTable() {
-    const tbody = document.querySelector('#partsTable tbody');
-    tbody.innerHTML = '';
-    partsList.forEach((item, i) => {
-      tbody.innerHTML += `<tr><td>${item.brand}</td><td>${item.partNumber||'-'}</td><td>${item.partName||'-'}</td><td>${item.qty}</td><td><button class="btn-icon" onclick="deletePart(${i})">❌</button></td></tr>`;
-    });
-  }
-  function deletePart(i) { partsList.splice(i,1); renderPartsTable(); }
-  function submitPartsToWA() {
-    if (partsList.length===0) { alert(currentLang==='id'?'Tambahkan minimal 1 item.':'Add at least 1 item.'); return; }
-    let msg = currentLang==='id'?'Halo PT. ORENZ, berikut list sparepart:%0A%0A':'Hello PT. ORENZ, here is my spare parts list:%0A%0A';
-    partsList.forEach((item,i) => msg += `${i+1}. Brand: ${item.brand} | PN: ${item.partNumber||'-'} | Item: ${item.partName||'-'} | Qty: ${item.qty}%0A`);
-    msg += currentLang==='id'?'%0ATerima kasih.':'%0AThank you.';
-    window.open(`https://wa.me/6288802032033?text=${msg}`, '_blank');
-  }
-  function exportPartsToExcel() {
-    if (partsList.length===0) { alert(currentLang==='id'?'List kosong.':'List is empty.'); return; }
-    const ws = XLSX.utils.json_to_sheet(partsList);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Sparepart Order");
-    XLSX.writeFile(wb, "orenz_sparepart_order.xlsx");
-  }
-  function downloadExcelTemplate() {
-    const template = [
-      { brand:'SANY', partNumber:'123456', partName:'Filter Oli', qty:2 },
-      { brand:'HINO', partNumber:'', partName:'Kampas Rem', qty:4 },
-      { brand:'BELAZ', partNumber:'BZ-789', partName:'Bearing', qty:1 }
-    ];
-    const ws = XLSX.utils.json_to_sheet(template);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Template");
-    XLSX.writeFile(wb, "orenz_template.xlsx");
-  }
-  function handleExcelUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      try {
-        const data = new Uint8Array(e.target.result);
-        const wb = XLSX.read(data, {type:'array'});
-        const ws = wb.Sheets[wb.SheetNames[0]];
-        const json = XLSX.utils.sheet_to_json(ws);
-        if (json.length===0) { alert('File Excel kosong.'); return; }
-        json.forEach(row => {
-          const brand = row.brand || row.Brand || row.BRAND || 'OTHERS';
-          const partNumber = row.partNumber || row['Part Number'] || row['PART NUMBER'] || '';
-          const partName = row.partName || row['Item Name'] || row['ITEM NAME'] || '';
-          const qty = row.qty || row.Qty || row.QTY || 1;
-          partsList.push({ brand, partNumber, partName, qty });
-        });
-        renderPartsTable();
-        alert(`Berhasil import ${json.length} item.`);
-      } catch (err) { alert('Gagal membaca file Excel.'); }
-    };
-    reader.readAsArrayBuffer(file);
-  }
-
-  // ============ TYRE ============
-  const tyreData = [
-    { name:'CB793', type:'Widebody Dump Truck', img:'tyrecb793.jpg', sizes:['13.00R25 ★★★ 163/182A','14.00R24 ★★★ 169/188A','14.00R25 ★★★ 169/188A'], tread:'29-31 mm', desc:'Pola khusus truk widebody.' },
-    { name:'CM770PRO', type:'Crane Tire', img:'tyrecm770pro.jpg', sizes:['385/95R25 170F'], tread:'Variatif', desc:'Stabilitas tinggi, longitudinal groove anti selip.' },
-    { name:'CB386', type:'Loader Tire', img:'tyrecb386.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Dalam', desc:'Block besar, traksi sangat baik.' },
-    { name:'E4 Underground', type:'Underground Mine', img:'tyree4.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Ekstra dalam', desc:'Desain block besar untuk bawah tanah.' },
-    { name:'Smooth Mine', type:'Underground Smooth', img:'tyresmooth.jpg', sizes:['Tersedia berbagai ukuran'], tread:'Low Section', desc:'Permukaan halus, masa pakai panjang.' },
-    { name:'Dump Truck', type:'Off-Highway Dump', img:'tyredump.jpg', sizes:['16.00R25','23.5R25','26.5R25'], tread:'Ultra deep', desc:'Heat dissipation, kompon TKPH tinggi.' },
-    { name:'Loader Bias', type:'Bias Loader', img:'tyreloaderbias.jpg', sizes:['Multi size'], tread:'Standar', desc:'Ekonomis dan andal.' },
-    { name:'Motor Grader', type:'Grader', img:'tyregrader.jpg', sizes:['Tersedia'], tread:'Variatif', desc:'Traksi baik dan tahan aus.' }
-  ];
-
-  function buildTyreCatalog() {
-    const grid = document.getElementById('tyreCatalogGrid');
-    grid.innerHTML = '';
-    tyreData.forEach((tyre, i) => {
-      grid.innerHTML += `
-        <div class="alsintan-card" onclick="showTyreDetail(${i})" style="text-align:center; padding:1rem;">
-          <img src="${tyre.img}" alt="${tyre.name}" draggable="false" style="width:100%; height:90px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem; background:#0d1222;"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <div style="display:none; font-size:2.5rem; color:var(--orange);">⭕</div>
-          <span style="display:block; color:#fff; font-weight:600;">${tyre.name}</span>
-          <small style="color:#888;">${tyre.type}</small>
-          <small style="display:block; color:#aaa;">${tyre.sizes[0]}</small>
-        </div>`;
-    });
-  }
-  function showTyreDetail(index) {
-    const tyre = tyreData[index];
-    const detailDiv = document.getElementById('tyreDetail');
-    detailDiv.style.display = 'block';
-    let sizesHtml = tyre.sizes.map(s => `<li>${s}</li>`).join('');
-    detailDiv.innerHTML = `
-      <h4 style="color:#fff; font-family:monospace;">${tyre.name} <span style="color:var(--orange);">| ${tyre.type}</span></h4>
-      <p><strong>Ukuran:</strong></p><ul style="color:#ccc; padding-left:1.5rem;">${sizesHtml}</ul>
-      <p><strong>Tread Depth:</strong> ${tyre.tread}</p>
-      <p style="color:#ccc;">${tyre.desc}</p>
-      <small style="color:#666;">*Hubungi WhatsApp untuk harga & stok.</small>`;
-    detailDiv.scrollIntoView({ behavior:'smooth' });
-  }
-
-  function openROA() { openModal('modalROA'); }
-
-  // ============ ALSINTAN ============
-  const alsintanProducts = {
-    DF504: { name:'Traktor DF504 (50 HP)', img:'df504.jpg', specs:{ id:['Engine: 4 silinder, 50 HP','Transmisi: 8F+4R','4WD','PTO: 540/720 rpm','3-point lift: 800 kg','Berat: 2,100 kg'], en:['Engine: 4-cyl, 50 HP','Transmission: 8F+4R','4WD','PTO: 540/720 rpm','Lift: 800 kg','Weight: 2,100 kg'] }, desc:{ id:'Serbaguna, irit BBM.', en:'Versatile, fuel efficient.' }, tco:{ fob:5324, hp:50 } },
-    DF704: { name:'Traktor DF704 (70 HP)', img:'df704.jpg', specs:{ id:['Engine: 4 silinder, 70 HP','Transmisi: 8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Berat: 2,650 kg'], en:['Engine: 4-cyl, 70 HP','8F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,200 kg','Weight: 2,650 kg'] }, desc:{ id:'Bertenaga untuk lahan berat.', en:'Powerful for heavy soil.' }, tco:{ fob:6676, hp:70 } },
-    DF904: { name:'Traktor DF904 (90 HP)', img:'df904.jpg', specs:{ id:['Engine: 4 silinder, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Berat: 3,100 kg'], en:['Engine: 4-cyl, 90 HP','12F+4R','4WD','PTO: 540/1000 rpm','Lift: 1,600 kg','Weight: 3,100 kg'] }, desc:{ id:'Heavy-duty, kabin AC.', en:'Heavy-duty with AC cab.' }, tco:{ fob:10310, hp:90 } },
-    DF1004: { name:'Traktor DF1004 (100 HP)', img:'df1004.jpg', specs:{ id:['Engine: 4 silinder, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Berat: 3,450 kg'], en:['Engine: 4-cyl, 100 HP','12F+12R Powershuttle','4WD','PTO: 540/1000 rpm','Lift: 2,000 kg','Weight: 3,450 kg'] }, desc:{ id:'Flagship, kenyamanan tinggi.', en:'Flagship, high comfort.' }, tco:{ fob:10408, hp:100 } },
-    '4LZ7': { name:'Rice Harvester 4LZ-7 (120 HP)', img:'4lz7.jpg', specs:{ id:['Engine: 120 HP','Kapasitas: 5-7 ton/jam','Grain tank: 1,500 L','Lebar potong: 2.2 m','Berat: 4,800 kg'], en:['Engine: 120 HP','Capacity: 5-7 t/h','Grain tank: 1,500 L','Cutting width: 2.2 m','Weight: 4,800 kg'] }, desc:{ id:'Combine harvester modern.', en:'Modern combine harvester.' }, tco:{ fob:18900, hp:120 } }
-  };
-
-  function buildAlsintanCatalog() {
-    const grid = document.getElementById('alsintanProductGrid');
-    const models = ['DF504','DF704','DF904','DF1004','4LZ7'];
-    grid.innerHTML = '';
-    models.forEach(m => {
-      const p = alsintanProducts[m];
-      grid.innerHTML += `
-        <div class="alsintan-card" style="position:relative;">
-          <img src="${p.img}" alt="${p.name}" draggable="false" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" style="width:100%; height:120px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem; background:#0d1222;">
-          <div class="icon" style="display:none;">🚜</div>
-          <h4>${p.name.split('(')[0]}</h4><p>${p.name.includes('(')?p.name.split('(')[1].replace(')',''):''}</p>
-          <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:0.5rem;">
-            <button class="btn btn-outline btn-sm" onclick="showAlsintanDetail('${m}')">${t('alsintan.detail')}</button>
-            ${m === '4LZ7' ? `<button class="btn btn-outline btn-sm" style="border-color:#4caf50; color:#4caf50;" onclick="openModal('modalVideo')">🎬 Video Demo</button>` : ''}
-          </div>
-        </div>`;
-    });
-    const implGrid = document.getElementById('implementGrid');
-    implGrid.innerHTML = `
-      <div class="alsintan-card" onclick="openWhatsApp('Rotary Tiller')">
-        <img src="rotarytiller.jpg" alt="Rotary Tiller" draggable="false" style="width:100%; height:120px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="icon" style="display:none;">🔄</div>
-        <h4>${t('implement.rotary')}</h4><p>${t('implement.rotaryDesc')}</p>
-        <button class="btn btn-outline btn-sm" style="margin-top:0.5rem; width:100%;">${t('implement.priceBtn')}</button>
-      </div>
-      <div class="alsintan-card" onclick="openWhatsApp('Disc Plough')">
-        <img src="discplough.jpg" alt="Disc Plough" draggable="false" style="width:100%; height:120px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="icon" style="display:none;">🪵</div>
-        <h4>${t('implement.disc')}</h4><p>${t('implement.discDesc')}</p>
-        <button class="btn btn-outline btn-sm" style="margin-top:0.5rem; width:100%;">${t('implement.priceBtn')}</button>
-      </div>
-      <div class="alsintan-card" onclick="openWhatsApp('Trailer')">
-        <img src="trailer.jpg" alt="Trailer" draggable="false" style="width:100%; height:120px; object-fit:contain; border-radius:8px; margin-bottom:0.5rem;"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <div class="icon" style="display:none;">🚛</div>
-        <h4>${t('implement.trailer')}</h4><p>${t('implement.trailerDesc')}</p>
-        <button class="btn btn-outline btn-sm" style="margin-top:0.5rem; width:100%;">${t('implement.priceBtn')}</button>
-      </div>`;
-  }
-
-  function showAlsintanDetail(model) {
-    const prod = alsintanProducts[model];
-    if (!prod) return;
-    const specs = prod.specs[currentLang] || prod.specs.id;
-    const cont = document.getElementById('alsintanDetailContent');
-    const specsHtml = specs.map(s => `<li>${s}</li>`).join('');
-    cont.innerHTML = `
-      <h2 style="font-family:monospace;"><span>${prod.name.split('(')[0]}</span> ${prod.name.includes('(') ? '('+prod.name.split('(')[1] : ''}</h2>
-      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:1rem;">
-        <div style="flex:1; min-width:200px; text-align:center;">
-          <img src="${prod.img}" alt="${prod.name}" draggable="false" style="width:100%; max-width:300px; border-radius:12px; background:#111827;"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <div style="display:none; font-size:4rem; color:var(--orange);">🚜</div>
-        </div>
-        <div style="flex:2; min-width:250px;">
-          <h4 style="color:#fff;">${currentLang==='id'?'Spesifikasi Teknis':'Technical Specifications'}</h4>
-          <ul style="color:#ccc; padding-left:1.2rem;">${specsHtml}</ul>
-          <p style="color:#bbb; margin-top:1rem;">${prod.desc[currentLang] || prod.desc.id}</p>
-          <div style="display:flex; gap:1rem; margin-top:1rem;">
-            <button class="btn btn-primary btn-sm" onclick="openWhatsApp('${prod.name}')">📞 ${currentLang==='id'?'Tanya Harga':'Ask Price'}</button>
-            <button class="btn btn-outline btn-sm" onclick="showOperationalCost('${model}')">📊 ${currentLang==='id'?'Estimasi Biaya Operasional':'Operational Cost Estimate'}</button>
-          </div>
-        </div>
-      </div>`;
-    openModal('modalAlsintanDetail');
-  }
-
-  const baseComparison = {
-    Dafeng: { fuel:56000000, maint:4100000, overhaul:27600000, resale:48300000, total5:280000000, perYear:56000000 },
-    K:      { fuel:56000000, maint:8500000, overhaul:57000000, resale:42500000, total5:356000000, perYear:71200000 },
-    JD:     { fuel:56000000, maint:12500000, overhaul:85000000, resale:72000000, total5:354000000, perYear:70800000 },
-    MF:     { fuel:56000000, maint:9800000, overhaul:66000000, resale:38000000, total5:372000000, perYear:74400000 },
-    Y:      { fuel:56000000, maint:10200000, overhaul:68000000, resale:40000000, total5:370000000, perYear:74000000 }
-  };
-
-  function getCompetitorData(hp) {
-    const s = hp / 50;
-    const result = {};
-    for (const [brand, base] of Object.entries(baseComparison)) {
-      result[brand] = {
-        fuel: Math.round(base.fuel * s).toLocaleString('id-ID'),
-        maint: Math.round(base.maint * s).toLocaleString('id-ID'),
-        overhaul: Math.round(base.overhaul * s).toLocaleString('id-ID'),
-        resale: Math.round(base.resale * s).toLocaleString('id-ID'),
-        total5: Math.round(base.total5 * s).toLocaleString('id-ID'),
-        perYear: Math.round(base.perYear * s).toLocaleString('id-ID')
-      };
-    }
-    return result;
-  }
-
-  function showOperationalCost(model) {
-    const prod = alsintanProducts[model];
-    const tc = translations[currentLang].tco;
-    const comp = getCompetitorData(prod.tco.hp);
-    let rows = '';
-    for (const [brand, data] of Object.entries(comp)) {
-      rows += `<tr><td>${brand}</td><td>Rp ${data.fuel}</td><td>Rp ${data.maint}</td><td>Rp ${data.overhaul}</td><td>Rp ${data.resale}</td><td>Rp ${data.total5}</td><td>Rp ${data.perYear}</td></tr>`;
-    }
-    document.getElementById('tcoContent').innerHTML = `
-      <h2 style="font-family:monospace;">📊 <span>${tc.title}</span></h2>
-      <p style="color:#aaa; margin-bottom:1rem;">${prod.name} – ${currentLang==='id'?'Proyeksi 5 tahun':'5-year projection'}</p>
-      <div style="background:#0d1222; border-radius:12px; padding:1rem; margin-bottom:1.5rem; border-left:4px solid var(--orange);">
-        <p style="font-size:0.9rem; color:#ccc;"><strong>📖 Definisi:</strong> ${tc.definisi}</p>
-        <p style="font-size:0.85rem; color:var(--orange); margin-top:0.5rem;">${tc.asumsi}</p>
-      </div>
-      <h4 style="color:#fff; margin:1rem 0 0.5rem;">${tc.comparison}</h4>
-      <div class="table-wrapper">
-        <table>
-          <thead><tr><th>Brand</th><th>${tc.fuel}</th><th>${tc.maint}</th><th>${tc.overhaul}</th><th>${tc.resale}</th><th>${tc.total5}</th><th>${tc.totalYear}</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
-      <p style="color:#888; font-size:0.8rem; margin:0.5rem 0;">${tc.disclaimer}</p>
-      <button class="btn btn-primary btn-sm" onclick="openWhatsApp('${prod.name}')">${tc.ask}</button>`;
-    openModal('modalTCO');
-  }
-
-  function openWhatsApp(product) {
-    window.open(`https://wa.me/6288802032033?text=${currentLang==='id'?'Halo':'Hello'}%20PT.%20ORENZ%2C%20${currentLang==='id'?'saya tertarik dengan':'I am interested in'}%20${encodeURIComponent(product)}.`, '_blank');
-  }
-
-  window.addEventListener('load', () => {
-    applyLanguage(currentLang);
-    buildAlsintanCatalog();
-    document.getElementById('sparepartGuide').innerHTML = t('modal.sparepartGuide');
-  });
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target) } });
+}, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
+reveals.forEach(el => observer.observe(el));
 </script>
 
 </body>
