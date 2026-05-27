@@ -163,6 +163,11 @@ ${part.unit_type || ""}
 <div class="stock ${stockClass}">
 ${part.stock_status}
 </div>
+<button
+class="rfq-btn"
+onclick="openRFQ('${part.part_number}','${part.description}')">
+Request RFQ
+</button>
 
 </div>
 
