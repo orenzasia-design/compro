@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>OSCARPART Parts Portal</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+padding:20px;
+background:#f5f5f5;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+.search-box{
+width:100%;
+padding:12px;
+font-size:16px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:8px;
+margin-bottom:10px;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+.part-number{
+font-weight:bold;
+font-size:18px;
+}
+
+.stock{
+margin-top:8px;
+font-weight:bold;
+}
+
+.available{
+color:green;
+}
+
+.low{
+color:orange;
+}
+
+.out{
+color:red;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>OSCARPART Parts Portal</h1>
+
+<input
+type="text"
+id="search"
+class="search-box"
+placeholder="Search Part Number or Description">
+
+<div id="results"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
