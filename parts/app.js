@@ -1,3 +1,4 @@
+let rfqCart = [];
 const client = supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
@@ -166,7 +167,7 @@ ${part.stock_status}
 <button
 class="rfq-btn"
 onclick="openRFQ('${part.part_number}','${part.description}')">
-Request RFQ
++ Add RFQ
 </button>
 
 </div>
@@ -194,5 +195,111 @@ stockFilter.addEventListener(
 "change",
 applyFilters
 );
+function openRFQ(
+partNumber,
+description
+){
 
+const existing =
+rfqCart.find(
+x => x.part_number === partNumber
+);
+
+if(existing){
+
+existing.qty += 1;
+
+}else{
+
+rfqCart.push({
+part_number: partNumber,
+description: description,
+qty: 1
+});
+
+}
+
+renderRFQCart();
+
+}
+function renderRFQCart(){
+
+const rfqItems =
+document.getElementById("rfqItems");
+
+const rfqSummary =
+document.getElementById("rfqSummary");
+
+rfqItems.innerHTML = "";
+
+rfqCart.forEach((item,index)=>{
+
+rfqItems.innerHTML += `
+
+<div class="rfq-item">
+
+<div class="rfq-top">
+
+<div>
+<b>${item.part_number}</b><br>
+${item.description}
+</div>
+
+</div>
+
+<input
+type="number"
+min="1"
+value="${item.qty}"
+class="rfq-qty"
+onchange="updateQty(${index},this.value)">
+
+<br>
+
+<button
+class="remove-btn"
+onclick="removeRFQ(${index})">
+Remove
+</button>
+
+</div>
+
+`;
+
+});
+
+rfqSummary.innerHTML =
+`${rfqCart.length} Items`;
+
+}
+function updateQty(index,value){
+
+rfqCart[index].qty =
+parseInt(value) || 1;
+
+renderRFQCart();
+function removeRFQ(index){
+document
+.getElementById("submitRFQ")
+.addEventListener("click",()=>{
+
+if(rfqCart.length===0){
+
+alert("RFQ Cart is empty");
+
+return;
+
+}
+
+alert(
+"RFQ Cart Ready\n\nNext Step: Customer Form"
+);
+
+});
+rfqCart.splice(index,1);
+
+renderRFQCart();
+
+}
+}
 loadParts();
