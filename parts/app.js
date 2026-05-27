@@ -278,7 +278,17 @@ rfqCart[index].qty =
 parseInt(value) || 1;
 
 renderRFQCart();
+
+}
+
 function removeRFQ(index){
+
+rfqCart.splice(index,1);
+
+renderRFQCart();
+
+}
+
 document
 .getElementById("submitRFQ")
 .addEventListener("click",()=>{
@@ -296,10 +306,4 @@ alert(
 );
 
 });
-rfqCart.splice(index,1);
-
-renderRFQCart();
-
-}
-}
 loadParts();
