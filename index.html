@@ -6,16 +6,6 @@
 <meta name="description" content="PT. Orenz Suku Cadang Asia Raya — Heavy Equipment Parts & OTR Tyre Solutions untuk industri pertambangan Indonesia. Spesialis SANY, BELAZ, KAMAZ, HOWO, UD Truck. Ready Stock Jakarta. 24/7 Emergency Response.">
 <title>PT. ORENZ SUKU CADANG ASIA RAYA — Company Profile 2026</title>
 
-<!-- ============================================================
-     OSCARPART — Company Profile 2026
-     Revisi: Mei 2026
-     
-     PANDUAN GANTI GAMBAR:
-     Semua gambar ada di folder: assets/
-     Cari komentar "GANTI:" untuk menemukan src yang perlu diganti.
-     Format: src="assets/NAMA-FILE.jpg"
-     ============================================================ -->
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -35,7 +25,6 @@
 html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;line-height:1.6;}
 
-/* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,166,35,0.15);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px;}
 .nav-logo{display:flex;align-items:center;gap:12px;}
 .nav-logo-img{width:38px;height:38px;object-fit:contain;}
@@ -48,13 +37,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,13,13,0.
 .nav-cta{background:var(--orange);color:#000;padding:9px 20px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:0.5px;transition:background 0.2s;}
 .nav-cta:hover{background:var(--orange-dark);}
 
-/* ── SECTIONS ── */
 section{padding:80px 5%;}
 .section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--orange);margin-bottom:16px;}
 h2{font-size:clamp(32px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:20px;}
 h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 
-/* ── HERO ── */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px;background:linear-gradient(135deg,#0D0D0D 0%,#141414 50%,#0D0D0D 100%);position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(245,166,35,0.05) 0%,transparent 60%);}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);border-radius:100px;padding:6px 16px;margin-bottom:32px;width:fit-content;}
@@ -79,7 +66,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .ticker-item{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--orange);opacity:0.8;}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── ABOUT ── */
 #about{background:var(--dark2);}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .about-left .tagline{font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.2;margin-bottom:24px;}
@@ -91,13 +77,11 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .about-info-value{font-size:13px;font-weight:600;color:var(--white);line-height:1.5;}
 .about-info-value a{color:var(--orange);text-decoration:none;}
 
-/* ── STATS ── */
 .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.05);border-radius:12px;overflow:hidden;}
 .stat-item{background:var(--dark3);padding:36px 28px;text-align:center;}
 .stat-num{font-size:48px;font-weight:900;color:var(--orange);line-height:1;}
 .stat-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-top:8px;}
 
-/* ── TEAM ── */
 #team{background:var(--dark);}
 .team-grid{display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:start;margin-top:40px;}
 .team-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;}
@@ -116,7 +100,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .skills-row{display:flex;flex-wrap:wrap;gap:8px;}
 .skill-tag{background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);color:var(--orange);font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px;letter-spacing:0.5px;}
 
-/* ── FLEET ── */
 #units{background:var(--dark2);}
 .units-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
 .unit-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;transition:border-color 0.2s;}
@@ -130,7 +113,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .unit-name{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
 .unit-models{font-size:11px;color:var(--text2);line-height:1.6;}
 
-/* ── CAPABILITY ── */
 #capability{background:var(--dark);}
 .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
 .cap-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:32px;transition:border-color 0.3s;}
@@ -142,7 +124,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .cap-list li{font-size:13px;color:var(--text2);padding:4px 0;display:flex;align-items:center;gap:8px;}
 .cap-list li::before{content:'›';color:var(--orange);font-weight:700;font-size:16px;}
 
-/* ── PRODUCTS ── */
 #products{background:var(--dark2);}
 .products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:32px;}
 .product-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;}
@@ -167,7 +148,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .stock-legend{display:flex;gap:16px;margin-top:10px;font-size:11px;color:var(--text2);}
 .stock-legend span{display:flex;align-items:center;gap:5px;}
 
-/* ── TYRE ── */
 #tyre{background:var(--dark);}
 .tyre-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;margin-top:40px;}
 .tyre-brand-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 16px;margin-bottom:20px;}
@@ -180,7 +160,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .tkph-box{background:rgba(245,166,35,0.05);border:1px solid rgba(245,166,35,0.2);border-radius:12px;padding:18px;margin-top:16px;}
 .tkph-box p{font-size:13px;color:var(--text2);margin-top:6px;}
 
-/* ── PRICELIST CTA ── */
 #pricelist{background:var(--dark2);}
 .pricelist-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:36px;}
 .pricelist-card{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);display:flex;flex-direction:column;}
@@ -199,14 +178,12 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .pricelist-card.tyre-card{background:linear-gradient(135deg,rgba(245,166,35,0.08) 0%,var(--dark3) 100%);}
 .pricelist-card.parts-card{background:var(--dark3);}
 
-/* ── BRANDS ── */
 #brands{background:var(--dark2);}
 .brands-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
 .brand-chip{background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;color:var(--text2);transition:all 0.2s;cursor:default;}
 .brand-chip.priority{background:rgba(245,166,35,0.1);border-color:rgba(245,166,35,0.3);color:var(--orange);}
 .brand-chip:hover{border-color:rgba(245,166,35,0.3);color:var(--orange);}
 
-/* ── WAREHOUSE ── */
 #warehouse{background:var(--dark);}
 .wh-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px;}
 .wh-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
@@ -223,7 +200,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .badge-ready{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;}
 .badge-order{background:rgba(234,179,8,0.1);border:1px solid rgba(234,179,8,0.3);color:#eab308;}
 
-/* ── DELIVERY ── */
 #delivery{background:var(--dark2);}
 .delivery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
 .delivery-region{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;}
@@ -235,7 +211,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .delivery-note p{font-size:13px;color:var(--text2);line-height:1.7;}
 .delivery-note strong{color:var(--white);}
 
-/* ── EMERGENCY ── */
 #emergency{background:var(--dark);}
 .emergency-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:0;}
 .timeline{position:relative;}
@@ -255,7 +230,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .emergency-live{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444;font-size:11px;font-weight:700;padding:5px 13px;border-radius:100px;letter-spacing:1px;margin-left:16px;}
 .live-dot{width:7px;height:7px;background:#ef4444;border-radius:50%;animation:pulse 1s infinite;}
 
-/* ── TRACK RECORD ── */
 #clients{background:var(--dark2);}
 .clients-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
 .client-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;position:relative;}
@@ -272,7 +246,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .project-ref-label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--orange);margin-bottom:5px;}
 .project-ref-text{font-size:12px;color:var(--text2);line-height:1.6;}
 
-/* ── WHY ── */
 #why{background:var(--dark);}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
 .why-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:28px;}
@@ -281,7 +254,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .why-desc{font-size:13px;color:var(--text2);line-height:1.7;}
 .why-tag{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,166,35,0.5);margin-top:14px;font-family:monospace;}
 
-/* ── LEGAL ── */
 #legal{background:var(--dark2);}
 .legal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px;}
 .legal-card{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px;}
@@ -294,7 +266,6 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .btn-vendor{background:var(--orange);color:#000;padding:10px 20px;border-radius:8px;font-weight:700;font-size:12px;text-decoration:none;white-space:nowrap;transition:background 0.2s;}
 .btn-vendor:hover{background:var(--orange-dark);}
 
-/* ── CONTACT ── */
 #contact{background:var(--dark);}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px;}
 .contact-headline{font-size:clamp(28px,4vw,48px);font-weight:900;line-height:1.1;margin-bottom:12px;}
@@ -314,14 +285,12 @@ h3{font-size:24px;font-weight:700;margin-bottom:12px;}
 .contact-btn-vendor2:hover{background:rgba(245,166,35,0.05);}
 .contact-qr-box{background:var(--dark3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;display:flex;align-items:center;gap:20px;margin-top:8px;}
 .contact-qr-img{width:90px;height:90px;border-radius:8px;overflow:hidden;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.contact-qr-img img{width:80px;height:80px;object-fit:contain;display:block;}
 .contact-qr-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:5px;}
 .contact-qr-url{font-size:12px;color:var(--orange);font-weight:600;line-height:1.5;}
 .contact-legal-mini{background:var(--dark3);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:18px;}
 .legal-row-mini{font-size:12px;color:var(--text2);padding:3px 0;display:flex;gap:12px;}
 .legal-row-mini strong{color:var(--white);min-width:48px;}
 
-/* ── FOOTER ── */
 footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);padding:28px 5%;}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .footer-logo{font-size:12px;font-weight:700;color:var(--white);}
@@ -331,7 +300,6 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
 .footer-links a:hover{color:var(--orange);}
 .footer-copy{font-size:10px;color:var(--gray);}
 
-/* ── RESPONSIVE ── */
 @media(max-width:900px){
   .about-grid,.team-grid,.tyre-layout,.wh-grid,.contact-layout{grid-template-columns:1fr;}
   .units-grid,.cap-grid,.products-grid,.pricelist-grid,.why-grid,.legal-grid,.clients-grid,.delivery-grid{grid-template-columns:1fr 1fr;}
@@ -347,9 +315,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
-     NAV
-════════════════════════════════════════════ -->
+<!-- ==================== NAV ==================== -->
 <nav>
   <div class="nav-logo">
     <img src="logoorenz.png" alt="Logo PT. Orenz Suku Cadang Asia Raya" class="nav-logo-img"
@@ -373,9 +339,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
   <a href="https://wa.me/6288802032033" class="nav-cta" target="_blank">INQUIRY PARTS ›</a>
 </nav>
 
-<!-- ═══════════════════════════════════════════
-     HERO
-════════════════════════════════════════════ -->
+<!-- ==================== HERO ==================== -->
 <section id="hero">
   <div class="hero-badge">
     <div class="hero-badge-dot"></div>
@@ -420,9 +384,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════ -->
+<!-- ==================== ABOUT ==================== -->
 <section id="about">
   <div class="about-grid">
     <div class="about-left">
@@ -473,9 +435,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     STATS BAR
-════════════════════════════════════════════ -->
+<!-- ==================== STATS ==================== -->
 <section style="padding:40px 5%;background:var(--dark3);">
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-num">200+</div><div class="stat-label">Part Numbers Ready</div></div>
@@ -485,17 +445,13 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     TEAM
-════════════════════════════════════════════ -->
+<!-- ==================== TEAM ==================== -->
 <section id="team">
   <div class="section-label">Our Team</div>
   <h2>15+ Tahun Pengalaman<br><span style="color:var(--orange);">Di Berbagai Industri Termasuk Alat Berat & Pertambangan.</span></h2>
   <div class="team-grid">
     <div class="team-card">
-      <img class="team-photo"
-           src="director1.png"
-           alt="Muhammad Ali Syofyan — Founder & Managing Director PT. Orenz Suku Cadang Asia Raya">
+      <img class="team-photo" src="director1.png" alt="Muhammad Ali Syofyan — Founder & Managing Director">
       <div class="team-card-body">
         <div class="team-name">Muhammad Ali Syofyan</div>
         <div class="team-role">Founder & Managing Director</div>
@@ -513,25 +469,21 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
           <div class="exp-company">PT. Orenz Suku Cadang Asia Raya (OSCARPART)</div>
           <div class="exp-role">Director</div>
           <div class="exp-period">2022 – Sekarang</div>
-          <div class="exp-brands">SANY, BELAZ, KAMAZ, HOWO/SINOTRUK, SHACMAN, FAW, UD TRUCKS, KOMATSU, CATERPILLAR, TONLY, XCMG, etc.</div>
         </div>
         <div class="exp-item">
           <div class="exp-company">PT. Pusaka Bumi Transportasi</div>
           <div class="exp-role">Parts Sales — Mining &amp; Heavy Equipment</div>
           <div class="exp-period">2020 – 2021</div>
-          <div class="exp-brands">BELAZ, KAMAZ, SANY, POWERPLUS.</div>
         </div>
         <div class="exp-item">
           <div class="exp-company">PT. Altrak 1978</div>
           <div class="exp-role">Customer Service Officer / Parts Sales</div>
           <div class="exp-period">2017 – 2019</div>
-          <div class="exp-brands">Cummins, Fleetguard, New Holland, Mitsubishi Forklift, Nichiyu, Kawasaki, Grove, JCB, CASE, Yanmar, Kubota, Merlo.</div>
         </div>
         <div class="exp-item">
           <div class="exp-company">PT. Bina Pertiwi (United Tractors Group)</div>
           <div class="exp-role">Field Coordinator — Project PLN</div>
           <div class="exp-period">2010 – 2015</div>
-          <div class="exp-brands">Projects:PLN Power Plant ; Equipment:Komatsu EGS850-6,Komatsu EGS1200 - Industrial Power Generation Systems</div>
         </div>
       </div>
       <div class="skills-row">
@@ -548,764 +500,239 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.05);paddi
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FLEET COVERAGE
-════════════════════════════════════════════ -->
+<!-- ==================== UNITS ==================== -->
 <section id="units">
   <div class="section-label">Fleet Coverage</div>
   <h2>Units We <span style="color:var(--orange);">Support</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Kami familiar dengan unit-unit yang beroperasi di pit tambang Indonesia — dari spek teknis hingga part number kritis yang paling sering diganti.</p>
-
   <div class="units-grid">
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="sanysrt95c.png"
-             alt="SANY HD Dump Truck"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">HD DUMP TRUCK</div>
-        <div class="unit-name">SANY — SYZ, SKT &amp; SRT Series</div>
-        <div class="unit-models">SRT95C · SRT75C · SKT90S · SYZ90</div>
-      </div>
-    </div>
-
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="belaz75131.png"
-             alt="BELAZ HD Dump Truck"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">HD DUMP TRUCK</div>
-        <div class="unit-name">BELAZ — 75131 / 75135</div>
-        <div class="unit-models">75131 · 75135 · 7513</div>
-      </div>
-    </div>
-
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="kamaz6520.png"
-             alt="KAMAZ Haul Truck"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">HAUL TRUCK</div>
-        <div class="unit-name">KAMAZ — 6520 / 65201</div>
-        <div class="unit-models">6520 · 65201 · 6522</div>
-      </div>
-    </div>
-
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="haultruck.png"
-             alt="HOWO / SHACMAN Truck"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">HAUL TRUCK</div>
-        <div class="unit-name">HOWO / SHACMAN</div>
-        <div class="unit-models">T5G · A7 · N7G · X3000</div>
-      </div>
-    </div>
-
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="supporttruck.png"
-             alt="UD Truck / HINO Support Truck"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">SUPPORT TRUCK</div>
-        <div class="unit-name">UD Truck / HINO / FAW / ISUZU</div>
-        <div class="unit-models">UD Quon · HINO 500 · FAW · ISUZU Giga</div>
-      </div>
-    </div>
-
-    <div class="unit-card">
-      <div class="unit-img-wrap">
-        <img src="SANY SY Series.png"
-             alt="SANY Excavator SY Series"
-             onerror="this.parentElement.style.background='#1e1e1e';">
-      </div>
-      <div class="unit-body">
-        <div class="unit-brand">SANY EXCAVATOR — 10 MODELS</div>
-        <div class="unit-name">SANY SY Series</div>
-        <div class="unit-models">SY60C · SY75C · SY135C · SY215C · SY215C LC · SY305C · SY365H · SY375H · SY465H · SY500H</div>
-      </div>
-    </div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="sanysrt95c.png" alt="SANY HD Dump Truck"></div><div class="unit-body"><div class="unit-brand">HD DUMP TRUCK</div><div class="unit-name">SANY — SYZ, SKT &amp; SRT Series</div><div class="unit-models">SRT95C · SRT75C · SKT90S · SYZ90</div></div></div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="belaz75131.png" alt="BELAZ HD Dump Truck"></div><div class="unit-body"><div class="unit-brand">HD DUMP TRUCK</div><div class="unit-name">BELAZ — 75131 / 75135</div><div class="unit-models">75131 · 75135 · 7513</div></div></div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="kamaz6520.png" alt="KAMAZ Haul Truck"></div><div class="unit-body"><div class="unit-brand">HAUL TRUCK</div><div class="unit-name">KAMAZ — 6520 / 65201</div><div class="unit-models">6520 · 65201 · 6522</div></div></div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="haultruck.png" alt="HOWO / SHACMAN Truck"></div><div class="unit-body"><div class="unit-brand">HAUL TRUCK</div><div class="unit-name">HOWO / SHACMAN</div><div class="unit-models">T5G · A7 · N7G · X3000</div></div></div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="supporttruck.png" alt="UD Truck / HINO Support Truck"></div><div class="unit-body"><div class="unit-brand">SUPPORT TRUCK</div><div class="unit-name">UD Truck / HINO / FAW / ISUZU</div><div class="unit-models">UD Quon · HINO 500 · FAW · ISUZU Giga</div></div></div>
+    <div class="unit-card"><div class="unit-img-wrap"><img src="SANY SY Series.png" alt="SANY Excavator SY Series"></div><div class="unit-body"><div class="unit-brand">SANY EXCAVATOR — 10 MODELS</div><div class="unit-name">SANY SY Series</div><div class="unit-models">SY60C · SY75C · SY135C · SY215C · SY215C LC · SY305C · SY365H · SY375H · SY465H · SY500H</div></div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     OUR CAPABILITY
-════════════════════════════════════════════ -->
+<!-- ==================== CAPABILITY ==================== -->
 <section id="capability">
   <div class="section-label">Our Capability</div>
   <h2>Lebih dari Sekadar <span style="color:var(--orange);">Supplier</span></h2>
   <p style="color:var(--text2);max-width:580px;margin-top:12px;">Kami adalah technical partner Anda — mulai dari identifikasi part, sourcing, hingga pengiriman ke site.</p>
   <div class="cap-grid">
-    <div class="cap-card">
-      <div class="cap-icon">🔍</div>
-      <div class="cap-title">Parts Sourcing &amp; Identification</div>
-      <div class="cap-desc">Kirim foto atau part number — kami identifikasi dan verifikasi dalam <strong>3 jam kerja *khusus SANY</strong>.</div>
-      <ul class="cap-list">
-        <li>OEM &amp; OEM-compatible parts</li>
-        <li>Cross-reference service</li>
-        <li>Fit &amp; function verification</li>
-        <li>Direct manufacturer network</li>
-      </ul>
-    </div>
-    <div class="cap-card">
-      <div class="cap-icon">📦</div>
-      <div class="cap-title">Stock &amp; Logistics Management</div>
-      <div class="cap-desc">Buffer stock untuk fast-moving parts dengan pengiriman ke seluruh site mining Indonesia.</div>
-      <ul class="cap-list">
-        <li>Jakarta central warehouse</li>
-        <li>Same-day dispatch (ready stock)</li>
-        <li>Air freight emergency capability</li>
-        <li>Custom industrial packaging</li>
-      </ul>
-    </div>
-    <div class="cap-card">
-      <div class="cap-icon">🔧</div>
-      <div class="cap-title">Technical Support &amp; Consultation</div>
-      <div class="cap-desc">Kami bukan order taker. Kami adalah technical partner di balik setiap PO Anda.</div>
-      <ul class="cap-list">
-        <li>Application-specific recommendation</li>
-        <li>TKPH tyre calculation (free)</li>
-        <li>Vendor registration documentation</li>
-        <li>After-supply follow-up support</li>
-      </ul>
-    </div>
+    <div class="cap-card"><div class="cap-icon">🔍</div><div class="cap-title">Parts Sourcing &amp; Identification</div><div class="cap-desc">Kirim foto atau part number — kami identifikasi dan verifikasi dalam <strong>3 jam kerja *khusus SANY</strong>.</div><ul class="cap-list"><li>OEM &amp; OEM-compatible parts</li><li>Cross-reference service</li><li>Fit &amp; function verification</li><li>Direct manufacturer network</li></ul></div>
+    <div class="cap-card"><div class="cap-icon">📦</div><div class="cap-title">Stock &amp; Logistics Management</div><div class="cap-desc">Buffer stock untuk fast-moving parts dengan pengiriman ke seluruh site mining Indonesia.</div><ul class="cap-list"><li>Jakarta central warehouse</li><li>Same-day dispatch (ready stock)</li><li>Air freight emergency capability</li><li>Custom industrial packaging</li></ul></div>
+    <div class="cap-card"><div class="cap-icon">🔧</div><div class="cap-title">Technical Support &amp; Consultation</div><div class="cap-desc">Kami bukan order taker. Kami adalah technical partner di balik setiap PO Anda.</div><ul class="cap-list"><li>Application-specific recommendation</li><li>TKPH tyre calculation (free)</li><li>Vendor registration documentation</li><li>After-supply follow-up support</li></ul></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     PRODUCT LINES
-════════════════════════════════════════════ -->
+<!-- ==================== PRODUCTS ==================== -->
 <section id="products">
   <div class="section-label">Product Lines</div>
   <h2>Fast Moving Parts — <span style="color:var(--orange);">Ready Stock</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Parts yang paling sering dibutuhkan operasional mining. Kami maintain stok agar tidak ada downtime akibat tunggu parts.</p>
-
   <div class="products-grid">
-
     <!-- HD DUMP TRUCK PARTS -->
     <div class="product-card">
-      <div class="product-header">
-        <img src="hdtruck.png" alt="HD Dump Truck Parts">
-        <div class="product-header-overlay"></div>
-        <div class="product-badge">READY STOCK ●</div>
-        <div class="product-title-block">
-          <div class="product-subtitle">HD Dump Truck Parts</div>
-          <div class="product-card-title">SANY · BELAZ · KAMAZ · HOWO</div>
-        </div>
-      </div>
-      <div class="product-body">
-        <div class="product-brands">
-          <span class="brand-tag">SANY</span><span class="brand-tag">BELAZ</span><span class="brand-tag">KAMAZ</span><span class="brand-tag">HOWO</span><span class="brand-tag">SHACMAN</span>
-        </div>
-        <table class="parts-table">
-          <thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead>
-          <tbody>
-            <tr><td>Suspension Cylinder Seal Kit</td><td>SRT95C / BELAZ 75131</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Brake Disc / Rotor Set</td><td>SANY / BELAZ Series</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Fuel Filter Set (Primary+Secondary)</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Air Filter Element Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Steering Cylinder Seal Kit</td><td>BELAZ / SANY</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Transmission Oil Filter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Drive Belt Set</td><td>KAMAZ / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Hydraulic Return Filter</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-          </tbody>
-        </table>
-        <div class="stock-legend">
-          <span><span class="dot dot-green" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Ready (H+1 dispatch)</span>
-          <span><span class="dot dot-yellow" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Order Basis (7-14 hari)</span>
-        </div>
-      </div>
+      <div class="product-header"><img src="hdtruck.png" alt="HD Dump Truck Parts"><div class="product-header-overlay"></div><div class="product-badge">READY STOCK ●</div><div class="product-title-block"><div class="product-subtitle">HD Dump Truck Parts</div><div class="product-card-title">SANY · BELAZ · KAMAZ · HOWO</div></div></div>
+      <div class="product-body"><div class="product-brands"><span class="brand-tag">SANY</span><span class="brand-tag">BELAZ</span><span class="brand-tag">KAMAZ</span><span class="brand-tag">HOWO</span><span class="brand-tag">SHACMAN</span></div>
+      <table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead><tbody>
+        <tr><td>Suspension Cylinder Seal Kit</td><td>SRT95C / BELAZ 75131</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Brake Disc / Rotor Set</td><td>SANY / BELAZ Series</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Fuel Filter Set (Primary+Secondary)</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Air Filter Element Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Steering Cylinder Seal Kit</td><td>BELAZ / SANY</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Transmission Oil Filter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Drive Belt Set</td><td>KAMAZ / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Hydraulic Return Filter</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+      </tbody></table>
+      <div class="stock-legend"><span><span class="dot dot-green"></span>&nbsp;Ready (H+1 dispatch)</span><span><span class="dot dot-yellow"></span>&nbsp;Order Basis (7-14 hari)</span></div></div>
     </div>
-
     <!-- EXCAVATOR PARTS -->
     <div class="product-card">
-      <div class="product-header">
-        <img src="SANY SY Series XCMG XE Series.png" alt="Excavator Parts">
-        <div class="product-header-overlay"></div>
-        <div class="product-badge">READY STOCK ●</div>
-        <div class="product-title-block">
-          <div class="product-subtitle">Excavator Parts</div>
-          <div class="product-card-title">SANY SY Series · XCMG XE Series</div>
-        </div>
-      </div>
-      <div class="product-body">
-        <div class="product-brands">
-          <span class="brand-tag">SANY SY</span><span class="brand-tag">XCMG XE</span>
-        </div>
-        <table class="parts-table">
-          <thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead>
-          <tbody>
-            <tr><td>Bucket Tooth Standard + HD</td><td>SY700 / SY870 / XE900D</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Bucket Tooth Adapter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Hydraulic Cylinder Seal Kit</td><td>Boom / Arm / Bucket</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Cutting Edge + End Bit Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Swing Motor Seal Kit</td><td>SANY / XCMG</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Track Pad / Shoe</td><td>SY700 / XE900D</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-            <tr><td>Boom Pin &amp; Bushing Set</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-            <tr><td>Hydraulic Oil Filter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-          </tbody>
-        </table>
-        <div class="stock-legend">
-          <span><span class="dot dot-green" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Ready (H+1 dispatch)</span>
-          <span><span class="dot dot-yellow" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Order Basis (7-14 hari)</span>
-        </div>
-      </div>
+      <div class="product-header"><img src="SANY SY Series XCMG XE Series.png" alt="Excavator Parts"><div class="product-header-overlay"></div><div class="product-badge">READY STOCK ●</div><div class="product-title-block"><div class="product-subtitle">Excavator Parts</div><div class="product-card-title">SANY SY Series · XCMG XE Series</div></div></div>
+      <div class="product-body"><div class="product-brands"><span class="brand-tag">SANY SY</span><span class="brand-tag">XCMG XE</span></div>
+      <table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead><tbody>
+        <tr><td>Bucket Tooth Standard + HD</td><td>SY700 / SY870 / XE900D</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Bucket Tooth Adapter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Hydraulic Cylinder Seal Kit</td><td>Boom / Arm / Bucket</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Cutting Edge + End Bit Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Swing Motor Seal Kit</td><td>SANY / XCMG</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Track Pad / Shoe</td><td>SY700 / XE900D</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+        <tr><td>Boom Pin &amp; Bushing Set</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+        <tr><td>Hydraulic Oil Filter</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+      </tbody></table>
+      <div class="stock-legend"><span><span class="dot dot-green"></span>&nbsp;Ready (H+1 dispatch)</span><span><span class="dot dot-yellow"></span>&nbsp;Order Basis (7-14 hari)</span></div></div>
     </div>
-
     <!-- SUPPORT TRUCK PARTS -->
     <div class="product-card">
-      <div class="product-header">
-        <img src="supporttruck.png" alt="Support Truck Parts">
-        <div class="product-header-overlay"></div>
-        <div class="product-badge">READY STOCK ●</div>
-        <div class="product-title-block">
-          <div class="product-subtitle">Support Truck Parts</div>
-          <div class="product-card-title">UD Truck · HINO · FAW · ISUZU</div>
-        </div>
-      </div>
-      <div class="product-body">
-        <div class="product-brands">
-          <span class="brand-tag">UD TRUCK</span><span class="brand-tag">HINO</span><span class="brand-tag">FAW</span><span class="brand-tag">ISUZU</span>
-        </div>
-        <table class="parts-table">
-          <thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead>
-          <tbody>
-            <tr><td>Brake Pad Set (Front + Rear)</td><td>UD Quon / HINO 500</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Clutch Disc + Pressure Plate</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Air Filter Element</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Fuel Filter Kit</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Leaf Spring Set</td><td>HOWO / SHACMAN</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-            <tr><td>Diff Seal Kit</td><td>FAW / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
-          </tbody>
-        </table>
-        <div class="stock-legend">
-          <span><span class="dot dot-green" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Ready (H+1 dispatch)</span>
-          <span><span class="dot dot-yellow" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Order Basis (7-14 hari)</span>
-        </div>
-      </div>
+      <div class="product-header"><img src="supporttruck.png" alt="Support Truck Parts"><div class="product-header-overlay"></div><div class="product-badge">READY STOCK ●</div><div class="product-title-block"><div class="product-subtitle">Support Truck Parts</div><div class="product-card-title">UD Truck · HINO · FAW · ISUZU</div></div></div>
+      <div class="product-body"><div class="product-brands"><span class="brand-tag">UD TRUCK</span><span class="brand-tag">HINO</span><span class="brand-tag">FAW</span><span class="brand-tag">ISUZU</span></div>
+      <table class="parts-table"><thead><tr><th>Part Name</th><th>Application</th><th>Stock</th></tr></thead><tbody>
+        <tr><td>Brake Pad Set (Front + Rear)</td><td>UD Quon / HINO 500</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Clutch Disc + Pressure Plate</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Air Filter Element</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Fuel Filter Kit</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Leaf Spring Set</td><td>HOWO / SHACMAN</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+        <tr><td>Diff Seal Kit</td><td>FAW / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
+      </tbody></table>
+      <div class="stock-legend"><span><span class="dot dot-green"></span>&nbsp;Ready (H+1 dispatch)</span><span><span class="dot dot-yellow"></span>&nbsp;Order Basis (7-14 hari)</span></div></div>
     </div>
-
     <!-- ENGINE & FILTER PACKAGE -->
     <div class="product-card">
-      <div class="product-header">
-        <img src="enginekitfilter.png" alt="Engine & Filter Package">
-        <div class="product-header-overlay"></div>
-        <div class="product-badge">READY STOCK ●</div>
-        <div class="product-title-block">
-          <div class="product-subtitle">Engine &amp; Filter Package</div>
-          <div class="product-card-title">Scheduled Maintenance — Multi Brand</div>
-        </div>
-      </div>
-      <div class="product-body">
-        <div class="product-brands">
-          <span class="brand-tag">SANY</span><span class="brand-tag">BELAZ</span><span class="brand-tag">KAMAZ</span><span class="brand-tag">HOWO</span>
-        </div>
-        <table class="parts-table">
-          <thead><tr><th>Package</th><th>Coverage</th><th>Stock</th></tr></thead>
-          <tbody>
-            <tr><td>Complete Filter Kit (250H service)</td><td>SANY / BELAZ</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Complete Filter Kit (500H service)</td><td>KAMAZ / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>Cooling System Hose Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
-            <tr><td>V-Belt &amp; Drive Belt Package</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-            <tr><td>Water Pump Seal Kit</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
-            <tr><td>Thermostat Set</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
-          </tbody>
-        </table>
-        <div class="stock-legend">
-          <span><span class="dot dot-green" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Ready (H+1 dispatch)</span>
-          <span><span class="dot dot-yellow" style="display:inline-block;vertical-align:middle;"></span>&nbsp;Order Basis (7-14 hari)</span>
-        </div>
-      </div>
+      <div class="product-header"><img src="enginekitfilter.png" alt="Engine & Filter Package"><div class="product-header-overlay"></div><div class="product-badge">READY STOCK ●</div><div class="product-title-block"><div class="product-subtitle">Engine &amp; Filter Package</div><div class="product-card-title">Scheduled Maintenance — Multi Brand</div></div></div>
+      <div class="product-body"><div class="product-brands"><span class="brand-tag">SANY</span><span class="brand-tag">BELAZ</span><span class="brand-tag">KAMAZ</span><span class="brand-tag">HOWO</span></div>
+      <table class="parts-table"><thead><tr><th>Package</th><th>Coverage</th><th>Stock</th></tr></thead><tbody>
+        <tr><td>Complete Filter Kit (250H service)</td><td>SANY / BELAZ</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Complete Filter Kit (500H service)</td><td>KAMAZ / HOWO</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>Cooling System Hose Set</td><td>Multi-unit</td><td><span class="dot dot-green"></span> READY</td></tr>
+        <tr><td>V-Belt &amp; Drive Belt Package</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+        <tr><td>Water Pump Seal Kit</td><td>Multi-unit</td><td><span class="dot dot-yellow"></span> ORDER</td></tr>
+        <tr><td>Thermostat Set</td><td>Multi-brand</td><td><span class="dot dot-green"></span> READY</td></tr>
+      </tbody></table>
+      <div class="stock-legend"><span><span class="dot dot-green"></span>&nbsp;Ready (H+1 dispatch)</span><span><span class="dot dot-yellow"></span>&nbsp;Order Basis (7-14 hari)</span></div></div>
     </div>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     OTR TYRE
-════════════════════════════════════════════ -->
+<!-- ==================== TYRE ==================== -->
 <section id="tyre">
   <div class="section-label">OTR Tyre Solutions</div>
   <h2>Ban Tambang untuk <span style="color:var(--orange);">Setiap Aplikasi</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Kami tidak sekadar jual ban. Kami konsultasikan tyre selection yang tepat untuk kondisi haul road, payload class, dan TKPH operasional Anda.</p>
-
   <div class="tyre-layout">
     <div>
-      <div class="tyre-brand-badge">
-        <strong>YARTU</strong>
-        <span>by</span>
-        <strong>ZC Rubber (Zhongce Rubber Group)</strong>
-        <span>·</span>
-        <span>SANY Recommended OTR Tyre</span>
-      </div>
-
+      <div class="tyre-brand-badge"><strong>YARTU</strong><span>by</span><strong>ZC Rubber (Zhongce Rubber Group)</strong><span>·</span><span>SANY Recommended OTR Tyre</span></div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:10px;">OTR Size Coverage</div>
-      <div class="size-grid">
-        <span class="size-tag">33.00-51</span>
-        <span class="size-tag">27.00-49</span>
-        <span class="size-tag">24.00-35</span>
-        <span class="size-tag">21.00-35</span>
-        <span class="size-tag">18.00-33</span>
-        <span class="size-tag">26.5-25</span>
-        <span class="size-tag">29.5-25</span>
-        <span class="size-tag">17.5-25</span>
-      </div>
-
+      <div class="size-grid"><span class="size-tag">33.00-51</span><span class="size-tag">27.00-49</span><span class="size-tag">24.00-35</span><span class="size-tag">21.00-35</span><span class="size-tag">18.00-33</span><span class="size-tag">26.5-25</span><span class="size-tag">29.5-25</span><span class="size-tag">17.5-25</span></div>
       <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin:16px 0 10px;">Truck Tyre Size Coverage</div>
-      <div class="size-grid">
-        <span class="size-tag">10.00R20</span>
-        <span class="size-tag">12.00R20</span>
-        <span class="size-tag">11.00R20</span>
-        <span class="size-tag">12.00R24</span>
-        <span class="size-tag">295/80R22.5</span>
-        <span class="size-tag">11R22.5</span>
-        <span class="size-tag">12R22.5</span>
-        <span class="size-tag">275/70R22.5</span>
-        <span class="size-tag">8.25R16</span>
-      </div>
-
-      <div class="tkph-box">
-        <strong style="font-size:14px;color:var(--orange);">📐 TKPH Consultation — Free</strong>
-        <p>Kami hitung TKPH requirement fleet Anda dan rekomendasikan tyre paling cost-efficient. Gratis, tanpa obligation PO.</p>
-      </div>
-
-      <div style="margin-top:20px;">
-        <a href="https://orenzasia-design.github.io/2.-Tyre/" class="btn-primary" target="_blank" style="display:inline-flex;">
-          📋 Lihat Pricelist OTR Tyre ›
-        </a>
-      </div>
+      <div class="size-grid"><span class="size-tag">10.00R20</span><span class="size-tag">12.00R20</span><span class="size-tag">11.00R20</span><span class="size-tag">12.00R24</span><span class="size-tag">295/80R22.5</span><span class="size-tag">11R22.5</span><span class="size-tag">12R22.5</span><span class="size-tag">275/70R22.5</span><span class="size-tag">8.25R16</span></div>
+      <div class="tkph-box"><strong style="font-size:14px;color:var(--orange);">📐 TKPH Consultation — Free</strong><p>Kami hitung TKPH requirement fleet Anda dan rekomendasikan tyre paling cost-efficient. Gratis, tanpa obligation PO.</p></div>
+      <div style="margin-top:20px;"><a href="https://orenzasia-design.github.io/2.-Tyre/" class="btn-primary" target="_blank" style="display:inline-flex;">📋 Lihat Pricelist OTR Tyre ›</a></div>
     </div>
-
-    <div>
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:14px;">Application Matrix</div>
-      <div class="app-matrix-img-wrap">
-        <img src="tyre.png"
-             alt="OTR Tyre Application Matrix — Open Pit, Underground, Wheel Loader, Grader"
-             style="width:100%;display:block;object-fit:contain;">
-      </div>
-    </div>
+    <div><div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:14px;">Application Matrix</div><div class="app-matrix-img-wrap"><img src="tyre.png" alt="OTR Tyre Application Matrix" style="width:100%;display:block;object-fit:contain;"></div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     PRICELIST & KATALOG
-════════════════════════════════════════════ -->
+<!-- ==================== PRICELIST ==================== -->
 <section id="pricelist">
   <div class="section-label">Pricelist &amp; Katalog</div>
   <h2>Harga Transparan, <span style="color:var(--orange);">Langsung Cek.</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Pricelist kami tersedia secara online dan selalu diperbarui. Inquiry langsung untuk negosiasi harga fleet atau order volume besar.</p>
-
   <div class="pricelist-grid">
-
-    <!-- TYRE PRICELIST -->
     <div class="pricelist-card tyre-card">
-      <div class="pricelist-card-header">
-        <div class="pricelist-card-type">· 📦 Pricelist Tyre</div>
-        <div class="pricelist-card-title">Pricelist OTR Tyre</div>
-        <div class="pricelist-card-desc">Harga ban tambang YARTU by ZC Rubber — semua ukuran dan pattern tersedia. Update berkala sesuai kurs dan stok.</div>
-        <div class="pricelist-items-preview">
-          <div class="pricelist-preview-item">Size coverage: 33.00-51 hingga 8.25R16</div>
-          <div class="pricelist-preview-item">Pattern: E-4/TK6, E-3/TK5, L-5, G-2/G-4, CB972E</div>
-          <div class="pricelist-preview-item">Harga per unit &amp; per set tersedia</div>
-          <div class="pricelist-preview-item">Include spec sheet &amp; load table</div>
-        </div>
-      </div>
-      <div class="pricelist-card-footer">
-        <span style="font-size:12px;color:var(--text2);">orenzasia-design.github.io/2.-Tyre/</span>
-        <a href="https://orenzasia-design.github.io/2.-Tyre/" class="btn-pricelist" target="_blank">
-          Buka Pricelist ›
-        </a>
-      </div>
+      <div class="pricelist-card-header"><div class="pricelist-card-type">● Live · Selalu Update</div><div class="pricelist-card-title">Pricelist OTR Tyre</div><div class="pricelist-card-desc">Harga ban tambang YARTU by ZC Rubber — semua ukuran dan pattern tersedia. Update berkala sesuai kurs dan stok.</div><div class="pricelist-items-preview"><div class="pricelist-preview-item">Size coverage: 33.00-51 hingga 8.25R16</div><div class="pricelist-preview-item">Pattern: E-4/TK6, E-3/TK5, L-5, G-2/G-4, CB972E</div><div class="pricelist-preview-item">Harga per unit &amp; per set tersedia</div><div class="pricelist-preview-item">Include spec sheet &amp; load table</div></div></div>
+      <div class="pricelist-card-footer"><span style="font-size:12px;color:var(--text2);">orenzasia-design.github.io/2.-Tyre/</span><a href="https://orenzasia-design.github.io/2.-Tyre/" class="btn-pricelist" target="_blank">Buka Pricelist ›</a></div>
     </div>
-
-    <!-- SPAREPARTS PRICELIST -->
     <div class="pricelist-card parts-card">
-      <div class="pricelist-card-header">
-        <div class="pricelist-card-type" style="color:var(--gray);">📦 Pricelist Spareparts</div>
-        <div class="pricelist-card-title">Akses Portal Spareparts</div>
-        <div class="pricelist-card-desc">Katalog harga & stok spareparts alat berat multi‑brand — real time. Hanya untuk customer teregistrasi.</div>
-        <div class="pricelist-items-preview">
-          <div class="pricelist-preview-item">SANY · BELAZ · KAMAZ · HOWO · UD Truck</div>
-          <div class="pricelist-preview-item">200+ part numbers ready stock</div>
-          <div class="pricelist-preview-item">OEM &amp; OEM-compatible</div>
-          <div class="pricelist-preview-item">Quotation via WhatsApp — respon 3 jam *khusus SANY</div>
-        </div>
-      </div>
-      <div class="pricelist-card-footer">
-        <a href="https://truthful-spontaneity-production.up.railway.app/search" class="btn-pricelist" target="_blank">
-          🔐 Akses Portal Spareparts ›
-        </a>
-        <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20minta%20pricelist%20spareparts" class="btn-pricelist-outline" target="_blank">
-          💬 Request via WA
-        </a>
-      </div>
+      <div class="pricelist-card-header"><div class="pricelist-card-type" style="color:var(--gray);">📦 Pricelist Spareparts</div><div class="pricelist-card-title">Akses Portal Spareparts</div><div class="pricelist-card-desc">Katalog harga & stok spareparts alat berat multi‑brand — real time. Hanya untuk customer teregistrasi.</div><div class="pricelist-items-preview"><div class="pricelist-preview-item">SANY · BELAZ · KAMAZ · HOWO · UD Truck</div><div class="pricelist-preview-item">200+ part numbers ready stock</div><div class="pricelist-preview-item">OEM &amp; OEM-compatible</div><div class="pricelist-preview-item">Quotation via WhatsApp — respon 3 jam *khusus SANY</div></div></div>
+      <div class="pricelist-card-footer"><a href="https://truthful-spontaneity-production.up.railway.app/search" class="btn-pricelist" target="_blank">🔐 Akses Portal Spareparts ›</a><a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20minta%20pricelist%20spareparts" class="btn-pricelist-outline" target="_blank">💬 Request via WA</a></div>
     </div>
-
   </div>
-
   <div style="margin-top:20px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-    <span style="font-size:18px;">💡</span>
-    <p style="font-size:13px;color:var(--text2);flex:1;line-height:1.6;"><strong style="color:var(--white);">Butuh custom quotation atau negosiasi harga fleet?</strong> Kirim detail kebutuhan Anda via WhatsApp — unit, part number atau ukuran tyre, quantity — dan kami kirim penawaran resmi dalam 3 jam kerja *khusus SANY.</p>
-    <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20butuh%20quotation%20untuk%3A%0A%0AUnit%3A%20%0APart%2FTyre%3A%20%0AQty%3A%20%0ASite%3A%20" class="btn-primary" target="_blank" style="white-space:nowrap;">
-      Request Quotation ›
-    </a>
+    <span style="font-size:18px;">💡</span><p style="font-size:13px;color:var(--text2);flex:1;line-height:1.6;"><strong style="color:var(--white);">Butuh custom quotation atau negosiasi harga fleet?</strong> Kirim detail kebutuhan Anda via WhatsApp — unit, part number atau ukuran tyre, quantity — dan kami kirim penawaran resmi dalam 3 jam kerja *khusus SANY.</p>
+    <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20butuh%20quotation%20untuk%3A%0A%0AUnit%3A%20%0APart%2FTyre%3A%20%0AQty%3A%20%0ASite%3A%20" class="btn-primary" target="_blank" style="white-space:nowrap;">Request Quotation ›</a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     BRANDS
-════════════════════════════════════════════ -->
+<!-- ==================== BRANDS ==================== -->
 <section id="brands">
   <div class="section-label">Brand Coverage</div>
   <h2>Kami Cover <span style="color:var(--orange);">Fleet Anda</span></h2>
   <p style="color:var(--text2);max-width:500px;margin-top:12px;">Tidak terikat satu brand. Kami terikat pada kebutuhan operasional Anda.</p>
-  <div class="brands-grid">
-    <div class="brand-chip priority">SANY — Priority</div>
-    <div class="brand-chip">BELAZ</div>
-    <div class="brand-chip">KAMAZ</div>
-    <div class="brand-chip">HOWO</div>
-    <div class="brand-chip">SHACMAN</div>
-    <div class="brand-chip">FAW</div>
-    <div class="brand-chip">XCMG</div>
-    <div class="brand-chip">UD TRUCK</div>
-    <div class="brand-chip">HINO</div>
-    <div class="brand-chip">ISUZU</div>
-    <div class="brand-chip">SINOTRUK</div>
-    <div class="brand-chip">FOTON</div>
-    <div class="brand-chip">+ OEM Compatible</div>
-  </div>
+  <div class="brands-grid"><div class="brand-chip priority">SANY — Priority</div><div class="brand-chip">BELAZ</div><div class="brand-chip">KAMAZ</div><div class="brand-chip">HOWO</div><div class="brand-chip">SHACMAN</div><div class="brand-chip">FAW</div><div class="brand-chip">XCMG</div><div class="brand-chip">UD TRUCK</div><div class="brand-chip">HINO</div><div class="brand-chip">ISUZU</div><div class="brand-chip">SINOTRUK</div><div class="brand-chip">FOTON</div><div class="brand-chip">+ OEM Compatible</div></div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     WAREHOUSE & STOCK
-════════════════════════════════════════════ -->
+<!-- ==================== WAREHOUSE ==================== -->
 <section id="warehouse">
   <div class="section-label">Stock &amp; Warehouse</div>
   <h2>Parts Ada. <span style="color:var(--orange);">Tidak Perlu Tunggu Indent.</span></h2>
   <div class="wh-grid">
-    <div class="wh-photos">
-      <div class="wh-photo tall">
-        <img src="wh sany marunda.png" alt="Warehouse SANY Parts Jakarta">
-      </div>
-      <div class="wh-photo">
-        <img src="stock.png" alt="Stock Parts Ready">
-      </div>
-      <div class="wh-photo">
-        <img src="loadingdelivery.png" alt="Loading & Delivery">
-      </div>
-    </div>
+    <div class="wh-photos"><div class="wh-photo tall"><img src="wh sany marunda.png" alt="Warehouse SANY Parts Jakarta"></div><div class="wh-photo"><img src="stock.png" alt="Stock Parts Ready"></div><div class="wh-photo"><img src="loadingdelivery.png" alt="Loading & Delivery"></div></div>
     <div>
       <p style="color:var(--text2);font-size:15px;line-height:1.8;margin-bottom:24px;">Kami maintain <strong style="color:var(--white);">buffer stock 200+ fast-moving part numbers</strong> agar unit Anda tidak harus menunggu parts dari luar negeri.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;">
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <div style="width:10px;height:10px;background:#22c55e;border-radius:50%;flex-shrink:0;margin-top:5px;"></div>
-          <div><strong style="font-size:14px;">Ready Stock</strong><br><span style="font-size:13px;color:var(--text2);">Tersedia di warehouse Jakarta — dispatch H+1 kerja</span></div>
-        </div>
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <div style="width:10px;height:10px;background:#eab308;border-radius:50%;flex-shrink:0;margin-top:5px;"></div>
-          <div><strong style="font-size:14px;">Order Basis</strong><br><span style="font-size:13px;color:var(--text2);">Procurement dari principal — estimasi 7–14 hari kerja</span></div>
-        </div>
-        <div style="display:flex;gap:12px;align-items:flex-start;">
-          <div style="width:10px;height:10px;background:#ef4444;border-radius:50%;flex-shrink:0;margin-top:5px;"></div>
-          <div><strong style="font-size:14px;">Emergency Procurement</strong><br><span style="font-size:13px;color:var(--text2);">Eskalasi khusus via air freight — timeline by case</span></div>
-        </div>
-      </div>
-      <div class="stock-levels">
-        <div class="stock-item"><div><div class="stock-name">Suspension Cylinder Seal Kit</div><div class="stock-app">SANY SRT95C / BELAZ 75131</div></div><span class="stock-badge badge-ready">● READY</span></div>
-        <div class="stock-item"><div><div class="stock-name">Bucket Tooth Set (Standard + HD)</div><div class="stock-app">SANY SY Series / XCMG XE</div></div><span class="stock-badge badge-ready">● READY</span></div>
-        <div class="stock-item"><div><div class="stock-name">Fuel Filter Set (250H Kit)</div><div class="stock-app">Multi-brand</div></div><span class="stock-badge badge-ready">● READY</span></div>
-        <div class="stock-item"><div><div class="stock-name">Brake Disc Set</div><div class="stock-app">BELAZ 75131 / SANY SRT</div></div><span class="stock-badge badge-ready">● READY</span></div>
-        <div class="stock-item"><div><div class="stock-name">OTR Tyre 27.00-49 E-4 (YARTU)</div><div class="stock-app">HD Dump Truck Class</div></div><span class="stock-badge badge-ready">● READY</span></div>
-        <div class="stock-item"><div><div class="stock-name">Steering Cylinder Seal Kit</div><div class="stock-app">BELAZ / KAMAZ</div></div><span class="stock-badge badge-order">ORDER</span></div>
-        <div class="stock-item"><div><div class="stock-name">Hydraulic Return Filter</div><div class="stock-app">Multi-unit</div></div><span class="stock-badge badge-ready">● READY</span></div>
-      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px;"><div style="display:flex;gap:12px;"><div style="width:10px;height:10px;background:#22c55e;border-radius:50%;margin-top:5px;"></div><div><strong>Ready Stock</strong><br><span style="font-size:13px;color:var(--text2);">Tersedia di warehouse Jakarta — dispatch H+1 kerja</span></div></div><div style="display:flex;gap:12px;"><div style="width:10px;height:10px;background:#eab308;border-radius:50%;margin-top:5px;"></div><div><strong>Order Basis</strong><br><span style="font-size:13px;color:var(--text2);">Procurement dari principal — estimasi 7–14 hari kerja</span></div></div><div style="display:flex;gap:12px;"><div style="width:10px;height:10px;background:#ef4444;border-radius:50%;margin-top:5px;"></div><div><strong>Emergency Procurement</strong><br><span style="font-size:13px;color:var(--text2);">Eskalasi khusus via air freight — timeline by case</span></div></div></div>
+      <div class="stock-levels"><div class="stock-item"><div><div class="stock-name">Suspension Cylinder Seal Kit</div><div class="stock-app">SANY SRT95C / BELAZ 75131</div></div><span class="stock-badge badge-ready">● READY</span></div><div class="stock-item"><div><div class="stock-name">Bucket Tooth Set (Standard + HD)</div><div class="stock-app">SANY SY Series / XCMG XE</div></div><span class="stock-badge badge-ready">● READY</span></div><div class="stock-item"><div><div class="stock-name">Fuel Filter Set (250H Kit)</div><div class="stock-app">Multi-brand</div></div><span class="stock-badge badge-ready">● READY</span></div><div class="stock-item"><div><div class="stock-name">Brake Disc Set</div><div class="stock-app">BELAZ 75131 / SANY SRT</div></div><span class="stock-badge badge-ready">● READY</span></div><div class="stock-item"><div><div class="stock-name">OTR Tyre 27.00-49 E-4 (YARTU)</div><div class="stock-app">HD Dump Truck Class</div></div><span class="stock-badge badge-ready">● READY</span></div><div class="stock-item"><div><div class="stock-name">Steering Cylinder Seal Kit</div><div class="stock-app">BELAZ / KAMAZ</div></div><span class="stock-badge badge-order">ORDER</span></div><div class="stock-item"><div><div class="stock-name">Hydraulic Return Filter</div><div class="stock-app">Multi-unit</div></div><span class="stock-badge badge-ready">● READY</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     DELIVERY COVERAGE
-════════════════════════════════════════════ -->
+<!-- ==================== DELIVERY ==================== -->
 <section id="delivery">
   <div class="section-label">Delivery Coverage</div>
   <h2>Pengiriman ke <span style="color:var(--orange);">Seluruh Indonesia</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Jaringan logistik kami mampu menangani pengiriman ke seluruh site mining di Indonesia — dari Sumatera hingga Papua.</p>
   <div class="delivery-grid">
-    <div class="delivery-region">
-      <div class="delivery-region-title">Kalimantan</div>
-      <div class="delivery-region-sub">Hub terbesar mining batubara Indonesia</div>
-      <div class="delivery-cities">
-        <span class="city-tag">Balikpapan</span><span class="city-tag">Samarinda</span><span class="city-tag">Sangatta</span><span class="city-tag">Bontang</span><span class="city-tag">Banjarmasin</span><span class="city-tag">Tanjung</span><span class="city-tag">Muara Teweh</span><span class="city-tag">Palangkaraya</span>
-      </div>
-    </div>
-    <div class="delivery-region">
-      <div class="delivery-region-title">Sumatera</div>
-      <div class="delivery-region-sub">Batubara, nikel, emas, dan mineral lainnya</div>
-      <div class="delivery-cities">
-        <span class="city-tag">Palembang</span><span class="city-tag">Tanjung Enim</span><span class="city-tag">Muara Enim</span><span class="city-tag">Pekanbaru</span><span class="city-tag">Jambi</span><span class="city-tag">Bengkulu</span><span class="city-tag">Medan</span><span class="city-tag">Lahat</span>
-      </div>
-    </div>
-    <div class="delivery-region">
-      <div class="delivery-region-title">Papua &amp; Sulawesi</div>
-      <div class="delivery-region-sub">Nickel, copper, gold mining</div>
-      <div class="delivery-cities">
-        <span class="city-tag">Mimika</span><span class="city-tag">Manokwari</span><span class="city-tag">Sorong</span><span class="city-tag">Jayapura</span><span class="city-tag">Morowali</span><span class="city-tag">Kendari</span><span class="city-tag">Makassar</span>
-      </div>
-    </div>
+    <div class="delivery-region"><div class="delivery-region-title">Kalimantan</div><div class="delivery-region-sub">Hub terbesar mining batubara Indonesia</div><div class="delivery-cities"><span class="city-tag">Balikpapan</span><span class="city-tag">Samarinda</span><span class="city-tag">Sangatta</span><span class="city-tag">Bontang</span><span class="city-tag">Banjarmasin</span><span class="city-tag">Tanjung</span><span class="city-tag">Muara Teweh</span><span class="city-tag">Palangkaraya</span></div></div>
+    <div class="delivery-region"><div class="delivery-region-title">Sumatera</div><div class="delivery-region-sub">Batubara, nikel, emas, dan mineral lainnya</div><div class="delivery-cities"><span class="city-tag">Palembang</span><span class="city-tag">Tanjung Enim</span><span class="city-tag">Muara Enim</span><span class="city-tag">Pekanbaru</span><span class="city-tag">Jambi</span><span class="city-tag">Bengkulu</span><span class="city-tag">Medan</span><span class="city-tag">Lahat</span></div></div>
+    <div class="delivery-region"><div class="delivery-region-title">Papua &amp; Sulawesi</div><div class="delivery-region-sub">Nickel, copper, gold mining</div><div class="delivery-cities"><span class="city-tag">Mimika</span><span class="city-tag">Manokwari</span><span class="city-tag">Sorong</span><span class="city-tag">Jayapura</span><span class="city-tag">Morowali</span><span class="city-tag">Kendari</span><span class="city-tag">Makassar</span></div></div>
   </div>
-  <div class="delivery-note">
-    <span style="font-size:22px;flex-shrink:0;">✈️</span>
-    <p><strong>Air Freight Emergency Capability.</strong> Untuk kebutuhan urgent, kami dapat mengirimkan via air freight ke seluruh bandara di Indonesia. Tidak ada site yang terlalu jauh untuk unit Anda segera kembali beroperasi.</p>
-  </div>
+  <div class="delivery-note"><span style="font-size:22px;">✈️</span><p><strong>Air Freight Emergency Capability.</strong> Untuk kebutuhan urgent, kami dapat mengirimkan via air freight ke seluruh bandara di Indonesia. Tidak ada site yang terlalu jauh untuk unit Anda segera kembali beroperasi.</p></div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     EMERGENCY
-════════════════════════════════════════════ -->
+<!-- ==================== EMERGENCY ==================== -->
 <section id="emergency">
   <div class="section-label">Emergency Support Protocol</div>
-  <div style="display:flex;align-items:center;margin-bottom:40px;flex-wrap:wrap;gap:12px;">
-    <h2 style="margin:0;">Apapun Kebutuhan Anda & Kapan Pun<br><span style="color:var(--orange);">Kami Selalu Response.</span></h2>
-    <div class="emergency-live"><div class="live-dot"></div>24/7 EMERGENCY ACTIVE</div>
-  </div>
+  <div style="display:flex;align-items:center;margin-bottom:40px;flex-wrap:wrap;gap:12px;"><h2 style="margin:0;">Apapun Kebutuhan Anda & Kapan Pun<br><span style="color:var(--orange);">Kami Selalu Response.</span></h2><div class="emergency-live"><div class="live-dot"></div>24/7 EMERGENCY ACTIVE</div></div>
   <div class="emergency-wrap">
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot">T+0</div>
-        <div class="timeline-content">
-          <div class="timeline-time">JAM BERAPA PUN</div>
-          <div class="timeline-title">Unit Down Alert Diterima</div>
-          <div class="timeline-desc">Inquiry masuk via WhatsApp — tidak ada batas jam kerja untuk emergency.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">T+2</div>
-        <div class="timeline-content">
-          <div class="timeline-time">3 JAM *khusus SANY</div>
-          <div class="timeline-title">Part Identification &amp; Availability Check</div>
-          <div class="timeline-desc">Identifikasi part number, cek stok warehouse, konfirmasi ketersediaan.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">T+4</div>
-        <div class="timeline-content">
-          <div class="timeline-time">3 JAM *khusus SANY</div>
-          <div class="timeline-title">Quotation Issued</div>
-          <div class="timeline-desc">Penawaran resmi dengan harga, quantity, dan estimasi delivery dikirim.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot">✓</div>
-        <div class="timeline-content">
-          <div class="timeline-time">SETELAH PO CONFIRMED</div>
-          <div class="timeline-title">Same-Day / Next-Day Dispatch</div>
-          <div class="timeline-desc">Packing dan pengiriman prioritas.</div>
-        </div>
-      </div>
+      <div class="timeline-item"><div class="timeline-dot">T+0</div><div class="timeline-content"><div class="timeline-time">JAM BERAPA PUN</div><div class="timeline-title">Unit Down Alert Diterima</div><div class="timeline-desc">Inquiry masuk via WhatsApp — tidak ada batas jam kerja untuk emergency.</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot">T+2</div><div class="timeline-content"><div class="timeline-time">3 JAM *khusus SANY</div><div class="timeline-title">Part Identification &amp; Availability Check</div><div class="timeline-desc">Identifikasi part number, cek stok warehouse, konfirmasi ketersediaan.</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot">T+4</div><div class="timeline-content"><div class="timeline-time">3 JAM *khusus SANY</div><div class="timeline-title">Quotation Issued</div><div class="timeline-desc">Penawaran resmi dengan harga, quantity, dan estimasi delivery dikirim.</div></div></div>
+      <div class="timeline-item"><div class="timeline-dot">✓</div><div class="timeline-content"><div class="timeline-time">SETELAH PO CONFIRMED</div><div class="timeline-title">Same-Day / Next-Day Dispatch</div><div class="timeline-desc">Packing dan pengiriman prioritas.</div></div></div>
     </div>
     <div class="emergency-right">
-      <div class="quote-box">
-        <div class="quote-text">"Kami tidak mengenal jam kerja ketika unit Anda down."</div>
-        <div style="font-size:13px;color:var(--text2);margin-top:12px;">Production loss dari satu HD dump truck bisa mencapai Rp 80–150 juta per hari. Response cepat bukan sekadar service — ini adalah kewajiban kami sebagai operational partner Anda.</div>
-      </div>
-      <div class="inquiry-box">
-        <div class="inquiry-title">📱 Cara Inquiry Emergency — Paling Mudah</div>
-        <div style="font-size:13px;color:var(--text2);margin-bottom:10px;">Kirim via WhatsApp, format bebas:</div>
-        <div class="inquiry-template">
-Unit: SANY SRT95C<br>
-Problem: Suspension turun<br>
-Part: Suspension seal kit<br>
-Qty: 2 set<br>
-Site: [lokasi Anda]
-        </div>
-        <a href="https://wa.me/6288802032033" style="display:block;background:var(--orange);color:#000;padding:12px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;text-align:center;margin-top:14px;" target="_blank">
-          HUBUNGI KAMI — EMERGENCY ›
-        </a>
-      </div>
+      <div class="quote-box"><div class="quote-text">"Kami tidak mengenal jam kerja ketika unit Anda down."</div><div style="font-size:13px;color:var(--text2);margin-top:12px;">Production loss dari satu HD dump truck bisa mencapai Rp 80–150 juta per hari. Response cepat bukan sekadar service — ini adalah kewajiban kami sebagai operational partner Anda.</div></div>
+      <div class="inquiry-box"><div class="inquiry-title">📱 Cara Inquiry Emergency — Paling Mudah</div><div style="font-size:13px;color:var(--text2);margin-bottom:10px;">Kirim via WhatsApp, format bebas:</div><div class="inquiry-template">Unit: SANY SRT95C<br>Problem: Suspension turun<br>Part: Suspension seal kit<br>Qty: 2 set<br>Site: [lokasi Anda]</div><a href="https://wa.me/6288802032033" class="btn-primary" style="display:block;text-align:center;margin-top:14px;" target="_blank">HUBUNGI KAMI — EMERGENCY ›</a></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     TRACK RECORD
-════════════════════════════════════════════ -->
+<!-- ==================== CLIENTS ==================== -->
 <section id="clients">
   <div class="section-label">Track Record</div>
   <h2>Dipercaya Oleh <span style="color:var(--orange);">Industri Pertambangan</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Dari BUMN tambang hingga kontraktor swasta nasional — kami telah membuktikan capability kami di lapangan.</p>
-
   <div class="clients-grid">
-    <div class="client-card bumn">
-      <span class="bumn-badge">BUMN</span>
-      <div class="client-logo-wrap">
-        <img src="logobukitasam.png" alt="Logo PT. Bukit Asam Tbk"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div class="logo-placeholder" style="display:none;">PTBA</div>
-      </div>
-      <div class="client-type">VERIFIED CLIENT — COAL MINING</div>
-      <div class="client-name">PT. Bukit Asam Tbk</div>
-      <div class="client-desc">BUMN · Energi &amp; Pertambangan Batu Bara · IDX: PTBA</div>
-      <div class="client-about">Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di Tanjung Enim, Sumatera Selatan. ORENZ terpercaya untuk pengadaan spareparts dan komponen alat berat operasional tambang.</div>
-      <div class="project-ref">
-        <div class="project-ref-label">Project Reference</div>
-        <div class="project-ref-text">Pengadaan spareparts unit BELAZ Rigid Dump Truck — operasional pit tambang batu bara, Tanjung Enim, Sumatera Selatan. Supply terverifikasi, delivery on-time.</div>
-      </div>
-    </div>
-
-    <div class="client-card">
-      <div class="client-logo-wrap">
-        <img src="logoglobalmakara.png" alt="Logo Global Makara Teknik"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div class="logo-placeholder" style="display:none;">GMK</div>
-      </div>
-      <div class="client-type">VERIFIED CLIENT — MINING SERVICES</div>
-      <div class="client-name">Global Makara Teknik</div>
-      <div class="client-desc">Swasta · Jasa Pertambangan — Sumatera Selatan &amp; Kalimantan Selatan</div>
-      <div class="client-about">Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. ORENZ mendukung kebutuhan parts untuk fleet operasional di lapangan.</div>
-      <div class="project-ref">
-        <div class="project-ref-label">Project Reference</div>
-        <div class="project-ref-text">Pengadaan spareparts untuk fleet alat berat operasional tambang.</div>
-      </div>
-    </div>
-
-    <div class="client-card">
-      <div class="client-logo-wrap">
-        <img src="logopawonservis.png" alt="Logo PT. Pawon Servis Tama"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div class="logo-placeholder" style="display:none;">PST</div>
-      </div>
-      <div class="client-type">VERIFIED CLIENT — HEAVY EQUIPMENT</div>
-      <div class="client-name">PT. Pawon Servis Tama</div>
-      <div class="client-desc">Swasta · Retail &amp; Sparepart Alat Berat — Jakarta Timur</div>
-      <div class="client-about">Perusahaan retail dan penjualan sparepart alat berat berbasis Jakarta Timur. Menjadi mitra distribusi ORENZ untuk kebutuhan parts multi-brand armada alat berat industri.</div>
-      <div class="project-ref">
-        <div class="project-ref-label">Project Reference</div>
-        <div class="project-ref-text">Pengadaan spare parts alat berat multi-brand.</div>
-      </div>
-    </div>
-
-    <div class="client-card">
-      <div class="client-logo-wrap">
-        <img src="logomayangkara.png" alt="Logo PT. Mayangkara Jaya Abadi"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div class="logo-placeholder" style="display:none;">MJA</div>
-      </div>
-      <div class="client-type">VERIFIED CLIENT — GENERAL TRADE</div>
-      <div class="client-name">PT. Mayangkara Jaya Abadi</div>
-      <div class="client-desc">Swasta · Perdagangan &amp; Jasa Umum</div>
-      <div class="client-about">Perusahaan swasta nasional di bidang perdagangan umum dan jasa. ORENZ dipercaya sebagai supplier parts dan komponen untuk kebutuhan procurement teknis mereka.</div>
-      <div class="project-ref">
-        <div class="project-ref-label">Project Reference</div>
-        <div class="project-ref-text">Pengadaan spareparts KAMAZ dan BELAZ.</div>
-      </div>
-    </div>
+    <div class="client-card bumn"><span class="bumn-badge">BUMN</span><div class="client-logo-wrap"><img src="logobukitasam.png" alt="PTBA"><div class="logo-placeholder" style="display:none;">PTBA</div></div><div class="client-type">VERIFIED CLIENT — COAL MINING</div><div class="client-name">PT. Bukit Asam Tbk</div><div class="client-desc">BUMN · Energi &amp; Pertambangan Batu Bara · IDX: PTBA</div><div class="client-about">Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di Tanjung Enim, Sumatera Selatan. ORENZ terpercaya untuk pengadaan spareparts dan komponen alat berat operasional tambang.</div><div class="project-ref"><div class="project-ref-label">Project Reference</div><div class="project-ref-text">Pengadaan spareparts unit BELAZ Rigid Dump Truck — operasional pit tambang batu bara, Tanjung Enim, Sumatera Selatan. Supply terverifikasi, delivery on-time.</div></div></div>
+    <div class="client-card"><div class="client-logo-wrap"><img src="logoglobalmakara.png" alt="Global Makara"><div class="logo-placeholder" style="display:none;">GMK</div></div><div class="client-type">VERIFIED CLIENT — MINING SERVICES</div><div class="client-name">Global Makara Teknik</div><div class="client-desc">Swasta · Jasa Pertambangan — Sumatera Selatan &amp; Kalimantan Selatan</div><div class="client-about">Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. ORENZ mendukung kebutuhan parts untuk fleet operasional di lapangan.</div><div class="project-ref"><div class="project-ref-label">Project Reference</div><div class="project-ref-text">Pengadaan spareparts untuk fleet alat berat operasional tambang.</div></div></div>
+    <div class="client-card"><div class="client-logo-wrap"><img src="logopawonservis.png" alt="Pawon Servis"><div class="logo-placeholder" style="display:none;">PST</div></div><div class="client-type">VERIFIED CLIENT — HEAVY EQUIPMENT</div><div class="client-name">PT. Pawon Servis Tama</div><div class="client-desc">Swasta · Retail &amp; Sparepart Alat Berat — Jakarta Timur</div><div class="client-about">Perusahaan retail dan penjualan sparepart alat berat berbasis Jakarta Timur. Menjadi mitra distribusi ORENZ untuk kebutuhan parts multi-brand armada alat berat industri.</div><div class="project-ref"><div class="project-ref-label">Project Reference</div><div class="project-ref-text">Pengadaan spare parts alat berat multi-brand.</div></div></div>
+    <div class="client-card"><div class="client-logo-wrap"><img src="logomayangkara.png" alt="Mayangkara"><div class="logo-placeholder" style="display:none;">MJA</div></div><div class="client-type">VERIFIED CLIENT — GENERAL TRADE</div><div class="client-name">PT. Mayangkara Jaya Abadi</div><div class="client-desc">Swasta · Perdagangan &amp; Jasa Umum</div><div class="client-about">Perusahaan swasta nasional di bidang perdagangan umum dan jasa. ORENZ dipercaya sebagai supplier parts dan komponen untuk kebutuhan procurement teknis mereka.</div><div class="project-ref"><div class="project-ref-label">Project Reference</div><div class="project-ref-text">Pengadaan spareparts KAMAZ dan BELAZ.</div></div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     WHY ORENZ
-════════════════════════════════════════════ -->
+<!-- ==================== WHY ORENZ ==================== -->
 <section id="why">
   <div class="section-label">Why ORENZ</div>
   <h2>Bukan Supplier Biasa. <span style="color:var(--orange);">Operational Partner.</span></h2>
   <div class="why-grid">
-    <div class="why-card">
-      <div class="why-num">01</div>
-      <div class="why-title">Kami Kenal Unit Anda</div>
-      <div class="why-desc">Kami familiar dengan seluruh line-up unit mining yang beroperasi di pit Indonesia — dari spek teknis hingga part number kritis.</div>
-      <div class="why-tag">// Fleet Familiarity</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">02</div>
-      <div class="why-title">Stock Ada, Bukan Klaim</div>
-      <div class="why-desc">Kami maintain buffer stock nyata di warehouse Jakarta — bukan sekadar klaim di brosur. 200+ part number ready untuk dispatch H+1. Tidak perlu tunggu 3 minggu untuk parts urgent.</div>
-      <div class="why-tag">// Stock Readiness</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">03</div>
-      <div class="why-title">Response, Bukan Janji</div>
-      <div class="why-desc">Identifikasi part dalam 3 jam *khusus SANY. Quotation dalam 3 jam *khusus SANY. Dispatch same-day untuk ready stock. Kami tahu berapa besar cost downtime unit Anda — tidak ada excuses untuk keterlambatan.</div>
-      <div class="why-tag">// Emergency Response</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">04</div>
-      <div class="why-title">Dokumentasi Procurement Lengkap</div>
-      <div class="why-desc">NPWP, SIUP, PKP, NIB, AHU — semua siap. Kami memahami proses vendor registration di perusahaan mining dan siap masuk ke sistem procurement Anda tanpa menyulitkan tim purchasing.</div>
-      <div class="why-tag">// Procurement Ready</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">05</div>
-      <div class="why-title">Technical Support Included</div>
-      <div class="why-desc">Tidak yakin part number? Kirim foto — kami identifikasi. Butuh cross-reference? Kami carikan. TKPH calculation? Kami hitung. Support teknis adalah bagian dari service kami, bukan extra charge.</div>
-      <div class="why-tag">// Technical Expertise</div>
-    </div>
-    <div class="why-card">
-      <div class="why-num">06</div>
-      <div class="why-title">Tidak Terikat Satu Brand</div>
-      <div class="why-desc">Fleet tambang Anda punya berbagai unit dari berbagai brand. Kami cover SANY, BELAZ, KAMAZ, HOWO, UD Truck, HINO, dan banyak lagi. Satu supplier untuk seluruh fleet — lebih efisien, lebih simple.</div>
-      <div class="why-tag">// Multi-Brand Coverage</div>
-    </div>
+    <div class="why-card"><div class="why-num">01</div><div class="why-title">Kami Kenal Unit Anda</div><div class="why-desc">Kami familiar dengan seluruh line-up unit mining yang beroperasi di pit Indonesia — dari spek teknis hingga part number kritis.</div><div class="why-tag">// Fleet Familiarity</div></div>
+    <div class="why-card"><div class="why-num">02</div><div class="why-title">Stock Ada, Bukan Klaim</div><div class="why-desc">Kami maintain buffer stock nyata di warehouse Jakarta — bukan sekadar klaim di brosur. 200+ part number ready untuk dispatch H+1. Tidak perlu tunggu 3 minggu untuk parts urgent.</div><div class="why-tag">// Stock Readiness</div></div>
+    <div class="why-card"><div class="why-num">03</div><div class="why-title">Response, Bukan Janji</div><div class="why-desc">Identifikasi part dalam 3 jam *khusus SANY. Quotation dalam 3 jam *khusus SANY. Dispatch same-day untuk ready stock. Kami tahu berapa besar cost downtime unit Anda — tidak ada excuses untuk keterlambatan.</div><div class="why-tag">// Emergency Response</div></div>
+    <div class="why-card"><div class="why-num">04</div><div class="why-title">Dokumentasi Procurement Lengkap</div><div class="why-desc">NPWP, SIUP, PKP, NIB, AHU — semua siap. Kami memahami proses vendor registration di perusahaan mining dan siap masuk ke sistem procurement Anda tanpa menyulitkan tim purchasing.</div><div class="why-tag">// Procurement Ready</div></div>
+    <div class="why-card"><div class="why-num">05</div><div class="why-title">Technical Support Included</div><div class="why-desc">Tidak yakin part number? Kirim foto — kami identifikasi. Butuh cross-reference? Kami carikan. TKPH calculation? Kami hitung. Support teknis adalah bagian dari service kami, bukan extra charge.</div><div class="why-tag">// Technical Expertise</div></div>
+    <div class="why-card"><div class="why-num">06</div><div class="why-title">Tidak Terikat Satu Brand</div><div class="why-desc">Fleet tambang Anda punya berbagai unit dari berbagai brand. Kami cover SANY, BELAZ, KAMAZ, HOWO, UD Truck, HINO, dan banyak lagi. Satu supplier untuk seluruh fleet — lebih efisien, lebih simple.</div><div class="why-tag">// Multi-Brand Coverage</div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     LEGAL
-════════════════════════════════════════════ -->
+<!-- ==================== LEGAL ==================== -->
 <section id="legal">
   <div class="section-label">Legal Identity</div>
   <h2>Legalitas <span style="color:var(--orange);">Lengkap &amp; Terverifikasi</span></h2>
   <p style="color:var(--text2);max-width:600px;margin-top:12px;">Seluruh dokumen legalitas perusahaan tersedia dan siap untuk proses vendor registration di perusahaan Anda.</p>
   <div class="legal-grid">
-    <div class="legal-card">
-      <div class="legal-label">Nomor NPWP</div>
-      <div class="legal-value">65.566.677.4-019.000</div>
-      <div class="legal-sub">KPP Pratama Jakarta Kebayoran Baru Dua · 28 Mei 2022</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-label">Nomor Induk Berusaha (NIB)</div>
-      <div class="legal-value">2805220017195</div>
-      <div class="legal-sub">OSS — Pemerintah Republik Indonesia · 28 Mei 2022</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-label">Pengusaha Kena Pajak (PKP)</div>
-      <div class="legal-value" style="font-size:13px;">S-178/PKP/KPP.300203/2023</div>
-      <div class="legal-sub">Direktorat Jenderal Pajak · Terdaftar sejak 4 Agustus 2023</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-label">SK Kemenkumham (AHU)</div>
-      <div class="legal-value" style="font-size:13px;">AHU-0034681.AH.01.01.TAHUN 2022</div>
-      <div class="legal-sub">Akta No. 21 · Notaris Noenik Marlina, SH., M.Kn. · 23 Mei 2022</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-label">Status Penanaman Modal</div>
-      <div class="legal-value">PMDN — Swasta Nasional</div>
-      <div class="legal-sub">Penanaman Modal Dalam Negeri</div>
-    </div>
-    <div class="legal-card">
-      <div class="legal-label">Bidang Usaha (KBLI)</div>
-      <div class="legal-value" style="font-size:13px;">46591 · 46593 · 28240</div>
-      <div class="legal-sub">Perdagangan Besar Mesin, Suku Cadang &amp; Perlengkapan; Industri Mesin Penambangan</div>
-    </div>
+    <div class="legal-card"><div class="legal-label">Nomor NPWP</div><div class="legal-value">65.566.677.4-019.000</div><div class="legal-sub">KPP Pratama Jakarta Kebayoran Baru Dua · 28 Mei 2022</div></div>
+    <div class="legal-card"><div class="legal-label">Nomor Induk Berusaha (NIB)</div><div class="legal-value">2805220017195</div><div class="legal-sub">OSS — Pemerintah Republik Indonesia · 28 Mei 2022</div></div>
+    <div class="legal-card"><div class="legal-label">Pengusaha Kena Pajak (PKP)</div><div class="legal-value" style="font-size:13px;">S-178/PKP/KPP.300203/2023</div><div class="legal-sub">Direktorat Jenderal Pajak · Terdaftar sejak 4 Agustus 2023</div></div>
+    <div class="legal-card"><div class="legal-label">SK Kemenkumham (AHU)</div><div class="legal-value" style="font-size:13px;">AHU-0034681.AH.01.01.TAHUN 2022</div><div class="legal-sub">Akta No. 21 · Notaris Noenik Marlina, SH., M.Kn. · 23 Mei 2022</div></div>
+    <div class="legal-card"><div class="legal-label">Status Penanaman Modal</div><div class="legal-value">PMDN — Swasta Nasional</div><div class="legal-sub">Penanaman Modal Dalam Negeri</div></div>
+    <div class="legal-card"><div class="legal-label">Bidang Usaha (KBLI)</div><div class="legal-value" style="font-size:13px;">46591 · 46593 · 28240</div><div class="legal-sub">Perdagangan Besar Mesin, Suku Cadang &amp; Perlengkapan; Industri Mesin Penambangan</div></div>
   </div>
-  <div class="vendor-reg-box">
-    <span style="font-size:24px;">📋</span>
-    <p><strong>Vendor Registration tersedia.</strong> Kami menyiapkan seluruh dokumen yang dibutuhkan untuk proses pendaftaran vendor di sistem procurement perusahaan Anda.</p>
-    <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20request%20Vendor%20Registration%20" class="btn-vendor" target="_blank">REQUEST →</a>
-  </div>
+  <div class="vendor-reg-box"><span style="font-size:24px;">📋</span><p><strong>Vendor Registration tersedia.</strong> Kami menyiapkan seluruh dokumen yang dibutuhkan untuk proses pendaftaran vendor di sistem procurement perusahaan Anda.</p><a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20request%20Vendor%20Registration%20" class="btn-vendor" target="_blank">REQUEST →</a></div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     CONTACT
-════════════════════════════════════════════ -->
+<!-- ==================== CONTACT ==================== -->
 <section id="contact">
   <div class="section-label">Start Your Inquiry</div>
   <div class="contact-layout">
@@ -1313,59 +740,20 @@ Site: [lokasi Anda]
       <h2 class="contact-headline">Mulai dengan<br>Satu <span style="color:var(--orange);">Inquiry.</span></h2>
       <p class="contact-sub">Kami tidak minta Anda percaya dulu. Kami minta satu kesempatan untuk buktikan response time dan kualitas kami. Tidak ada obligation untuk PO.</p>
       <div class="contact-items">
-        <div class="contact-item">
-          <div class="contact-icon">💬</div>
-          <div>
-            <div class="contact-detail-label">WhatsApp — Respon Tercepat</div>
-            <div class="contact-detail-value"><a href="https://wa.me/6288802032033">0888-020-32033</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📧</div>
-          <div>
-            <div class="contact-detail-label">Email — Dokumentasi Formal</div>
-            <div class="contact-detail-value"><a href="mailto:orenzasia@gmail.com">orenzasia@gmail.com</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-detail-label">Alamat Kantor</div>
-            <div class="contact-detail-value">Jakarta Selatan, DKI Jakarta 12140</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🏭</div>
-          <div>
-            <div class="contact-detail-label">Alamat Gudang</div>
-            <div class="contact-detail-value">Rorotan, Cilincing, Jakarta Utara</div>
-          </div>
-        </div>
+        <div class="contact-item"><div class="contact-icon">💬</div><div><div class="contact-detail-label">WhatsApp — Respon Tercepat</div><div class="contact-detail-value"><a href="https://wa.me/6288802032033">0888-020-32033</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-detail-label">Email — Dokumentasi Formal</div><div class="contact-detail-value"><a href="mailto:orenzasia@gmail.com">orenzasia@gmail.com</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><div class="contact-detail-label">Alamat Kantor</div><div class="contact-detail-value">Jakarta Selatan, DKI Jakarta 12140</div></div></div>
+        <div class="contact-item"><div class="contact-icon">🏭</div><div><div class="contact-detail-label">Alamat Gudang</div><div class="contact-detail-value">Rorotan, Cilincing, Jakarta Utara</div></div></div>
       </div>
     </div>
     <div class="contact-ctas">
-      <a href="https://wa.me/6288802032033" class="contact-btn-wa" target="_blank">
-        <span style="font-size:20px;">💬</span>
-        <div>
-          <div>WHATSAPP — RESPON TERCEPAT</div>
-          <div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px;">Kirim foto part / part number. Identifikasi dalam 3 jam *khusus SANY.</div>
-        </div>
-      </a>
-      <a href="mailto:orenzasia@gmail.com" class="contact-btn-email">
-        <span style="font-size:18px;">📧</span>
-        <div>
-          <div>EMAIL — DOKUMENTASI FORMAL</div>
-          <div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px;">orenzasia@gmail.com</div>
-        </div>
-      </a>
-      <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20request%20Vendor%20Registration%20" class="contact-btn-vendor2" target="_blank">
-        📋 REQUEST VENDOR REGISTRATION ›
-      </a>
+      <a href="https://wa.me/6288802032033" class="contact-btn-wa" target="_blank"><span style="font-size:20px;">💬</span><div><div>WHATSAPP — RESPON TERCEPAT</div><div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px;">Kirim foto part / part number. Identifikasi dalam 3 jam *khusus SANY.</div></div></a>
+      <a href="mailto:orenzasia@gmail.com" class="contact-btn-email"><span style="font-size:18px;">📧</span><div><div>EMAIL — DOKUMENTASI FORMAL</div><div style="font-size:11px;font-weight:400;opacity:0.8;margin-top:2px;">orenzasia@gmail.com</div></div></a>
+      <a href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20request%20Vendor%20Registration%20" class="contact-btn-vendor2" target="_blank">📋 REQUEST VENDOR REGISTRATION ›</a>
 
+      <!-- QR CODE GENERATED AUTOMATICALLY -->
       <div class="contact-qr-box">
-        <div class="contact-qr-img">
-          <img src="assets/qr-code.png" alt="QR Code WA ORENZ" onerror="this.src='https://placehold.co/80x80?text=QR'">
-        </div>
+        <div class="contact-qr-img" id="qr-code-container"></div>
         <div>
           <div class="contact-qr-label">SCAN QR</div>
           <div class="contact-qr-url">wa.me/6288802032033</div>
@@ -1385,28 +773,32 @@ Site: [lokasi Anda]
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════ -->
+<!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">
-    <div>
-      <div class="footer-logo">PT. ORENZ SUKU CADANG ASIA RAYA</div>
-      <div class="footer-tagline">Supporting Your Fleet. Protecting Your Production.</div>
-    </div>
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#units">Units</a>
-      <a href="#products">Products</a>
-      <a href="#tyre">OTR Tyre</a>
-      <a href="#pricelist">Pricelist</a>
-      <a href="#clients">Clients</a>
-      <a href="#legal">Legal</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <div><div class="footer-logo">PT. ORENZ SUKU CADANG ASIA RAYA</div><div class="footer-tagline">Supporting Your Fleet. Protecting Your Production.</div></div>
+    <div class="footer-links"><a href="#about">About</a><a href="#units">Units</a><a href="#products">Products</a><a href="#tyre">OTR Tyre</a><a href="#pricelist">Pricelist</a><a href="#clients">Clients</a><a href="#legal">Legal</a><a href="#contact">Contact</a></div>
     <div class="footer-copy">© 2024 PT. Orenz Suku Cadang Asia Raya. All rights reserved.<br>Jakarta, Indonesia · Est. 2022</div>
   </div>
 </footer>
+
+<!-- QRCode.js library and generator -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var qrContainer = document.getElementById("qr-code-container");
+    if (qrContainer) {
+      new QRCode(qrContainer, {
+        text: "https://wa.me/6288802032033",
+        width: 80,
+        height: 80,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
