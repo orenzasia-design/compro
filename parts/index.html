@@ -1,252 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>OSCARPART Mining Parts Portal</title>
-
-<style>
-  .rfq-cart{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 2px 6px rgba(0,0,0,.08);
-}
-
-.rfq-item{
-border-bottom:1px solid #eee;
-padding:10px 0;
-}
-
-.rfq-top{
-display:flex;
-justify-content:space-between;
-gap:10px;
-}
-
-.rfq-qty{
-width:80px;
-padding:6px;
-margin-top:8px;
-}
-
-.remove-btn{
-margin-top:8px;
-padding:6px 10px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-#submitRFQ{
-margin-top:15px;
-padding:12px 16px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-weight:bold;
-width:100%;
-}
-.rfq-btn{
-margin-top:10px;
-padding:10px 14px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.rfq-btn:hover{
-opacity:.9;
-}  
-
-*{
-box-sizing:border-box;
-}
-
-body{
-font-family:Arial,sans-serif;
-background:#f4f6f9;
-margin:0;
-padding:0;
-}
-
-.header{
-background:white;
-padding:20px;
-box-shadow:0 2px 6px rgba(0,0,0,.1);
-text-align:center;
-}
-
-.logo{
-height:80px;
-margin-bottom:10px;
-}
-
-h1{
-margin:5px 0;
-font-size:28px;
-}
-
-.subtitle{
-color:#666;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
-
-.search-box{
-width:100%;
-padding:14px;
-font-size:16px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-.filters{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:10px;
-margin-bottom:20px;
-}
-
-select{
-padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-.stats{
-background:white;
-padding:15px;
-border-radius:8px;
-margin-bottom:20px;
-font-weight:bold;
-}
-
-.card{
-background:white;
-padding:15px;
-border-radius:10px;
-margin-bottom:12px;
-box-shadow:0 2px 6px rgba(0,0,0,.08);
-}
-
-.part-number{
-font-size:18px;
-font-weight:bold;
-color:#003366;
-}
-
-.desc{
-margin-top:6px;
-}
-
-.brand{
-margin-top:6px;
-color:#666;
-}
-
-.stock{
-margin-top:8px;
-font-weight:bold;
-}
-
-.available{
-color:green;
-}
-
-.low{
-color:orange;
-}
-
-.out{
-color:red;
-}
-
-</style>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parts &amp; OTR Tyre — PT. Orenz Suku Cadang Asia Raya</title>
+<meta name="description" content="Heavy equipment parts &amp; OTR tyre untuk mining Indonesia. Spesialis SANY, BELAZ, KAMAZ, HOWO, UD Truck. Ready stock Jakarta, respons 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../favicon.png">
+<link rel="canonical" href="https://orenzasia-design.github.io/compro/parts/">
+<meta property="og:type" content="website"><meta property="og:title" content="Parts &amp; OTR Tyre — PT. Orenz Suku Cadang Asia Raya"><meta property="og:description" content="Heavy equipment parts &amp; OTR tyre untuk mining Indonesia. Ready stock Jakarta, respons 24/7."><meta property="og:image" content="https://orenzasia-design.github.io/compro/img/og.jpg"><meta property="og:url" content="https://orenzasia-design.github.io/compro/parts/"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/page.css">
 </head>
-
-<body>
-
-<div class="header">
-
-<img
-src="../logoorenz.png"
-class="logo"
-alt="OSCARPART Logo">
-
-<h1>OSCARPART Mining Parts Portal</h1>
-
-<div class="subtitle">
-PT. Orenz Suku Cadang Asia Raya
-</div>
-
-</div>
-
-<div class="container">
-
-<input
-type="text"
-id="search"
-class="search-box"
-placeholder="Search Part Number or Description">
-
-<div class="filters">
-
-<select id="brandFilter">
-<option value="">All Brands</option>
-</select>
-
-<select id="unitFilter">
-<option value="">All Units</option>
-</select>
-
-<select id="stockFilter">
-<option value="">All Status</option>
-<option value="Available">Available</option>
-<option value="Low Stock">Low Stock</option>
-<option value="Out of Stock">Out of Stock</option>
-</select>
-
-</div>
-
-<div class="stats" id="stats">
-Loading...
-</div>
-
-<div id="rfqCart" class="rfq-cart">
-
-<h2>RFQ Cart</h2>
-
-<div id="rfqItems"></div>
-
-<div id="rfqSummary">
-0 Items
-</div>
-
-<button id="submitRFQ">
-Request Official Quotation
-</button>
-
-</div>
-
-<div id="results"></div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="config.js"></script>
-<script src="app.js"></script>
-<div id="rfqModal" style="display:none;">
-  RFQ FORM AKAN KITA PASANG
-</div>
-</body>
-</html>
+<body style="--c:#F2C100">
+<header><div class="wrap bar">
+ <a class="brand" href="../"><img src="../logo-orenz-sm.png" alt="" onerror="this.style.display='none'">ORENZ</a>
+ <nav aria-label="Menu utama"><a href="../parts/" aria-current="page">Parts &amp; OTR Tyre</a><a href="../alsintan/">Alsintan</a><a href="../drone/">Drone</a><a href="../armor/">Armor</a><a href="../#kontak">Kontak</a></nav>
+ <a class="btn" href="#konsultasi">Konsultasi</a>
+</div></header>
+<main>
+<section class="phero"><div class="wrap"><div class="tag"><span>Mining</span><span>Beroperasi sejak 2022 · Jakarta Selatan</span></div><h1>Your fleet never stops.</h1><p>Heavy equipment parts dan OTR tyre untuk operasional mining Indonesia. Spesialis SANY, BELAZ, KAMAZ, HOWO, UD Truck, dan seluruh armada Anda.</p>
+<div class="row"><a class="btn" href="https://wa.me/6288802032033">Hubungi via WhatsApp</a><a class="btn ghost" href="#produk">Lihat produk</a></div>
+<div class="hk"><div>1000+<small>fast-moving parts ready stock</small></div><div>10+<small>model unit didukung</small></div><div>8+<small>brand tercakup</small></div><div>24/7<small>respons emergency</small></div></div></div></section>
+<nav class="toc" aria-label="Isi halaman"><div class="wrap"><a href="#unit">Unit</a><a href="#produk">Produk</a><a href="#otr">OTR Tyre</a><a href="#pricelist">Pricelist</a><a href="#stok">Stok &amp; gudang</a><a href="#pengiriman">Pengiriman</a><a href="#emergency">Emergency</a><a href="#klien">Klien</a><a href="#legalitas">Legalitas</a><a href="#kontak">Kontak</a></div></nav>
+<section class="sec" id="tentang"><div class="wrap"><h2>Kami menjaga availability unit Anda.</h2><p class="intro">Satu unit yang down bukan hanya masalah teknis. Ini production loss yang berdampak langsung ke bisnis Anda. Karena itu kami menjaga buffer stock fast-moving parts dan menyediakan respons 24/7 untuk kebutuhan emergency. Jaringan pengiriman kami menjangkau site mining di Kalimantan, Sumatera, Papua, dan seluruh Indonesia.</p><div class="split" style="grid-template-columns:minmax(0,300px) 1fr;align-items:center"><img src="../img/founder.webp" alt="Muhammad Ali Syofyan" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-top:6px solid var(--hivis)"><div><h3 style="font-size:36px">Muhammad Ali Syofyan</h3><p class="intro" style="margin:6px 0 12px">Founder &amp; Managing Director · Teknik Mesin, Institut Teknologi Indonesia</p><p style="color:var(--muted)">Profesional sales dan procurement dengan pengalaman 15+ tahun di industri alat berat, mining, transportasi, energi, dan general trading berbasis engineering. Berpengalaman menangani penjualan spare parts, pengadaan, negosiasi supplier lokal dan import, supply chain, serta pengembangan bisnis. Terbiasa bekerja dengan customer site, proyek, dan area remote.</p></div></div><ul class="team"><li><b>PT. Orenz Suku Cadang Asia Raya</b><span>Director · 2022 sampai sekarang</span></li><li><b>PT. Pusaka Bumi Transportasi</b><span>Parts Sales, Mining &amp; Heavy Equipment · 2020 sampai 2021</span></li><li><b>PT. Altrak 1978</b><span>Customer Service Officer / Parts Sales · 2017 sampai 2019</span></li><li><b>PT. Bina Pertiwi (United Tractors Group)</b><span>Field Coordinator, Project PLN · 2010 sampai 2015</span></li></ul></div></section>
+<section class="sec " id="unit"><div class="wrap"><h2>Unit yang kami dukung</h2><p class="intro">Kami familiar dengan unit yang beroperasi di pit tambang Indonesia, dari spek teknis hingga part number kritis yang paling sering diganti.</p><div class="units"><div class="unit"><img src="../img/u-sany-hd.webp" alt="SANY SYZ, SKT &amp; SRT Series" loading="lazy"><div><small>HD Dump Truck</small><b>SANY SYZ, SKT &amp; SRT Series</b><span>SRT95C · SRT75C · SKT90S · SYZ90</span></div></div><div class="unit"><img src="../img/u-belaz.webp" alt="BELAZ 75131 / 75135" loading="lazy"><div><small>HD Dump Truck</small><b>BELAZ 75131 / 75135</b><span>75131 · 75135 · 7513</span></div></div><div class="unit"><img src="../img/u-kamaz.webp" alt="KAMAZ 6520 / 65201" loading="lazy"><div><small>Haul Truck</small><b>KAMAZ 6520 / 65201</b><span>6520 · 65201 · 6522</span></div></div><div class="unit"><img src="../img/u-howo.webp" alt="HOWO / SHACMAN" loading="lazy"><div><small>Haul Truck</small><b>HOWO / SHACMAN</b><span>T5G · A7 · N7G · X3000</span></div></div><div class="unit"><img src="../img/u-support.webp" alt="UD Truck / HINO / FAW / ISUZU" loading="lazy"><div><small>Support Truck</small><b>UD Truck / HINO / FAW / ISUZU</b><span>UD Quon · HINO 500 · FAW · ISUZU Giga</span></div></div><div class="unit"><img src="../img/u-sany-exca.webp" alt="SANY SY Series" loading="lazy"><div><small>SANY Excavator, 10 model</small><b>SANY SY Series</b><span>SY60C · SY75C · SY135C · SY215C · SY215C LC · SY305C · SY365H · SY375H · SY465H · SY500H</span></div></div></div></div></section><section class="sec " id="kapabilitas"><div class="wrap"><h2>Lebih dari sekadar supplier</h2><p class="intro">Technical partner Anda, mulai dari identifikasi part, sourcing, hingga pengiriman ke site.</p><div class="caps"><div><h3>Parts sourcing &amp; identifikasi</h3><p>Kirim foto atau part number. Kami identifikasi dan verifikasi dalam 3 jam kerja (khusus SANY).</p><ul><li>OEM &amp; OEM-compatible parts</li><li>Layanan cross-reference</li><li>Verifikasi fit &amp; function</li><li>Jaringan langsung ke manufaktur</li></ul></div><div><h3>Stock &amp; logistics</h3><p>Buffer stock untuk fast-moving parts dengan pengiriman ke seluruh site mining Indonesia.</p><ul><li>Gudang pusat di Jakarta</li><li>Dispatch hari yang sama (ready stock)</li><li>Kapabilitas air freight darurat</li><li>Packing industri sesuai kebutuhan</li></ul></div><div><h3>Dukungan teknis &amp; konsultasi</h3><p>Kami bukan sekadar penerima order. Kami technical partner di balik setiap PO Anda.</p><ul><li>Rekomendasi sesuai aplikasi</li><li>Perhitungan TKPH ban (gratis)</li><li>Dokumen vendor registration</li><li>Follow-up setelah supply</li></ul></div></div></div></section><section class="sec " id="produk"><div class="wrap"><h2>Fast moving parts, ready stock</h2><p class="intro">Parts yang paling sering dibutuhkan operasional mining. Kami menjaga stok agar tidak ada downtime karena menunggu parts.</p><div class="pgs"><article class="pg"><img src="../img/pg-hd.webp" alt="HD Dump Truck Parts" loading="lazy"><div class="in"><h3>HD Dump Truck Parts</h3><div class="br">SANY · BELAZ · KAMAZ · HOWO · SHACMAN</div><table class="pt"><tr><th>Part</th><th>Aplikasi</th><th>Stok</th></tr><tr><td>Suspension Cylinder Seal Kit</td><td>SRT95C / BELAZ 75131</td><td><span class="st">READY</span></td></tr><tr><td>Brake Disc / Rotor Set</td><td>SANY / BELAZ Series</td><td><span class="st">READY</span></td></tr><tr><td>Fuel Filter Set (Primary + Secondary)</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Air Filter Element Set</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Steering Cylinder Seal Kit</td><td>BELAZ / SANY</td><td><span class="st">READY</span></td></tr><tr><td>Transmission Oil Filter</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Drive Belt Set</td><td>KAMAZ / HOWO</td><td><span class="st">READY</span></td></tr><tr><td>Hydraulic Return Filter</td><td>Multi-unit</td><td><span class="st o">ORDER</span></td></tr></table></div></article><article class="pg"><img src="../img/pg-exca.webp" alt="Excavator Parts" loading="lazy"><div class="in"><h3>Excavator Parts</h3><div class="br">SANY SY Series · XCMG XE Series</div><table class="pt"><tr><th>Part</th><th>Aplikasi</th><th>Stok</th></tr><tr><td>Bucket Tooth Standard + HD</td><td>SY700 / SY870 / XE900D</td><td><span class="st">READY</span></td></tr><tr><td>Bucket Tooth Adapter</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Hydraulic Cylinder Seal Kit</td><td>Boom / Arm / Bucket</td><td><span class="st">READY</span></td></tr><tr><td>Cutting Edge + End Bit Set</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Swing Motor Seal Kit</td><td>SANY / XCMG</td><td><span class="st">READY</span></td></tr><tr><td>Track Pad / Shoe</td><td>SY700 / XE900D</td><td><span class="st o">ORDER</span></td></tr><tr><td>Boom Pin &amp; Bushing Set</td><td>Multi-unit</td><td><span class="st o">ORDER</span></td></tr><tr><td>Hydraulic Oil Filter</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr></table></div></article><article class="pg"><img src="../img/u-support.webp" alt="Support Truck Parts" loading="lazy"><div class="in"><h3>Support Truck Parts</h3><div class="br">UD Truck · HINO · FAW · ISUZU</div><table class="pt"><tr><th>Part</th><th>Aplikasi</th><th>Stok</th></tr><tr><td>Brake Pad Set (Front + Rear)</td><td>UD Quon / HINO 500</td><td><span class="st">READY</span></td></tr><tr><td>Clutch Disc + Pressure Plate</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>Air Filter Element</td><td>Multi-brand</td><td><span class="st">READY</span></td></tr><tr><td>Fuel Filter Kit</td><td>Multi-brand</td><td><span class="st">READY</span></td></tr><tr><td>Leaf Spring Set</td><td>HOWO / SHACMAN</td><td><span class="st o">ORDER</span></td></tr><tr><td>Diff Seal Kit</td><td>FAW / HOWO</td><td><span class="st">READY</span></td></tr></table></div></article><article class="pg"><img src="../img/pg-engine.webp" alt="Engine &amp; Filter Package" loading="lazy"><div class="in"><h3>Engine &amp; Filter Package</h3><div class="br">Scheduled maintenance, multi-brand</div><table class="pt"><tr><th>Part</th><th>Aplikasi</th><th>Stok</th></tr><tr><td>Complete Filter Kit (service 250H)</td><td>SANY / BELAZ</td><td><span class="st">READY</span></td></tr><tr><td>Complete Filter Kit (service 500H)</td><td>KAMAZ / HOWO</td><td><span class="st">READY</span></td></tr><tr><td>Cooling System Hose Set</td><td>Multi-unit</td><td><span class="st">READY</span></td></tr><tr><td>V-Belt &amp; Drive Belt Package</td><td>Multi-unit</td><td><span class="st o">ORDER</span></td></tr><tr><td>Water Pump Seal Kit</td><td>Multi-unit</td><td><span class="st o">ORDER</span></td></tr><tr><td>Thermostat Set</td><td>Multi-brand</td><td><span class="st">READY</span></td></tr></table></div></article></div><p class="legend"><span class="st">READY</span> dispatch H+1 &nbsp; <span class="st o">ORDER</span> berdasarkan order, 7 sampai 14 hari</p></div></section><section class="sec " id="otr"><div class="wrap"><h2>Ban tambang untuk setiap aplikasi</h2><p class="intro">Kami konsultasikan pemilihan ban yang tepat untuk kondisi haul road, kelas payload, dan TKPH operasional Anda.</p><div class="split"><div>
+<p class="intro" style="margin:0 0 14px"><b>YARTU</b> by <b>ZC Rubber (Zhongce Rubber Group)</b> · ban OTR rekomendasi SANY.</p>
+<h3 style="font-size:26px">Cakupan ukuran OTR</h3><div class="chips2"><span>33.00-51</span><span>27.00-49</span><span>24.00-35</span><span>21.00-35</span><span>18.00-33</span><span>26.5-25</span><span>29.5-25</span><span>17.5-25</span></div>
+<h3 style="font-size:26px">Cakupan ukuran ban truk</h3><div class="chips2"><span>10.00R20</span><span>12.00R20</span><span>11.00R20</span><span>12.00R24</span><span>295/80R22.5</span><span>11R22.5</span><span>12R22.5</span><span>275/70R22.5</span><span>8.25R16</span></div>
+<div class="call"><b>Konsultasi TKPH, gratis</b><p>Kami hitung kebutuhan TKPH fleet Anda dan rekomendasikan ban yang paling efisien. Tanpa kewajiban PO.</p></div>
+<div class="row" style="margin-top:18px"><a class="btn" href="https://orenzasia-design.github.io/2.-Tyre/">Lihat pricelist OTR Tyre</a><a class="btn ghost" href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20konsultasi%20TKPH%20dan%20ban%20OTR.">Konsultasi TKPH</a></div></div>
+<figure><img class="mx" src="../img/tyre-matrix.webp" alt="Matriks aplikasi ban OTR" loading="lazy"><figcaption class="cap" style="margin-top:8px">Matriks aplikasi: pilihan pattern untuk setiap kondisi kerja.</figcaption></figure></div></div></section><section class="sec " id="pricelist"><div class="wrap"><h2>Harga transparan, langsung cek</h2><p class="intro">Pricelist tersedia online dan selalu diperbarui. Untuk negosiasi harga fleet atau order volume besar, kirim inquiry langsung.</p><div class="prices">
+<div class="price"><span class="st" style="justify-self:start">LIVE · SELALU UPDATE</span><h3>Pricelist OTR Tyre</h3><p>Harga ban tambang YARTU by ZC Rubber, semua ukuran dan pattern. Diperbarui berkala sesuai kurs dan stok.</p><ul><li>Ukuran 33.00-51 sampai 8.25R16</li><li>Pattern E-4/TK6, E-3/TK5, L-5, G-2/G-4, CB972E</li><li>Harga per unit dan per set</li><li>Termasuk spec sheet dan load table</li></ul><div class="row"><a class="btn" href="https://orenzasia-design.github.io/2.-Tyre/">Buka pricelist</a></div></div>
+<div class="price"><span class="st" style="justify-self:start">PORTAL CUSTOMER</span><h3>Pricelist Spareparts</h3><p>Katalog harga dan stok spareparts alat berat multi-brand, real time. Hanya untuk customer teregistrasi.</p><ul><li>SANY · BELAZ · KAMAZ · HOWO · UD Truck</li><li>1000+ part number ready stock</li><li>OEM &amp; OEM-compatible</li><li>Quotation via WhatsApp, respons 3 jam (khusus SANY)</li></ul><div class="row"><a class="btn" href="https://oscar-parts.vercel.app">Akses portal spareparts</a><a class="btn ghost" href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20minta%20pricelist%20spareparts">Minta via WhatsApp</a></div></div></div>
+<div class="call"><b>Butuh custom quotation atau negosiasi harga fleet?</b><p>Kirim unit, part number atau ukuran ban, quantity, dan site. Kami kirim penawaran resmi dalam 3 jam kerja (khusus SANY).</p><div class="row" style="margin-top:12px"><a class="btn" href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20butuh%20quotation%20untuk%3A%0A%0AUnit%3A%20%0APart%2FTyre%3A%20%0AQty%3A%20%0ASite%3A%20">Minta quotation</a></div></div></div></section><section class="sec " id="brand"><div class="wrap"><h2>Kami cover fleet Anda</h2><div class="chips2"><span>SANY (prioritas)</span><span>BELAZ</span><span>KAMAZ</span><span>HOWO</span><span>SHACMAN</span><span>FAW</span><span>XCMG</span><span>UD Truck</span><span>HINO</span><span>ISUZU</span><span>SINOTRUK</span><span>FOTON</span><span>+ OEM compatible</span></div><p class="intro" style="margin:0">Tidak terikat satu brand. Kami terikat pada kebutuhan operasional Anda.</p></div></section><section class="sec " id="stok"><div class="wrap"><h2>Parts ada. Tidak perlu tunggu indent.</h2><div class="trio"><img src="../img/wh-sany.webp" alt="Gudang suku cadang di Jakarta" loading="lazy"><img src="../img/wh-stock.webp" alt="Stok parts ready" loading="lazy"><img src="../img/wh-delivery.webp" alt="Proses loading dan pengiriman" loading="lazy"></div>
+<p class="intro" style="margin:22px 0 0">Kami menjaga buffer stock 1000+ part number fast-moving agar unit Anda tidak menunggu parts dari luar negeri.</p>
+<div class="defs"><div><b>Ready stock</b><span>Tersedia di gudang Jakarta, dispatch H+1 kerja.</span></div><div><b>Order basis</b><span>Procurement dari principal, estimasi 7 sampai 14 hari kerja.</span></div><div><b>Emergency procurement</b><span>Eskalasi khusus via air freight, timeline sesuai kasus.</span></div></div></div></section><section class="sec " id="pengiriman"><div class="wrap"><h2>Pengiriman ke seluruh Indonesia</h2><p class="intro">Jaringan logistik kami menangani pengiriman ke seluruh site mining, dari Sumatera hingga Papua.</p><div class="regs"><div><h3>Kalimantan</h3><p>Hub terbesar mining batubara Indonesia</p><div class="chips2"><span>Balikpapan</span><span>Samarinda</span><span>Sangatta</span><span>Bontang</span><span>Banjarmasin</span><span>Tanjung</span><span>Muara Teweh</span><span>Palangkaraya</span></div></div><div><h3>Sumatera</h3><p>Batubara, nikel, emas, dan mineral lain</p><div class="chips2"><span>Palembang</span><span>Tanjung Enim</span><span>Muara Enim</span><span>Pekanbaru</span><span>Jambi</span><span>Bengkulu</span><span>Medan</span><span>Lahat</span></div></div><div><h3>Papua &amp; Sulawesi</h3><p>Nikel, tembaga, dan emas</p><div class="chips2"><span>Mimika</span><span>Manokwari</span><span>Sorong</span><span>Jayapura</span><span>Morowali</span><span>Kendari</span><span>Makassar</span></div></div></div><div class="call"><b>Kapabilitas air freight darurat</b><p>Untuk kebutuhan urgent, kami mengirim via air freight ke seluruh bandara di Indonesia. Tidak ada site yang terlalu jauh untuk membuat unit Anda kembali beroperasi.</p></div></div></section><section class="sec dkb" id="emergency"><div class="wrap"><h2>Apa pun kebutuhan Anda, kapan pun, kami respons.</h2><ol class="tl"><li><div class="t">T+0</div><small>JAM BERAPA PUN</small><b>Unit down diterima</b><span>Inquiry masuk via WhatsApp. Tidak ada batas jam kerja untuk emergency.</span></li>
+<li><div class="t">T+2</div><small>3 JAM (khusus SANY)</small><b>Identifikasi part &amp; cek stok</b><span>Identifikasi part number, cek stok gudang, konfirmasi ketersediaan.</span></li>
+<li><div class="t">T+4</div><small>3 JAM (khusus SANY)</small><b>Quotation diterbitkan</b><span>Penawaran resmi dengan harga, quantity, dan estimasi delivery.</span></li>
+<li><div class="t">PO</div><small>SETELAH PO CONFIRMED</small><b>Dispatch same-day / next-day</b><span>Packing dan pengiriman prioritas.</span></li></ol>
+<p class="q">"Kami tidak mengenal jam kerja ketika unit Anda down."</p>
+<p style="color:var(--soft);max-width:62ch">Production loss dari satu HD dump truck bisa mencapai Rp 80 sampai 150 juta per hari. Respons cepat adalah kewajiban kami sebagai operational partner Anda.</p>
+<div class="fmt">Unit: SANY SRT95C<br>Problem: Suspension turun<br>Part: Suspension seal kit<br>Qty: 2 set<br>Site: [lokasi Anda]</div>
+<div class="row" style="margin-top:16px"><a class="btn" href="https://wa.me/6288802032033">Hubungi kami, emergency</a></div></div></section><section class="sec " id="klien"><div class="wrap"><h2>Dipercaya industri pertambangan</h2><p class="intro">Dari BUMN tambang hingga kontraktor swasta nasional, kami membuktikan kapabilitas di lapangan.</p><div class="clients3"><article class="cl"><img src="../img/klien-bukitasam.webp" alt="PT. Bukit Asam Tbk" loading="lazy"><div><small>Verified client · coal mining</small><h3>PT. Bukit Asam Tbk</h3><div class="s">BUMN · Energi &amp; Pertambangan Batu Bara · IDX: PTBA</div><p>Salah satu produsen batu bara terbesar Indonesia dengan operasi utama di Tanjung Enim, Sumatera Selatan. ORENZ dipercaya untuk pengadaan spareparts dan komponen alat berat operasional tambang.</p><div class="ref"><b>Referensi proyek:</b> Pengadaan spareparts unit BELAZ Rigid Dump Truck untuk pit tambang batu bara Tanjung Enim. Supply terverifikasi, delivery on-time.</div></div></article><article class="cl"><img src="../img/klien-gmt.webp" alt="Global Makara Teknik" loading="lazy"><div><small>Verified client · mining services</small><h3>Global Makara Teknik</h3><div class="s">Swasta · Jasa Pertambangan, Sumatera Selatan &amp; Kalimantan Selatan</div><p>Perusahaan jasa pertambangan batu bara dengan keahlian konsultasi, perencanaan, dan implementasi proyek mining. ORENZ mendukung kebutuhan parts untuk fleet operasional di lapangan.</p><div class="ref"><b>Referensi proyek:</b> Pengadaan spareparts untuk fleet alat berat operasional tambang.</div></div></article><article class="cl"><img src="../img/klien-pawon.webp" alt="PT. Pawon Servis Tama" loading="lazy"><div><small>Verified client · heavy equipment</small><h3>PT. Pawon Servis Tama</h3><div class="s">Swasta · Retail &amp; Sparepart Alat Berat, Jakarta Timur</div><p>Perusahaan retail dan penjualan sparepart alat berat di Jakarta Timur. Mitra distribusi ORENZ untuk kebutuhan parts multi-brand armada alat berat industri.</p><div class="ref"><b>Referensi proyek:</b> Pengadaan spare parts alat berat multi-brand.</div></div></article><article class="cl"><img src="../img/klien-mja.webp" alt="PT. Mayangkara Jaya Abadi" loading="lazy"><div><small>Verified client · general trade</small><h3>PT. Mayangkara Jaya Abadi</h3><div class="s">Swasta · Perdagangan &amp; Jasa Umum</div><p>Perusahaan swasta nasional di bidang perdagangan umum dan jasa. ORENZ dipercaya sebagai supplier parts dan komponen untuk kebutuhan procurement teknis mereka.</p><div class="ref"><b>Referensi proyek:</b> Pengadaan spareparts KAMAZ dan BELAZ.</div></div></article></div></div></section><section class="sec " id="mengapa"><div class="wrap"><h2>Bukan supplier biasa. Operational partner.</h2><div class="why6"><div><div class="n">01</div><h3>Kami kenal unit Anda</h3><p>Kami familiar dengan seluruh line-up unit mining di pit Indonesia, dari spek teknis hingga part number kritis.</p></div><div><div class="n">02</div><h3>Stock ada, bukan klaim</h3><p>Buffer stock nyata di gudang Jakarta. 1000+ part number ready untuk dispatch H+1, tanpa menunggu 3 minggu untuk parts urgent.</p></div><div><div class="n">03</div><h3>Respons, bukan janji</h3><p>Identifikasi part dan quotation dalam 3 jam (khusus SANY). Dispatch same-day untuk ready stock.</p></div><div><div class="n">04</div><h3>Dokumentasi procurement lengkap</h3><p>NPWP, SIUP, PKP, NIB, AHU siap. Kami memahami proses vendor registration di perusahaan mining.</p></div><div><div class="n">05</div><h3>Dukungan teknis termasuk</h3><p>Tidak yakin part number? Kirim foto. Butuh cross-reference atau TKPH? Kami bantu. Bukan biaya tambahan.</p></div><div><div class="n">06</div><h3>Tidak terikat satu brand</h3><p>SANY, BELAZ, KAMAZ, HOWO, UD Truck, HINO, dan lainnya. Satu supplier untuk seluruh fleet.</p></div></div></div></section><section class="sec " id="legalitas"><div class="wrap"><h2>Legalitas lengkap &amp; terverifikasi</h2><p class="intro">Seluruh dokumen legalitas tersedia dan siap untuk proses vendor registration di perusahaan Anda.</p><div class="legal"><div><small>Nomor NPWP</small><b>65.566.677.4-019.000</b><span>KPP Pratama Jakarta Kebayoran Baru Dua · 28 Mei 2022</span></div><div><small>Nomor Induk Berusaha (NIB)</small><b>2805220017195</b><span>OSS, Pemerintah Republik Indonesia · 28 Mei 2022</span></div><div><small>Pengusaha Kena Pajak (PKP)</small><b>S-178/PKP/KPP.300203/2023</b><span>Direktorat Jenderal Pajak · terdaftar 4 Agustus 2023</span></div><div><small>SK Kemenkumham (AHU)</small><b>AHU-0034681.AH.01.01.TAHUN 2022</b><span>Akta No. 21 · Notaris Noenik Marlina, SH., M.Kn. · 23 Mei 2022</span></div><div><small>Status penanaman modal</small><b>PMDN, Swasta Nasional</b><span>Penanaman Modal Dalam Negeri</span></div><div><small>Bidang usaha (KBLI)</small><b>46591 · 46593 · 28240</b><span>Perdagangan besar mesin, suku cadang &amp; perlengkapan; industri mesin penambangan</span></div></div><div class="call"><b>Vendor registration tersedia</b><p>Kami menyiapkan seluruh dokumen untuk pendaftaran vendor di sistem procurement perusahaan Anda.</p><div class="row" style="margin-top:12px"><a class="btn" href="https://wa.me/6288802032033?text=Halo%20OSCAR%2C%20saya%20ingin%20request%20Vendor%20Registration%20">Request vendor registration</a></div></div></div></section><section class="sec cta" id="kontak"><div class="wrap"><div><h2>Mulai dengan satu inquiry.</h2><p>Kami tidak minta Anda percaya dulu. Beri kami satu kesempatan untuk membuktikan respons dan kualitas kami. Tanpa kewajiban PO.</p>
+<ul class="ci"><li><b>WhatsApp, respons tercepat</b><a href="https://wa.me/6288802032033">0888-020-32033</a></li><li><b>Email, dokumentasi formal</b><a href="mailto:orenzasia@gmail.com">orenzasia@gmail.com</a></li><li><b>Kantor</b>Jakarta Selatan, DKI Jakarta 12140</li><li><b>Gudang</b>Rorotan, Cilincing, Jakarta Utara</li></ul>
+<div class="qr"><img src="../img/qr-wa.webp" alt="QR WhatsApp Orenz" loading="lazy"><small>Scan untuk chat tanpa menyimpan nomor</small></div></div>
+<form id="lead" data-produk="Parts &amp; OTR Tyre"><div class="two"><label>Nama<input name="nama" required autocomplete="name"></label><label>Perusahaan / instansi<input name="inst" autocomplete="organization"></label></div>
+<div class="two"><label>Site / lokasi<input name="lokasi" placeholder="Kota / site" autocomplete="address-level2"></label><label>Kebutuhan<select name="butuh" required><option value="" disabled selected>Pilih</option><option>Spareparts</option><option>OTR Tyre</option><option>Konsultasi TKPH</option><option>Emergency / unit down</option><option>Vendor registration</option></select></label></div>
+<label>Unit, part number / ukuran ban, qty<textarea name="catatan" rows="3"></textarea></label><button class="btn" type="submit">Lanjut ke WhatsApp</button><small>Pesan akan terbuka di WhatsApp dan tim kami membalas langsung.</small></form></div></section></main>
+<footer><div class="wrap">© 2026 PT. Orenz Suku Cadang Asia Raya · Jakarta Selatan · <a href="mailto:orenzasia@gmail.com">orenzasia@gmail.com</a> · <a href="../">Kembali ke beranda</a></div></footer>
+<a class="btn wa" href="https://wa.me/6288802032033?text=Halo%20Orenz%2C%20saya%20tertarik%20dengan%20Alsintan." aria-label="Chat WhatsApp">Chat WhatsApp</a>
+<script src="../js/page.js"></script>
+</body></html>

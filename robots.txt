@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://orenzasia-design.github.io/compro/sitemap.xml
