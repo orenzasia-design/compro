@@ -13,6 +13,7 @@
    var p=m.querySelector('img');if(p)p.style.visibility='hidden';
    m.appendChild(v);btn.hidden=true;v.focus&&v.focus()})
  });
+ var nv=document.querySelector('header nav'),cu=nv&&nv.querySelector('[aria-current]');if(cu){nv.scrollLeft+=cu.getBoundingClientRect().left-24}
  var form=document.getElementById('lead');
  if(form)form.addEventListener('submit',function(e){e.preventDefault();
   var g=function(n){return(form.elements[n].value||'').trim()};
